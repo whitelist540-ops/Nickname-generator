@@ -510,6 +510,40 @@ const specialDesigns = [
 // Emojis and symbols
 const symbols = ["☯", "⚡", "🔥", "💫", "🌟", "⭐", "✨", "🎮", "⚔️", "🛡️", "💎", "🕊️", "💀", "🐉", "🐲", "🌙", "☀️", "🌺", "🌼", "🍀", "🦋", "🦅", "🦁", "🐺", "メ", "ツ", "亗", "♚", "♛", "⚚", "𓂀", "ꕤ", "𒊹", "⟢", "⌬", "⍟", "⎈", "⋆", "༄", "𖤓", "𓋼", "★", "☆", "■", "✦", "◈", "卐", "ᛟ", "𒀱", "ꕥ", "𖣘", "♠", "♣", "♦", "♥", "⚡", "🔥", "💧", "🌪️", "❄️", "🌙", "☀️", "⭐", "🌟", "✨", "💫", "☄️"];
 
+// Social media platforms for sharing
+const socialMedia = {
+    facebook: {
+        name: "Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u=",
+        color: "#1877f2"
+    },
+    twitter: {
+        name: "Twitter",
+        url: "https://twitter.com/intent/tweet?text=",
+        color: "#1da1f2"
+    },
+    whatsapp: {
+        name: "WhatsApp",
+        url: "https://api.whatsapp.com/send?text=",
+        color: "#25d366"
+    },
+    instagram: {
+        name: "Instagram",
+        url: "https://www.instagram.com/",
+        color: "#e4405f"
+    },
+    telegram: {
+        name: "Telegram",
+        url: "https://t.me/share/url?url=",
+        color: "#0088cc"
+    },
+    reddit: {
+        name: "Reddit",
+        url: "https://www.reddit.com/submit?title=",
+        color: "#ff4500"
+    }
+};
+
 // DOM elements
 const nameInput = document.getElementById('nameInput');
 const generateBtn = document.getElementById('generateBtn');
@@ -523,6 +557,9 @@ let currentName = "";
 let generatedCount = 0;
 let allGeneratedNames = [];
 const copyHistory = [];
+
+// Storage for likes and dislikes
+let nameReactions = JSON.parse(localStorage.getItem('nameReactions')) || {};
 
 // Apply style to a word - preserves case
 function applyStyle(word, style) {
@@ -856,6 +893,233 @@ function generateVariation(userName) {
     }
 }
 
+// Get reactions for a name
+function getReactions(name) {
+    if (!nameReactions[name]) {
+        // Initialize with random likes and dislikes
+        nameReactions[name] = {
+            likes: Math.floor(Math.random() * 50),
+            dislikes: Math.floor(Math.random() * 20),
+            userLiked: false,
+            userDisliked: false
+        };
+    }
+    return nameReactions[name];
+}
+
+// Save reactions to localStorage
+function saveReactions() {
+    localStorage.setItem('nameReactions', JSON.stringify(nameReactions));
+}
+
+// Handle like action
+function handleLike(name, likeBtn, dislikeBtn, likeCount, dislikeCount) {
+    const reactions = getReactions(name);
+    
+    if (reactions.userLiked) {
+        // Unlike
+        reactions.likes--;
+        reactions.userLiked = false;
+        likeBtn.classList.remove('active');
+    } else {
+        // Like
+        reactions.likes++;
+        reactions.userLiked = true;
+        likeBtn.classList.add('active');
+        
+        // If previously disliked, remove dislike
+        if (reactions.userDisliked) {
+            reactions.dislikes--;
+            reactions.userDisliked = false;
+            dislikeBtn.classList.remove('active');
+        }
+    }
+    
+    likeCount.textContent = reactions.likes;
+    dislikeCount.textContent = reactions.dislikes;
+    saveReactions();
+}
+
+// Handle dislike action
+function handleDislike(name, likeBtn, dislikeBtn, likeCount, dislikeCount) {
+    const reactions = getReactions(name);
+    
+    if (reactions.userDisliked) {
+        // Remove dislike
+        reactions.dislikes--;
+        reactions.userDisliked = false;
+        dislikeBtn.classList.remove('active');
+    } else {
+        // Dislike
+        reactions.dislikes++;
+        reactions.userDisliked = true;
+        dislikeBtn.classList.add('active');
+        
+        // If previously liked, remove like
+        if (reactions.userLiked) {
+            reactions.likes--;
+            reactions.userLiked = false;
+            likeBtn.classList.remove('active');
+        }
+    }
+    
+    likeCount.textContent = reactions.likes;
+    dislikeCount.textContent = reactions.dislikes;
+    saveReactions();
+}
+
+// Share name to social media
+function shareName(name, platform) {
+    const encodedText = encodeURIComponent(`Check out this cool name: ${name}`);
+    const encodedUrl = encodeURIComponent(window.location.href);
+    
+    let shareUrl = '';
+    
+    switch (platform) {
+        case 'facebook':
+            shareUrl = `${socialMedia.facebook.url}${encodedUrl}`;
+            break;
+        case 'twitter':
+            shareUrl = `${socialMedia.twitter.url}${encodedText}`;
+            break;
+        case 'whatsapp':
+            shareUrl = `${socialMedia.whatsapp.url}${encodedText}`;
+            break;
+        case 'telegram':
+            shareUrl = `${socialMedia.telegram.url}${encodedText}`;
+            break;
+        case 'reddit':
+            shareUrl = `${socialMedia.reddit.url}${encodedText}&url=${encodedUrl}`;
+            break;
+        default:
+            // Default to copying to clipboard
+            copyToClipboard(name);
+            showNotification('Name copied to clipboard! You can now share it anywhere.');
+            return;
+    }
+    
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+}
+
+// Show share options
+function showShareOptions(name) {
+    // Create share modal
+    const shareModal = document.createElement('div');
+    shareModal.className = 'share-modal';
+    shareModal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    `;
+    
+    const shareContent = document.createElement('div');
+    shareContent.style.cssText = `
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 400px;
+        width: 90%;
+        text-align: center;
+    `;
+    
+    const title = document.createElement('h3');
+    title.textContent = 'Share Name';
+    title.style.marginBottom = '15px';
+    
+    const namePreview = document.createElement('div');
+    namePreview.textContent = name;
+    namePreview.style.cssText = `
+        background: #f5f5f5;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 0;
+        font-size: 1.2em;
+        word-break: break-all;
+    `;
+    
+    const platformsContainer = document.createElement('div');
+    platformsContainer.style.cssText = `
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 20px 0;
+    `;
+    
+    // Create platform buttons
+    Object.keys(socialMedia).forEach(platform => {
+        const platformBtn = document.createElement('button');
+        platformBtn.textContent = socialMedia[platform].name;
+        platformBtn.style.cssText = `
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: ${socialMedia[platform].color};
+            color: white;
+            cursor: pointer;
+            font-size: 12px;
+        `;
+        platformBtn.addEventListener('click', () => {
+            shareName(name, platform);
+            document.body.removeChild(shareModal);
+        });
+        platformsContainer.appendChild(platformBtn);
+    });
+    
+    const copyBtn = document.createElement('button');
+    copyBtn.textContent = 'Copy to Clipboard';
+    copyBtn.style.cssText = `
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+    `;
+    copyBtn.addEventListener('click', () => {
+        copyToClipboard(name);
+        document.body.removeChild(shareModal);
+    });
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Close';
+    closeBtn.style.cssText = `
+        padding: 10px 20px;
+        background: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+    `;
+    closeBtn.addEventListener('click', () => {
+        document.body.removeChild(shareModal);
+    });
+    
+    shareContent.appendChild(title);
+    shareContent.appendChild(namePreview);
+    shareContent.appendChild(platformsContainer);
+    shareContent.appendChild(copyBtn);
+    shareContent.appendChild(closeBtn);
+    shareModal.appendChild(shareContent);
+    
+    document.body.appendChild(shareModal);
+    
+    // Close modal when clicking outside
+    shareModal.addEventListener('click', (e) => {
+        if (e.target === shareModal) {
+            document.body.removeChild(shareModal);
+        }
+    });
+}
+
 // Create a result card
 function createResultCard(variation) {
     const card = document.createElement('div');
@@ -865,16 +1129,124 @@ function createResultCard(variation) {
     nameElement.className = 'result-name';
     nameElement.textContent = variation;
     
+    // Get reactions for this name
+    const reactions = getReactions(variation);
+    
+    // Create reaction buttons container
+    const reactionContainer = document.createElement('div');
+    reactionContainer.className = 'reaction-container';
+    reactionContainer.style.cssText = `
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+    `;
+    
+    // Like button
+    const likeBtn = document.createElement('button');
+    likeBtn.className = `reaction-btn like-btn ${reactions.userLiked ? 'active' : ''}`;
+    likeBtn.innerHTML = '👍';
+    likeBtn.style.cssText = `
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        background: ${reactions.userLiked ? '#e3f2fd' : 'white'};
+        border-radius: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    `;
+    
+    const likeCount = document.createElement('span');
+    likeCount.className = 'like-count';
+    likeCount.textContent = reactions.likes;
+    
+    // Dislike button
+    const dislikeBtn = document.createElement('button');
+    dislikeBtn.className = `reaction-btn dislike-btn ${reactions.userDisliked ? 'active' : ''}`;
+    dislikeBtn.innerHTML = '👎';
+    dislikeBtn.style.cssText = `
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        background: ${reactions.userDisliked ? '#ffebee' : 'white'};
+        border-radius: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    `;
+    
+    const dislikeCount = document.createElement('span');
+    dislikeCount.className = 'dislike-count';
+    dislikeCount.textContent = reactions.dislikes;
+    
+    // Add event listeners for reactions
+    likeBtn.addEventListener('click', () => {
+        handleLike(variation, likeBtn, dislikeBtn, likeCount, dislikeCount);
+    });
+    
+    dislikeBtn.addEventListener('click', () => {
+        handleDislike(variation, likeBtn, dislikeBtn, likeCount, dislikeCount);
+    });
+    
+    // Assemble reaction container
+    likeBtn.appendChild(likeCount);
+    dislikeBtn.appendChild(dislikeCount);
+    reactionContainer.appendChild(likeBtn);
+    reactionContainer.appendChild(dislikeBtn);
+    
+    // Create action buttons container
+    const actionContainer = document.createElement('div');
+    actionContainer.className = 'action-container';
+    actionContainer.style.cssText = `
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    `;
+    
+    // Copy button
     const copyBtn = document.createElement('button');
     copyBtn.className = 'copy-btn';
-    copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy Name';
+    copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
+    copyBtn.style.cssText = `
+        padding: 8px 15px;
+        border: none;
+        background: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        flex: 1;
+    `;
     
     copyBtn.addEventListener('click', () => {
         copyToClipboard(variation);
     });
     
+    // Share button
+    const shareBtn = document.createElement('button');
+    shareBtn.className = 'share-btn';
+    shareBtn.innerHTML = '<i class="fas fa-share-alt"></i> Share';
+    shareBtn.style.cssText = `
+        padding: 8px 15px;
+        border: none;
+        background: #28a745;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        flex: 1;
+    `;
+    
+    shareBtn.addEventListener('click', () => {
+        showShareOptions(variation);
+    });
+    
+    actionContainer.appendChild(copyBtn);
+    actionContainer.appendChild(shareBtn);
+    
+    // Assemble card
     card.appendChild(nameElement);
-    card.appendChild(copyBtn);
+    card.appendChild(reactionContainer);
+    card.appendChild(actionContainer);
     
     return card;
 }
@@ -929,7 +1301,12 @@ function copyToClipboard(text) {
     }
     
     // Show notification
-    notification.textContent = `✓ Copied: ${text.substring(0, 20)}${text.length > 20 ? '...' : ''}`;
+    showNotification(`✓ Copied: ${text.substring(0, 20)}${text.length > 20 ? '...' : ''}`);
+}
+
+// Show notification
+function showNotification(message) {
+    notification.textContent = message;
     notification.classList.add('show');
     setTimeout(() => {
         notification.classList.remove('show');
@@ -966,20 +1343,6 @@ function filterResults(searchTerm) {
     });
 }
 
-// Export functionality
-function exportNames() {
-    const names = allGeneratedNames.join('\n');
-    const blob = new Blob([names], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'fancy-names.txt';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-}
-
 // Initialize advanced features
 function initializeAdvancedFeatures() {
     // Add search input if it doesn't exist
@@ -1001,26 +1364,6 @@ function initializeAdvancedFeatures() {
         });
         
         resultsContainer.parentNode.insertBefore(searchInput, resultsContainer);
-    }
-    
-    // Add export button if it doesn't exist
-    if (!document.getElementById('exportBtn')) {
-        const exportBtn = document.createElement('button');
-        exportBtn.id = 'exportBtn';
-        exportBtn.textContent = '📥 Export All Names';
-        exportBtn.className = 'export-btn';
-        exportBtn.style.cssText = `
-            padding: 10px 20px;
-            margin: 10px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        `;
-        exportBtn.addEventListener('click', exportNames);
-        
-        generateBtn.parentNode.appendChild(exportBtn);
     }
 }
 
@@ -1047,4 +1390,4 @@ window.addEventListener('load', () => {
     setTimeout(initializeAdvancedFeatures, 100);
 });
 
-console.log('Unicode Name Generator loaded successfully!');
+console.log('Unicode Name Generator loaded successfully with like/dislike and share features!');
