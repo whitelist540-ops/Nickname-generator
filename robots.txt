@@ -1,1 +1,5 @@
+# robots.txt — allow all crawlers
+User-agent: *
+Disallow:
+
 Sitemap: https://whitelist540-ops.github.io/Nickname-generator/sitemap.xml
