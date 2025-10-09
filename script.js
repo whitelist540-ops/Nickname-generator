@@ -233,6 +233,46 @@ const styles = {
     }
 };
 
+const prefixWords = {
+    iam: "ᴵᴬᴹ",
+    boss: "ᴮᴼˢˢ",
+    badboy: "ᴮᴬᴰᴮᴼʸ",
+    king: "ᴷᴵᴺᴳ",
+    queen: "Qᴜᴇᴇɴ",
+    legend: "ᴸᴱᴳᴱᴺᴰ",
+    pro: "ᴾᴿᴼ",
+    god: "ᴳᴼᴰ",
+    demon: "ᴰᴱᴹᴼᴺ",
+    angel: "ᴬᴺᴳᴱᴸ",
+    warrior: "ᵂᴬᴿᴿᴵᴼᴿ",
+    ghost: "ᴳᴴᴼˢᵀ",
+    hacker: "ᴴᴬᶜᴷᴱᴿ",
+    vampire: "ⱽᴬᴹᴾᴵᴿᴱ",
+    wolf: "ᵂᴼᴸᶠ",
+    tiger: "ᵀᴵᴳᴱᴿ",
+    dragon: "ᴰᴿᴬᴳᴼᴺ",
+    phoenix: "ᴾᴴᴼᴱᴺᴵˣ",
+    shadow: "ˢᴴᴬᴰᴼᵂ",
+    light: "ᴸᴵᴳᴴᵀ",
+    dark: "ᴰᴬᴿᴷ",
+    fire: "ᶠᴵᴿᴱ",
+    ice: "ᴵᶜᴱ",
+    storm: "ˢᵀᴼᴿᴹ",
+    thunder: "ᵀᴴᵁᴺᴰᴱᴿ",
+    cosmic: "ᶜᴼˢᴹᴵᶜ",
+    neon: "ᴺᴱᴼᴺ",
+    cyber: "ᶜʸᴮᴱᴿ",
+    atomic: "ᴬᵀᴼᴹᴵᶜ",
+    mega: "ᴹᴱᴳᴬ",
+    ultra: "ᵁᴸᵀᴿᴬ",
+    super: "ˢᵁᴾᴱᴿ",
+    epic: "ᴱᴾᴵᶜ",
+    myth: "ᴹʸᵀᴴ",
+    royal: "ᴿᴼʸᴬᴸ",
+    divine: "ᴰᴵⱽᴵᴺᴱ",
+    eternal: "ᴱᵀᴱᴿᴺᴬᴸ"
+};
+
 // Special Unicode character substitutions
 const specialChars = {
     a: ["ą", "ค", "ά", "ặ", "ꫀ", "α", "ａ", "₳", "ᴀ", "ᵃ", "ǟ", "ǡ", "ã", "â", "ä", "å", "ą", "ɑ"],
