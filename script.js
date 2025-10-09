@@ -233,46 +233,6 @@ const styles = {
     }
 };
 
-const prefixWords = {
-    iam: "ᴵᴬᴹ",
-    boss: "ᴮᴼˢˢ",
-    badboy: "ᴮᴬᴰᴮᴼʸ",
-    king: "ᴷᴵᴺᴳ",
-    queen: "Qᴜᴇᴇɴ",
-    legend: "ᴸᴱᴳᴱᴺᴰ",
-    pro: "ᴾᴿᴼ",
-    god: "ᴳᴼᴰ",
-    demon: "ᴰᴱᴹᴼᴺ",
-    angel: "ᴬᴺᴳᴱᴸ",
-    warrior: "ᵂᴬᴿᴿᴵᴼᴿ",
-    ghost: "ᴳᴴᴼˢᵀ",
-    hacker: "ᴴᴬᶜᴷᴱᴿ",
-    vampire: "ⱽᴬᴹᴾᴵᴿᴱ",
-    wolf: "ᵂᴼᴸᶠ",
-    tiger: "ᵀᴵᴳᴱᴿ",
-    dragon: "ᴰᴿᴬᴳᴼᴺ",
-    phoenix: "ᴾᴴᴼᴱᴺᴵˣ",
-    shadow: "ˢᴴᴬᴰᴼᵂ",
-    light: "ᴸᴵᴳᴴᵀ",
-    dark: "ᴰᴬᴿᴷ",
-    fire: "ᶠᴵᴿᴱ",
-    ice: "ᴵᶜᴱ",
-    storm: "ˢᵀᴼᴿᴹ",
-    thunder: "ᵀᴴᵁᴺᴰᴱᴿ",
-    cosmic: "ᶜᴼˢᴹᴵᶜ",
-    neon: "ᴺᴱᴼᴺ",
-    cyber: "ᶜʸᴮᴱᴿ",
-    atomic: "ᴬᵀᴼᴹᴵᶜ",
-    mega: "ᴹᴱᴳᴬ",
-    ultra: "ᵁᴸᵀᴿᴬ",
-    super: "ˢᵁᴾᴱᴿ",
-    epic: "ᴱᴾᴵᶜ",
-    myth: "ᴹʸᵀᴴ",
-    royal: "ᴿᴼʸᴬᴸ",
-    divine: "ᴰᴵⱽᴵᴺᴱ",
-    eternal: "ᴱᵀᴱᴿᴺᴬᴸ"
-};
-
 // Special Unicode character substitutions
 const specialChars = {
     a: ["ą", "ค", "ά", "ặ", "ꫀ", "α", "ａ", "₳", "ᴀ", "ᵃ", "ǟ", "ǡ", "ã", "â", "ä", "å", "ą", "ɑ"],
@@ -333,97 +293,324 @@ const specialChars = {
     ch: ["č", "ć", "ç", "ĉ", "ḉ"]
 };
 
+// Add new prefix words for the small text before names
+const prefixWords = {
+    iam: "ᴵᴬᴹ",
+    boss: "ᴮᴼˢˢ",
+    badboy: "ᴮᴬᴰᴮᴼʸ",
+    king: "ᴷᴵᴺᴳ",
+    queen: "Qᴜᴇᴇɴ",
+    legend: "ᴸᴱᴳᴱᴺᴰ",
+    pro: "ᴾᴿᴼ",
+    god: "ᴳᴼᴰ",
+    demon: "ᴰᴱᴹᴼᴺ",
+    angel: "ᴬᴺᴳᴱᴸ",
+    warrior: "ᵂᴬᴿᴿᴵᴼᴿ",
+    ghost: "ᴳᴴᴼˢᵀ",
+    hacker: "ᴴᴬᶜᴷᴱᴿ",
+    vampire: "ⱽᴬᴹᴾᴵᴿᴱ",
+    wolf: "ᵂᴼᴸᶠ",
+    tiger: "ᵀᴵᴳᴱᴿ",
+    dragon: "ᴰᴿᴬᴳᴼᴺ",
+    phoenix: "ᴾᴴᴼᴱᴺᴵˣ",
+    shadow: "ˢᴴᴬᴰᴼᵂ",
+    light: "ᴸᴵᴳᴴᵀ",
+    dark: "ᴰᴬᴿᴷ",
+    fire: "ᶠᴵᴿᴱ",
+    ice: "ᴵᶜᴱ",
+    storm: "ˢᵀᴼᴿᴹ",
+    thunder: "ᵀᴴᵁᴺᴰᴱᴿ",
+    cosmic: "ᶜᴼˢᴹᴵᶜ",
+    neon: "ᴺᴱᴼᴺ",
+    cyber: "ᶜʸᴮᴱᴿ",
+    atomic: "ᴬᵀᴼᴹᴵᶜ",
+    mega: "ᴹᴱᴳᴬ",
+    ultra: "ᵁᴸᵀᴿᴬ",
+    super: "ˢᵁᴾᴱᴿ",
+    epic: "ᴱᴾᴵᶜ",
+    myth: "ᴹʸᵀᴴ",
+    royal: "ᴿᴼʸᴬᴸ",
+    divine: "ᴰᴵⱽᴵᴺᴱ",
+    eternal: "ᴱᵀᴱᴿᴺᴬᴸ"
+};
+
+// Professional name styles with exact character mappings from your examples
+const professionalNameStyles = [
+    {
+        name: "Quote Bubble Style",
+        template: {
+            prefix: "°\"",
+            suffix: "\"°",
+            mapping: { r: "ℛ", a: "ค", y: "Ў", h: "ⲏ", n: "𐌽" }
+        }
+    },
+    {
+        name: "Elegant Border Style",
+        template: {
+            prefix: "꧁乂✰",
+            suffix: "✰乂꧂",
+            mapping: { r: "ⴽ", a: "ค", y: "𝕪", h: "𝓱", n: "ꫜ" }
+        }
+    },
+    {
+        name: "Simple Elegant Style",
+        template: {
+            prefix: "𑁍┊",
+            suffix: "",
+            mapping: { r: "℟", a: "𝔞", y: "ʸ", h: "Ꮵ", n: "𝑛" }
+        }
+    },
+    {
+        name: "Prefix Arrow Style",
+        template: {
+            prefix: "➳",
+            suffix: "➳",
+            mapping: { r: "ꋪ", a: "ą", y: "𐍅", h: "𝚑", n: "𝚗" },
+            addPrefix: true
+        }
+    },
+    {
+        name: "Flower Decoration Style",
+        template: {
+            prefix: "✿.｡",
+            suffix: ".:* ☆",
+            mapping: { r: "Ꮢ", a: "ᤂ", y: "ℽ", h: "𝓱", n: "ⲡ" }
+        }
+    },
+    {
+        name: "Bubble Special Style",
+        template: {
+            prefix: "°🫧•𖨆٭ ",
+            suffix: "꙳○𖨆°",
+            mapping: { r: "ꋪ", a: "𝗮", y: "ץ", h: "ʱ", n: "η" }
+        }
+    },
+    {
+        name: "Arrow Star Style",
+        template: {
+            prefix: "⇶✴☞",
+            suffix: "❈",
+            mapping: { r: "ꭱ", a: "α", y: "ᵞ", h: "ĥ", n: "ᴻ" }
+        }
+    },
+    {
+        name: "Dot Border Style",
+        template: {
+            prefix: "•.•.",
+            suffix: ".•.•",
+            mapping: { r: "ℛ", a: "ⲗ", y: "ʸ", h: "𝕙", n: "𝗇" }
+        }
+    },
+    {
+        name: "Flower Symbol Style",
+        template: {
+            prefix: "𖥻៹",
+            suffix: "🌻✨",
+            mapping: { r: "𝑅", a: "ᥲ", y: "𝓎", h: "ħ", n: "ꫛ" }
+        }
+    },
+    {
+        name: "Cloud Heart Style",
+        template: {
+            prefix: "☁♡⭒",
+            suffix: "⭒♡☁",
+            mapping: { r: "𝗥", a: "ᤂ", y: "𝔂", h: "ʱ", n: "Ϟ" }
+        }
+    },
+    {
+        name: "Kaomoji Style",
+        template: {
+            prefix: "+｡:.ﾟ",
+            suffix: "\\ (•◡•) /",
+            mapping: { r: "𝐑", a: "ศ", y: "ᵞ", h: "𝚑", n: "𝖓" }
+        }
+    },
+    {
+        name: "Star Line Style",
+        template: {
+            prefix: "—͟͞͞★",
+            suffix: "—͟͞͞★",
+            mapping: { r: "𝑅", a: "ɑ", y: "𝚢", h: "𝐡", n: "ɳ" }
+        }
+    },
+    {
+        name: "Book Border Style",
+        template: {
+            prefix: "《.•°~[",
+            suffix: "]~°•.》",
+            mapping: { r: "ꭱ", a: "𝒶", y: "ᵞ", h: "𝘩", n: "𝓷" }
+        }
+    },
+    {
+        name: "Star Cluster Style",
+        template: {
+            prefix: "★⁂⁙",
+            suffix: "⁙⁂★",
+            mapping: { r: "Ｒ", a: "ẳ", y: "𝒚", h: "ℏ", n: "𝓃" }
+        }
+    },
+    {
+        name: "Heart Fire Style",
+        template: {
+            prefix: "❤️‍🔥♡",
+            suffix: "♡❤️‍🔥",
+            mapping: { r: "℟", a: "ᤂ", y: "𝚢", h: "𝘩", n: "ⲡ" }
+        }
+    },
+    {
+        name: "Rose Fire Style",
+        template: {
+            prefix: "🔥🥀",
+            suffix: "🥀🔥",
+            mapping: { r: "𝗥", a: "𝓪", y: "ʸ", h: "ʱ", n: "𝔫" }
+        }
+    },
+    {
+        name: "Heart Border Style",
+        template: {
+            prefix: "꧁⪻♥",
+            suffix: "♥⪼꧂",
+            mapping: { r: "ʀ", a: "ᵃ", y: "ყ", h: "𝚑", n: "𝘯" }
+        }
+    },
+    {
+        name: "Square Text Style",
+        template: {
+            prefix: "",
+            suffix: "",
+            mapping: { r: "🅁", a: "𝗮", y: "🅈", h: "𝗵", n: "𝗻" }
+        }
+    },
+    {
+        name: "Star Line Variant Style",
+        template: {
+            prefix: "—͟͞͞★ ",
+            suffix: " ★",
+            mapping: { r: "𝐑", a: "ꪋ", y: "ყ", h: "ʰ", n: "ก" }
+        }
+    },
+    {
+        name: "Butterfly Style",
+        template: {
+            prefix: "🦋✨",
+            suffix: "✨🦋",
+            mapping: { r: "Ɍ", a: "ᤂ", y: "ʸ", h: "Ꮵ", n: "ᶯ" }
+        }
+    },
+    {
+        name: "Heart Star Style",
+        template: {
+            prefix: "°♡✧*",
+            suffix: "*✧♡°",
+            mapping: { r: "ʀ", a: "ᤂ", y: "¥", h: "ĥ", n: "𝗻" }
+        }
+    },
+    {
+        name: "Chain Style",
+        template: {
+            prefix: "⛓ 💯",
+            suffix: "⛓",
+            mapping: { r: "ꭱ", a: "ศ", y: "Ў", h: "𝗵", n: "𝗇" }
+        }
+    },
+    {
+        name: "Sunflower Style",
+        template: {
+            prefix: "🌻x",
+            suffix: "x🌻",
+            mapping: { r: "ᚱ", a: "𝒂", y: "у", h: "ɦ", n: "ƞ" }
+        }
+    },
+    {
+        name: "Lightning Style",
+        template: {
+            prefix: "⚡",
+            suffix: "|₂₂₀⚡",
+            mapping: { r: "Ꮢ", a: "ǟ", y: "ᵞ", h: "𝕙", n: "ᶰ" }
+        }
+    },
+    {
+        name: "Wave Style",
+        template: {
+            prefix: "🌊 .·:*¨",
+            suffix: "¨*:·. 🌊",
+            mapping: { r: "℟", a: "ᵃ", y: "у", h: "ʰ", n: "ᶰ" }
+        }
+    },
+    {
+        name: "Arrow Heart Style",
+        template: {
+            prefix: "🔥💘⇨",
+            suffix: "☔️",
+            mapping: { r: "ᴿ", a: "ᥲ", y: "ℽ", h: "𝖍", n: "ท" }
+        }
+    }
+];
+
+// Function to apply professional name styling
+function applyProfessionalStyle(userName, styleTemplate) {
+    let styledName = "";
+    const nameLower = userName.toLowerCase();
+    
+    for (let i = 0; i < nameLower.length; i++) {
+        const char = nameLower[i];
+        styledName += styleTemplate.mapping[char] || char;
+    }
+    
+    let finalName = styleTemplate.prefix + styledName + styleTemplate.suffix;
+    
+    // Add prefix word if specified
+    if (styleTemplate.addPrefix) {
+        const prefixKey = Object.keys(prefixWords)[Math.floor(Math.random() * Object.keys(prefixWords).length)];
+        finalName = prefixWords[prefixKey] + " " + finalName;
+    }
+    
+    return finalName;
+}
+
 // Complex decorations
 const complexDecorations = [
+    // Professional styles from examples
+    { prefix: "°\"", suffix: "\"°" },
+    { prefix: "꧁乂✰", suffix: "✰乂꧂" },
+    { prefix: "𑁍┊", suffix: "" },
+    { prefix: "✿.｡", suffix: ".:* ☆" },
+    { prefix: "°🫧•𖨆٭ ", suffix: "꙳○𖨆°" },
+    { prefix: "⇶✴☞", suffix: "❈" },
+    { prefix: "•.•.", suffix: ".•.•" },
+    { prefix: "𖥻៹", suffix: "🌻✨" },
+    { prefix: "☁♡⭒", suffix: "⭒♡☁" },
+    { prefix: "+｡:.ﾟ", suffix: "\\ (•◡•) /" },
+    { prefix: "—͟͞͞★", suffix: "—͟͞͞★" },
+    { prefix: "《.•°~[", suffix: "]~°•.》" },
+    { prefix: "★⁂⁙", suffix: "⁙⁂★" },
+    { prefix: "❤️‍🔥♡", suffix: "♡❤️‍🔥" },
+    { prefix: "🔥🥀", suffix: "🥀🔥" },
+    { prefix: "꧁⪻♥", suffix: "♥⪼꧂" },
+    { prefix: "—͟͞͞★ ", suffix: " ★" },
+    { prefix: "🦋✨", suffix: "✨🦋" },
+    { prefix: "°♡✧*", suffix: "*✧♡°" },
+    { prefix: "⛓ 💯", suffix: "⛓" },
+    { prefix: "🌻x", suffix: "x🌻" },
+    { prefix: "⚡", suffix: "|₂₂₀⚡" },
+    { prefix: "🌊 .·:*¨", suffix: "¨*:·. 🌊" },
+    { prefix: "🔥💘⇨", suffix: "☔️" },
+    
+    // Keep original ones that work well
     { prefix: "━ 𝗚ҽϞυ𝑖Ϟҽ𝓓ҽℊḭ𝔫ʄ๏𝑟 :･ﾟ✧", suffix: "" },
-    { prefix: "", suffix: "|₂₂₀" },
     { prefix: "꧁☬⋆", suffix: "⋆☬꧂" },
     { prefix: "꧁༒", suffix: "༒꧂" },
     { prefix: "༺", suffix: "༻ᴳᵒᵈ" },
-    { prefix: "꧁༺", suffix: "༻꧂" },
-    { prefix: "꧁☬", suffix: "☬꧂" },
-    { prefix: "꧁༒☬", suffix: "☬༒꧂" },
-    { prefix: "꧁༺༒༻", suffix: "༺༒༻꧂" },
     { prefix: "꧁𓊈𒆜", suffix: "𒆜𓊉꧂" },
-    { prefix: "꧁☯༺", suffix: "༻☯꧂" },
-    { prefix: "꧁☬✞", suffix: "✞☬꧂" },
     { prefix: "❝ ", suffix: " ❞" },
-    { prefix: "❝★", suffix: "★❞" },
-    { prefix: "❝☆", suffix: "☆❞" },
-    { prefix: "꧁🕊️⃝", suffix: "🕊️⃝࿐" },
-    { prefix: "🎃⟫", suffix: "⟪🎃" },
-    { prefix: "🦋⟫", suffix: "⟪🦋" },
-    { prefix: "⭐⟫", suffix: "⟪⭐" },
-    { prefix: "🔥⟫", suffix: "⟪🔥" },
-    { prefix: "~♥~", suffix: "~♥~" },
-    { prefix: "♡⋆", suffix: "⋆♡" },
-    { prefix: "♡💫", suffix: "💫♡" },
     { prefix: "𓆩💜𓆪", suffix: "𓆩💜𓆪" },
-    { prefix: "𓆩🖤𓆪", suffix: "𓆩🖤𓆪" },
-    { prefix: "𓆩💎𓆪", suffix: "𓆩💎𓆪" },
     { prefix: "𓆩🔥𓆪", suffix: "𓆩🔥𓆪" },
     { prefix: "𓆩⚡𓆪", suffix: "𓆩⚡𓆪" },
-    { prefix: "☬🎮", suffix: "🎮☬" },
-    { prefix: "⚔️", suffix: "⚔️" },
-    { prefix: "🎯⟫", suffix: "⟪🎯" },
-    { prefix: "★彡(", suffix: ")彡★" },
     { prefix: "★彡", suffix: "彡★" },
-    { prefix: "☆彡", suffix: "彡☆" },
-    { prefix: "✦✧", suffix: "✧✦" },
     { prefix: "『", suffix: "』" },
-    { prefix: "《", suffix: "》" },
-    { prefix: "⎝", suffix: "⎠" },
     { prefix: "【", suffix: "】" },
-    { prefix: "⌜", suffix: "⌝" },
-    { prefix: "⧼", suffix: "⧽" },
-    { prefix: "♛👑", suffix: "👑♛" },
     { prefix: "♛", suffix: "♛" },
-    { prefix: "♕", suffix: "♕" },
     { prefix: "👑", suffix: "👑" },
-    { prefix: "✿", suffix: "✿" },
-    { prefix: "🌸", suffix: "🌸" },
-    { prefix: "🌹", suffix: "🌹" },
-    { prefix: "《.•°~[", suffix: "]~°•.》" },
-    { prefix: "◦•○•◦", suffix: "◦•○•◦" },
-    { prefix: "✧･ﾟ", suffix: "ﾟ･✧" },
-    { prefix: "⪻⪼", suffix: "⪻⪼" },
-    { prefix: "➳", suffix: "亗" },
-    { prefix: "『", suffix: "』•" },
-    { prefix: "꧁", suffix: "꧂" },
-    { prefix: "꧁࿇", suffix: "࿇꧂" },
-    { prefix: "『", suffix: "』 " },
-    // New advanced decorations
-    { prefix: "♚✦", suffix: "✦♚" },
-    { prefix: "♛♔", suffix: "♔♛" },
-    { prefix: "☤⚚", suffix: "⚚☤" },
-    { prefix: "𓂀", suffix: "𓂀" },
-    { prefix: "ꕤ", suffix: "ꕤ" },
-    { prefix: "𒊹", suffix: "𒊹" },
-    { prefix: "⟢⊶", suffix: "⊷⟣" },
-    { prefix: "⌬", suffix: "⌬" },
-    { prefix: "⍟", suffix: "⍟" },
-    { prefix: "⎈", suffix: "⎈" },
-    { prefix: "⚙️", suffix: "⚙️" },
-    { prefix: "⋆⭒˚", suffix: "˚⭒⋆" },
-    { prefix: "༄", suffix: "༄" },
-    { prefix: "⊹₊⋆", suffix: "⋆₊⊹" },
-    { prefix: "𖤓", suffix: "𖤓" },
-    { prefix: "꧁𓋼", suffix: "𓋼꧂" },
-    { prefix: "『★』", suffix: "『★』" },
-    { prefix: "≪☆≫", suffix: "≪☆≫" },
-    { prefix: "「■」", suffix: "「■」" },
-    { prefix: "〖✦〗", suffix: "〖✦〗" },
-    { prefix: "◈", suffix: "◈" },
-    { prefix: "卐", suffix: "卐" },
-    { prefix: "ᛟ", suffix: "ᛟ" },
-    { prefix: "𒀱", suffix: "𒀱" },
-    { prefix: "ꕥ", suffix: "ꕥ" },
-    { prefix: "𖣘", suffix: "𖣘" },
-    { prefix: "♚✦♛", suffix: "♛✦♚" },
-    { prefix: "꧁𓆩❀𓆪", suffix: "𓆩❀𓆪꧂" },
-    { prefix: "«░▒▓█", suffix: "█▓▒░»" },
-    { prefix: "≪☯≫", suffix: "≪☯≫" },
-    { prefix: "〖█►", suffix: "◄█〗" }
 ];
 
 // Special design templates
@@ -469,13 +656,6 @@ const specialDesigns = [
         generate: function(userName) {
             const specialName = applyStyle(userName, styles.specialUnicode);
             return "꧁࿇" + specialName + "࿇꧂";
-        }
-    },
-    {
-        name: "True Lone Style",
-        generate: function(userName) {
-            const specialName = applyStyle(userName, styles.specialUnicode);
-            return "『" + specialName + "』 ƬƦΘレ乇メ";
         }
     },
     {
@@ -679,7 +859,7 @@ function applySymbolReplacement(text) {
     return result;
 }
 
-// Generate a simple name (25%)
+// Generate a simple name (15%)
 function generateSimpleName(userName) {
     const styleKeys = Object.keys(styles);
     const randomStyle = styles[styleKeys[Math.floor(Math.random() * styleKeys.length)]];
@@ -703,7 +883,7 @@ function generateSimpleName(userName) {
     return styledName;
 }
 
-// Generate a premium name (50%) with 2-4 font styles
+// Generate a premium name (25%) with 2-4 font styles
 function generatePremiumName(userName) {
     const styleKeys = Object.keys(styles);
     
@@ -754,7 +934,7 @@ function generatePremiumName(userName) {
     return styledName;
 }
 
-// Generate advanced name (15%)
+// Generate advanced name (10%)
 function generateAdvancedName(userName) {
     const styleKeys = Object.keys(styles);
     const baseStyle = styles[styleKeys[Math.floor(Math.random() * styleKeys.length)]];
@@ -915,15 +1095,23 @@ function generateSpecialDesign(userName) {
     return design.generate(userName);
 }
 
+// Generate professional style name (40%)
+function generateProfessionalName(userName) {
+    const style = professionalNameStyles[Math.floor(Math.random() * professionalNameStyles.length)];
+    return applyProfessionalStyle(userName, style.template);
+}
+
 // Generate a fancy name variation
 function generateVariation(userName) {
-    // 25% simple, 50% premium, 15% advanced, 5% example style, 5% special designs
+    // 40% professional, 25% premium, 15% simple, 10% advanced, 5% example style, 5% special designs
     const randomValue = Math.random();
     
-    if (randomValue < 0.25) {
-        return generateSimpleName(userName);
-    } else if (randomValue < 0.75) {
+    if (randomValue < 0.4) {
+        return generateProfessionalName(userName);
+    } else if (randomValue < 0.65) {
         return generatePremiumName(userName);
+    } else if (randomValue < 0.8) {
+        return generateSimpleName(userName);
     } else if (randomValue < 0.9) {
         return generateAdvancedName(userName);
     } else if (randomValue < 0.95) {
@@ -1430,4 +1618,4 @@ window.addEventListener('load', () => {
     setTimeout(initializeAdvancedFeatures, 100);
 });
 
-console.log('Unicode Name Generator loaded successfully with like/dislike and share features!');
+console.log('Unicode Name Generator loaded successfully with professional styles!');
