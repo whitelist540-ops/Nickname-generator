@@ -365,7 +365,8 @@ const professionalNameStyles = [
         template: {
             prefix: "➳",
             suffix: "➳",
-            mapping: { r: "ꋪ", a: "ą", y: "𐍅", h: "𝚑", n: "𝚗" }
+            mapping: { r: "ꋪ", a: "ą", y: "𐍅", h: "𝚑", n: "𝚗" },
+            addPrefix: true
         }
     },
     {
@@ -546,27 +547,6 @@ const professionalNameStyles = [
     }
 ];
 
-// Function to add prefix and suffix to any name
-function addPrefixAndSuffix(name) {
-    let finalName = name;
-    
-    // 70% chance to add a prefix
-    if (Math.random() < 0.7) {
-        const prefixKeys = Object.keys(prefixWords);
-        const randomPrefixKey = prefixKeys[Math.floor(Math.random() * prefixKeys.length)];
-        finalName = prefixWords[randomPrefixKey] + " " + finalName;
-    }
-    
-    // 70% chance to add a suffix (using same prefix words as suffixes)
-    if (Math.random() < 0.7) {
-        const suffixKeys = Object.keys(prefixWords);
-        const randomSuffixKey = suffixKeys[Math.floor(Math.random() * suffixKeys.length)];
-        finalName = finalName + " " + prefixWords[randomSuffixKey];
-    }
-    
-    return finalName;
-}
-
 // Function to apply professional name styling
 function applyProfessionalStyle(userName, styleTemplate) {
     let styledName = "";
@@ -577,7 +557,15 @@ function applyProfessionalStyle(userName, styleTemplate) {
         styledName += styleTemplate.mapping[char] || char;
     }
     
-    return styleTemplate.prefix + styledName + styleTemplate.suffix;
+    let finalName = styleTemplate.prefix + styledName + styleTemplate.suffix;
+    
+    // Add prefix word if specified
+    if (styleTemplate.addPrefix) {
+        const prefixKey = Object.keys(prefixWords)[Math.floor(Math.random() * Object.keys(prefixWords).length)];
+        finalName = prefixWords[prefixKey] + " " + finalName;
+    }
+    
+    return finalName;
 }
 
 // Complex decorations
@@ -892,8 +880,7 @@ function generateSimpleName(userName) {
         }
     }
     
-    // Add prefix and suffix
-    return addPrefixAndSuffix(styledName);
+    return styledName;
 }
 
 // Generate a premium name (25%) with 2-4 font styles
@@ -944,8 +931,7 @@ function generatePremiumName(userName) {
         styledName = decoration.prefix + styledName + decoration.suffix;
     }
     
-    // Add prefix and suffix
-    return addPrefixAndSuffix(styledName);
+    return styledName;
 }
 
 // Generate advanced name (10%)
@@ -993,8 +979,7 @@ function generateAdvancedName(userName) {
         }
     }
     
-    // Add prefix and suffix
-    return addPrefixAndSuffix(styledName);
+    return styledName;
 }
 
 // Generate the specific style from the example
@@ -1033,8 +1018,7 @@ function generateExampleStyle(userName) {
     const emoji = emojis[Math.floor(Math.random() * emojis.length)];
     mixedName += " " + emoji;
     
-    // Add prefix and suffix
-    return addPrefixAndSuffix(mixedName);
+    return mixedName;
 }
 
 // Generate ultimate name (5%)
@@ -1102,26 +1086,19 @@ function generateUltimateName(userName) {
     ];
     
     const decoration = ultimateDecorations[Math.floor(Math.random() * ultimateDecorations.length)];
-    result = decoration.prefix + result + decoration.suffix;
-    
-    // Add prefix and suffix
-    return addPrefixAndSuffix(result);
+    return decoration.prefix + result + decoration.suffix;
 }
 
 // Generate a special design name (5%)
 function generateSpecialDesign(userName) {
     const design = specialDesigns[Math.floor(Math.random() * specialDesigns.length)];
-    const result = design.generate(userName);
-    // Add prefix and suffix
-    return addPrefixAndSuffix(result);
+    return design.generate(userName);
 }
 
 // Generate professional style name (40%)
 function generateProfessionalName(userName) {
     const style = professionalNameStyles[Math.floor(Math.random() * professionalNameStyles.length)];
-    const result = applyProfessionalStyle(userName, style.template);
-    // Add prefix and suffix
-    return addPrefixAndSuffix(result);
+    return applyProfessionalStyle(userName, style.template);
 }
 
 // Generate a fancy name variation
@@ -1641,4 +1618,4 @@ window.addEventListener('load', () => {
     setTimeout(initializeAdvancedFeatures, 100);
 });
 
-console.log('Unicode Name Generator loaded successfully with prefix and suffix support!');
+console.log('Unicode Name Generator loaded successfully with professional styles!');
