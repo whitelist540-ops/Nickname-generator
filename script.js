@@ -334,6 +334,58 @@ const prefixWords = {
     eternal: "ᴱᵀᴱᴿᴺᴬᴸ"
 };
 
+// Function to add prefix to any name with random chance
+function addPrefixToName(name) {
+    // 40% chance to add a prefix
+    if (Math.random() < 0.4) {
+        const prefixKeys = Object.keys(prefixWords);
+        const randomPrefixKey = prefixKeys[Math.floor(Math.random() * prefixKeys.length)];
+        return prefixWords[randomPrefixKey] + " " + name;
+    }
+    return name;
+}
+
+// Update the generateVariation function to include prefixes for ALL name types
+function generateVariation(userName) {
+    // 40% professional, 25% premium, 15% simple, 10% advanced, 5% example style, 5% special designs
+    const randomValue = Math.random();
+    let variation;
+    
+    if (randomValue < 0.4) {
+        variation = generateProfessionalName(userName);
+    } else if (randomValue < 0.65) {
+        variation = generatePremiumName(userName);
+    } else if (randomValue < 0.8) {
+        variation = generateSimpleName(userName);
+    } else if (randomValue < 0.9) {
+        variation = generateAdvancedName(userName);
+    } else if (randomValue < 0.95) {
+        variation = generateExampleStyle(userName);
+    } else {
+        variation = generateSpecialDesign(userName);
+    }
+    
+    // Add prefix to ALL variations with random chance
+    return addPrefixToName(variation);
+}
+
+// Also update the applyProfessionalStyle function to use the new prefix system
+function applyProfessionalStyle(userName, styleTemplate) {
+    let styledName = "";
+    const nameLower = userName.toLowerCase();
+    
+    for (let i = 0; i < nameLower.length; i++) {
+        const char = nameLower[i];
+        styledName += styleTemplate.mapping[char] || char;
+    }
+    
+    let finalName = styleTemplate.prefix + styledName + styleTemplate.suffix;
+    
+    // Remove the old prefix logic since we're handling it globally now
+    return finalName;
+}
+
+
 // Professional name styles with exact character mappings from your examples
 const professionalNameStyles = [
     {
