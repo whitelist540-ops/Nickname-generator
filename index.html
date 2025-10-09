@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Nick Name Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="floating-input">
+        <div class="container">
+            <div class="input-group">
+                <input type="text" id="nameInput" placeholder="Enter your name...">
+                <button id="generateBtn">
+                    <i class="fas fa-magic"></i>
+                    Generate Names
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Stylish Nick Name Generator</h1>
+            <p class="subtitle">Create unique and stylish nicknames using fancy fonts, symbols, and emojis!</p>
+        </header>
+        
+        <section class="results-section" id="resultsContainer">
+            <!-- Results will be generated here -->
+        </section>
+        
+        <div class="loading" id="loadingIndicator">Generating more names...</div>
+        
+        <footer>
+            <p>Scroll to generate more variations. Click "Copy" to use any nickname.</p>
+        </footer>
+    </div>
+    
+    <div class="notification" id="notification">Name copied to clipboard!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
