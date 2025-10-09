@@ -153,32 +153,109 @@ const styles = {
             K: "ᴋ", L: "ʟ", M: "ᴍ", N: "ɴ", O: "ᴏ", P: "ᴘ", Q: "ǫ", R: "ʀ", S: "ꜱ", T: "ᴛ",
             U: "ᴜ", V: "ᴠ", W: "ᴡ", X: "x", Y: "ʏ", Z: "ᴢ",
         }
+    },
+    hacker: {
+        name: "Hacker",
+        map: {
+            a: "a҉", b: "b҉", c: "c҉", d: "d҉", e: "e҉", f: "f҉", g: "g҉", h: "h҉", i: "i҉", j: "j҉",
+            k: "k҉", l: "l҉", m: "m҉", n: "n҉", o: "o҉", p: "p҉", q: "q҉", r: "r҉", s: "s҉", t: "t҉",
+            u: "u҉", v: "v҉", w: "w҉", x: "x҉", y: "y҉", z: "z҉",
+            A: "A҉", B: "B҉", C: "C҉", D: "D҉", E: "E҉", F: "F҉", G: "G҉", H: "H҉", I: "I҉", J: "J҉",
+            K: "K҉", L: "L҉", M: "M҉", N: "N҉", O: "O҉", P: "P҉", Q: "Q҉", R: "R҉", S: "S҉", T: "T҉",
+            U: "U҉", V: "V҉", W: "W҉", X: "X҉", Y: "Y҉", Z: "Z҉",
+        }
+    },
+    specialUnicode: {
+        name: "Special Unicode",
+        map: {
+            a: "ɑ", b: "ɓ", c: "ƈ", d: "ɗ", e: "ɛ", f: "ƒ", g: "ɠ", h: "ɦ", i: "ɩ", j: "ʝ",
+            k: "ƙ", l: "ʅ", m: "ɱ", n: "ɲ", o: "ơ", p: "ƥ", q: "ʠ", r: "ɾ", s: "ʂ", t: "ƭ",
+            u: "ʊ", v: "ʋ", w: "ɯ", x: "ҳ", y: "ʏ", z: "ʐ",
+            A: "Ⱥ", B: "Ɓ", C: "Ƈ", D: "Ɗ", E: "Ɛ", F: "Ƒ", G: "Ɠ", H: "Ƕ", I: "Ɨ", J: "Ɉ",
+            K: "Ƙ", L: "Ƚ", M: "Ɱ", N: "Ɲ", O: "Ø", P: "Ƥ", Q: "Ɋ", R: "Ʀ", S: "Ƨ", T: "Ƭ",
+            U: "Ʋ", V: "Ɣ", W: "Ƿ", X: "Ҳ", Y: "Ƴ", Z: "Ȥ",
+        }
+    },
+    gothic: {
+        name: "Gothic",
+        map: {
+            a: "𝔄", b: "𝔅", c: "ℭ", d: "𝔇", e: "𝔈", f: "𝔉", g: "𝔊", h: "ℌ", i: "ℑ", j: "𝔍",
+            k: "𝔎", l: "𝔏", m: "𝔐", n: "𝔑", o: "𝔒", p: "𝔓", q: "𝔔", r: "ℜ", s: "𝔖", t: "𝔗",
+            u: "𝔘", v: "𝔙", w: "𝔚", x: "𝔛", y: "𝔜", z: "ℨ",
+            A: "𝔄", B: "𝔅", C: "ℭ", D: "𝔇", E: "𝔈", F: "𝔉", G: "𝔊", H: "ℌ", I: "ℑ", J: "𝔍",
+            K: "𝔎", L: "𝔏", M: "𝔐", N: "𝔑", O: "𝔒", P: "𝔓", Q: "𝔔", R: "ℜ", S: "𝔖", T: "𝔗",
+            U: "𝔘", V: "𝔙", W: "𝔚", X: "𝔛", Y: "𝔜", Z: "ℨ",
+        }
+    },
+    medieval: {
+        name: "Medieval",
+        map: {
+            a: "𝕬", b: "𝕭", c: "𝕮", d: "𝕯", e: "𝕰", f: "𝕱", g: "𝕲", h: "𝕳", i: "𝕴", j: "𝕵",
+            k: "𝕶", l: "𝕷", m: "𝕸", n: "𝕹", o: "𝕺", p: "𝕻", q: "𝕼", r: "𝕽", s: "𝕾", t: "𝕿",
+            u: "𝖀", v: "𝖁", w: "𝖂", x: "𝖃", y: "𝖄", z: "𝖅",
+            A: "𝕬", B: "𝕭", C: "𝕮", D: "𝕯", E: "𝕰", F: "𝕱", G: "𝕲", H: "𝕳", I: "𝕴", J: "𝕵",
+            K: "𝕶", L: "𝕷", M: "𝕸", N: "𝕹", O: "𝕺", P: "𝕻", Q: "𝕼", R: "𝕽", S: "𝕾", T: "𝕿",
+            U: "𝖀", V: "𝖁", W: "𝖂", X: "𝖃", Y: "𝖄", Z: "𝖅",
+        }
+    },
+    magic: {
+        name: "Magic",
+        map: {
+            a: "ꪖ", b: "ꪜ", c: "ꪀ", d: "ꪗ", e: "ꫀ", f: "ꪶ", g: "ᦔ", h: "ꫝ", i: "꠸", j: "ꪊ",
+            k: "ꪶ", l: "ꪊ", m: "ꪑ", n: "ꪊ", o: "ꪮ", p: "ᖰ", q: "ꪇ", r: "ꪹ", s: "ꪊ", t: "ꪻ",
+            u: "ꪊ", v: "ꪜ", w: "ꪹ", x: "ꪗ", y: "ꪗ", z: "ꪗ",
+            A: "ꪖ", B: "ꪜ", C: "ꪀ", D: "ꪗ", E: "ꫀ", F: "ꪶ", G: "ᦔ", H: "ꫝ", I: "꠸", J: "ꪊ",
+            K: "ꪶ", L: "ꪊ", M: "ꪑ", N: "ꪊ", O: "ꪮ", P: "ᖰ", Q: "ꪇ", R: "ꪹ", S: "ꪊ", T: "ꪻ",
+            U: "ꪊ", V: "ꪜ", W: "ꪹ", X: "ꪗ", Y: "ꪗ", Z: "ꪗ",
+        }
+    },
+    ancient: {
+        name: "Ancient",
+        map: {
+            a: "α", b: "β", c: "ƈ", d: "∂", e: "ε", f: "ƒ", g: "ɠ", h: "ɦ", i: "ι", j: "ʝ",
+            k: "ƙ", l: "ℓ", m: "ɱ", n: "ɳ", o: "σ", p: "ρ", q: "ϙ", r: "ɾ", s: "ʂ", t: "ƭ",
+            u: "υ", v: "ʋ", w: "ω", x: "χ", y: "ყ", z: "ƶ",
+            A: "Α", B: "Β", C: "Ƈ", D: "Δ", E: "Ε", F: "Ƒ", G: "Ɠ", H: "Η", I: "Ι", J: "ʝ",
+            K: "Ƙ", L: "ℓ", M: "Μ", N: "Ν", O: "Ω", P: "Ρ", Q: "Ϙ", R: "Ʀ", S: "Ƨ", T: "Ƭ",
+            U: "Ʋ", V: "Ɣ", W: "Ɯ", X: "Χ", Y: "Ƴ", Z: "Ƶ",
+        }
+    },
+    cyber: {
+        name: "Cyber",
+        map: {
+            a: "₳", b: "฿", c: "₵", d: "Đ", e: "Ɇ", f: "₣", g: "₲", h: "Ⱨ", i: "ł", j: "J",
+            k: "₭", l: "Ⱡ", m: "₥", n: "₦", o: "Ø", p: "₱", q: "Q", r: "Ɽ", s: "₴", t: "₮",
+            u: "Ʉ", v: "V", w: "₩", x: "Ӿ", y: "Ɏ", z: "Ⱬ",
+            A: "₳", B: "฿", C: "₵", D: "Đ", E: "Ɇ", F: "₣", G: "₲", H: "Ⱨ", I: "ł", J: "J",
+            K: "₭", L: "Ⱡ", M: "₥", N: "₦", O: "Ø", P: "₱", Q: "Q", R: "Ɽ", S: "₴", T: "₮",
+            U: "Ʉ", V: "V", W: "₩", X: "Ӿ", Y: "Ɏ", Z: "Ⱬ",
+        }
     }
 };
 
 // Special Unicode character substitutions
 const specialChars = {
-    a: ["ą", "ค", "ά", "ặ", "ꫀ", "α", "ａ", "₳", "ᴀ", "ᵃ"],
+    a: ["ą", "ค", "ά", "ặ", "ꫀ", "α", "ａ", "₳", "ᴀ", "ᵃ", "ǟ", "ǡ", "ã", "â", "ä", "å", "ą", "ɑ"],
     b: ["ḃ", "β", "ḅ", "ḇ", "ｂ", "ʙ", "ᵇ"],
     c: ["č", "ć", "ç", "ĉ", "ḉ", "ｃ", "ᴄ", "ᶜ"],
     d: ["ď", "ḋ", "ḍ", "ḑ", "ｄ", "ᴅ", "ᵈ"],
-    e: ["ē", "ė", "ę", "ع", "ɇ", "ε", "ｅ", "ᴇ", "ᵉ", "Ɛ"],
+    e: ["ē", "ė", "ę", "ع", "ɇ", "ε", "ｅ", "ᴇ", "ᵉ", "Ɛ", "ė", "ë", "ê", "ě", "ę", "è", "é", "ē"],
     f: ["ḟ", "ƒ", "ｆ", "ꜰ", "ᶠ", "Ƒ"],
     g: ["ğ", "ġ", "ģ", "ḡ", "ｇ", "ɢ", "ᵍ", "Ɠ"],
     h: ["ħ", "ђ", "ℏ", "ɦ", "ｈ", "ʜ", "ʰ", "ℋ"],
-    i: ["ï", "ī", "į", "ι", "ɨ", "ł", "ｉ", "ɪ", "ⁱ", "ℐ"],
+    i: ["ï", "ī", "į", "ι", "ɨ", "ł", "ｉ", "ɪ", "ⁱ", "ℐ", "ï", "î", "ì", "í", "ī", "į", "ı"],
     j: ["ĵ", "ј", "ｊ", "ᴊ", "ʲ", "Ɉ"],
     k: ["ķ", "ḳ", "ƙ", "ｋ", "ᴋ", "ᵏ", "ʞ"],
     l: ["ł", "ĺ", "ľ", "ļ", "ḷ", "ｌ", "ʟ", "ˡ", "ℒ"],
     m: ["ṁ", "ṃ", "ｍ", "ᴍ", "ᵐ", "ɱ", "ℳ"],
-    n: ["ñ", "ń", "ň", "ή", "ɳ", "ₙ", "ｎ", "₦", "ɴ", "ⁿ", "ℕ"],
-    o: ["ō", "ö", "ø", "ơ", "ǿ", "ο", "๏", "ₒ", "ᴏ", "ᵒ", "Ø"],
+    n: ["ñ", "ń", "ň", "ή", "ɳ", "ₙ", "ｎ", "₦", "ɴ", "ⁿ", "ℕ", "ń", "ň", "ñ", "ņ", "ṅ", "ṇ"],
+    o: ["ō", "ö", "ø", "ơ", "ǿ", "ο", "๏", "ₒ", "ᴏ", "ᵒ", "Ø", "ö", "ô", "õ", "ø", "ō", "ò", "ó", "œ"],
     p: ["ṗ", "ṕ", "ｐ", "ᴘ", "ᵖ"],
     q: ["ｑ", "ǫ", "ᑫ"],
-    r: ["ř", "ŕ", "я", "ʀ", "ɾ", "ｒ", "ʳ", "Ř"],
-    s: ["š", "ś", "ş", "ѕ", "ร", "ｓ", "ꜱ", "ˢ", "ʂ"],
+    r: ["ř", "ŕ", "я", "ʀ", "ɾ", "ｒ", "ʳ", "Ř", "ŗ", "ř", "ŕ", "ṙ", "ṛ", "ṝ"],
+    s: ["š", "ś", "ş", "ѕ", "ร", "ｓ", "ꜱ", "ˢ", "ʂ", "ṩ", "ṡ", "ṣ", "ŝ", "š", "ś", "ş"],
     t: ["ť", "ţ", "τ", "ŧ", "ƚ", "ｔ", "Ŧ", "ᴛ", "ᵗ", "ʈ", "₮"],
-    u: ["ū", "ü", "ų", "ứ", "ᥙ", "υ", "ｕ", "ᴜ", "ᵘ", "ʊ"],
+    u: ["ū", "ü", "ų", "ứ", "ᥙ", "υ", "ｕ", "ᴜ", "ᵘ", "ʊ", "ü", "û", "ù", "ú", "ū", "ů"],
     v: ["ṽ", "ṿ", "ｖ", "ᴠ", "ᵛ", "ʋ", "ⱽ"],
     w: ["ẃ", "ẅ", "ẇ", "ｗ", "ᴡ", "ʷ", "ʍ", "ᵂ"],
     x: ["ẋ", "ẍ", "ｘ", "ˣ", "ᵡ"],
@@ -210,17 +287,19 @@ const specialChars = {
     X: ["Ẋ", "Ẍ", "Ｘ", "ˣ"],
     Y: ["Ý", "Ÿ", "Ұ", "Ɏ", "Ү", "Ｙ", "ʸ"],
     Z: ["Ž", "Ź", "Ż", "Ｚ", "ᶻ", "Ȥ"],
+    // Combined characters
+    th: ["þ", "ð", "ṯ", "ṱ"],
+    sh: ["š", "ṩ", "ṣ", "ŝ"],
+    ch: ["č", "ć", "ç", "ĉ", "ḉ"]
 };
 
-// Complex decorations - Updated with your examples
+// Complex decorations
 const complexDecorations = [
     { prefix: "━ 𝗚ҽϞυ𝑖Ϟҽ𝓓ҽℊḭ𝔫ʄ๏𝑟 :･ﾟ✧", suffix: "" },
     { prefix: "", suffix: "|₂₂₀" },
     { prefix: "꧁☬⋆", suffix: "⋆☬꧂" },
     { prefix: "꧁༒", suffix: "༒꧂" },
     { prefix: "༺", suffix: "༻ᴳᵒᵈ" },
-    { prefix: "꧁༺", suffix: "༻꧂" },
-    { prefix: "꧁༺", suffix: "༻꧂" },
     { prefix: "꧁༺", suffix: "༻꧂" },
     { prefix: "꧁☬", suffix: "☬꧂" },
     { prefix: "꧁༒☬", suffix: "☬༒꧂" },
@@ -268,10 +347,168 @@ const complexDecorations = [
     { prefix: "◦•○•◦", suffix: "◦•○•◦" },
     { prefix: "✧･ﾟ", suffix: "ﾟ･✧" },
     { prefix: "⪻⪼", suffix: "⪻⪼" },
+    { prefix: "➳", suffix: "亗" },
+    { prefix: "『", suffix: "』•" },
+    { prefix: "꧁", suffix: "꧂" },
+    { prefix: "꧁࿇", suffix: "࿇꧂" },
+    { prefix: "『", suffix: "』 " },
+    // New advanced decorations
+    { prefix: "♚✦", suffix: "✦♚" },
+    { prefix: "♛♔", suffix: "♔♛" },
+    { prefix: "☤⚚", suffix: "⚚☤" },
+    { prefix: "𓂀", suffix: "𓂀" },
+    { prefix: "ꕤ", suffix: "ꕤ" },
+    { prefix: "𒊹", suffix: "𒊹" },
+    { prefix: "⟢⊶", suffix: "⊷⟣" },
+    { prefix: "⌬", suffix: "⌬" },
+    { prefix: "⍟", suffix: "⍟" },
+    { prefix: "⎈", suffix: "⎈" },
+    { prefix: "⚙️", suffix: "⚙️" },
+    { prefix: "⋆⭒˚", suffix: "˚⭒⋆" },
+    { prefix: "༄", suffix: "༄" },
+    { prefix: "⊹₊⋆", suffix: "⋆₊⊹" },
+    { prefix: "𖤓", suffix: "𖤓" },
+    { prefix: "꧁𓋼", suffix: "𓋼꧂" },
+    { prefix: "『★』", suffix: "『★』" },
+    { prefix: "≪☆≫", suffix: "≪☆≫" },
+    { prefix: "「■」", suffix: "「■」" },
+    { prefix: "〖✦〗", suffix: "〖✦〗" },
+    { prefix: "◈", suffix: "◈" },
+    { prefix: "卐", suffix: "卐" },
+    { prefix: "ᛟ", suffix: "ᛟ" },
+    { prefix: "𒀱", suffix: "𒀱" },
+    { prefix: "ꕥ", suffix: "ꕥ" },
+    { prefix: "𖣘", suffix: "𖣘" },
+    { prefix: "♚✦♛", suffix: "♛✦♚" },
+    { prefix: "꧁𓆩❀𓆪", suffix: "𓆩❀𓆪꧂" },
+    { prefix: "«░▒▓█", suffix: "█▓▒░»" },
+    { prefix: "≪☯≫", suffix: "≪☯≫" },
+    { prefix: "〖█►", suffix: "◄█〗" }
 ];
 
-// Emojis and symbols - Only for beginning/end
-const symbols = ["☯", "⚡", "🔥", "💫", "🌟", "⭐", "✨", "🎮", "⚔️", "🛡️", "💎", "🕊️", "💀", "🐉", "🐲", "🌙", "☀️", "🌺", "🌼", "🍀", "🦋", "🦅", "🦁", "🐺", "メ", "ツ"];
+// Special design templates
+const specialDesigns = [
+    {
+        name: "Hacker Style",
+        generate: function(userName) {
+            const styledName = applyStyle(userName, styles.hacker);
+            return "꧁" + styledName + "꧂";
+        }
+    },
+    {
+        name: "Lucifer Style",
+        generate: function(userName) {
+            const smallCapsPart = applyStyle(userName.substring(0, 2), styles.smallCaps);
+            const boldPart = applyStyle(userName.substring(2), styles.bold);
+            const spacedName = boldPart.split('').join(' ');
+            return "➳" + smallCapsPart + "メ " + spacedName + "亗";
+        }
+    },
+    {
+        name: "Black Panther Style",
+        generate: function(userName) {
+            return userName.split('').map(char => applyStyle(char, styles.squared)).join('');
+        }
+    },
+    {
+        name: "Shark Badboy Style",
+        generate: function(userName) {
+            const smallCapsName = applyStyle(userName, styles.smallCaps);
+            return "『" + smallCapsName + "』•ᴮᴬᴰʙᴏʏツ";
+        }
+    },
+    {
+        name: "Legends Style",
+        generate: function(userName) {
+            const specialName = applyStyle(userName, styles.specialUnicode);
+            return "꧁༒" + specialName + "༒꧂";
+        }
+    },
+    {
+        name: "Dark Fire Style",
+        generate: function(userName) {
+            const specialName = applyStyle(userName, styles.specialUnicode);
+            return "꧁࿇" + specialName + "࿇꧂";
+        }
+    },
+    {
+        name: "True Lone Style",
+        generate: function(userName) {
+            const specialName = applyStyle(userName, styles.specialUnicode);
+            return "『" + specialName + "』 ƬƦΘレ乇メ";
+        }
+    },
+    {
+        name: "Royal Gothic",
+        generate: function(userName) {
+            const gothicName = applyStyle(userName, styles.gothic);
+            return "♚ " + gothicName + " ♚";
+        }
+    },
+    {
+        name: "Cyber Warrior",
+        generate: function(userName) {
+            const cyberName = applyStyle(userName, styles.cyber);
+            return "⚙️ " + cyberName + " ⚙️";
+        }
+    },
+    {
+        name: "Ancient Rune",
+        generate: function(userName) {
+            const ancientName = applyStyle(userName, styles.ancient);
+            return "ᛟ " + ancientName + " ᛟ";
+        }
+    },
+    {
+        name: "Magic Spell",
+        generate: function(userName) {
+            const magicName = applyStyle(userName, styles.magic);
+            return "☤ " + magicName + " ☤";
+        }
+    },
+    {
+        name: "Medieval Knight",
+        generate: function(userName) {
+            const medievalName = applyStyle(userName, styles.medieval);
+            return "⚔️ " + medievalName + " 🛡️";
+        }
+    },
+    {
+        name: "Elemental Master",
+        generate: function(userName) {
+            const elements = ["🔥", "💧", "🌪️", "❄️", "⚡"];
+            const element = elements[Math.floor(Math.random() * elements.length)];
+            const styledName = applyStyle(userName, styles.bold);
+            return element + " " + styledName + " " + element;
+        }
+    },
+    {
+        name: "Digital Ghost",
+        generate: function(userName) {
+            let ghostName = "";
+            for (let char of userName) {
+                if (Math.random() > 0.3) {
+                    ghostName += applyStyle(char, styles.monospace);
+                } else {
+                    ghostName += "�";
+                }
+            }
+            return "[" + ghostName + "]";
+        }
+    },
+    {
+        name: "Mythical Beast",
+        generate: function(userName) {
+            const beastName = applyStyle(userName, styles.fraktur);
+            const beasts = ["🐉", "🐲", "🦁", "🐺", "🦅"];
+            const beast = beasts[Math.floor(Math.random() * beasts.length)];
+            return beast + " " + beastName + " " + beast;
+        }
+    }
+];
+
+// Emojis and symbols
+const symbols = ["☯", "⚡", "🔥", "💫", "🌟", "⭐", "✨", "🎮", "⚔️", "🛡️", "💎", "🕊️", "💀", "🐉", "🐲", "🌙", "☀️", "🌺", "🌼", "🍀", "🦋", "🦅", "🦁", "🐺", "メ", "ツ", "亗", "♚", "♛", "⚚", "𓂀", "ꕤ", "𒊹", "⟢", "⌬", "⍟", "⎈", "⋆", "༄", "𖤓", "𓋼", "★", "☆", "■", "✦", "◈", "卐", "ᛟ", "𒀱", "ꕥ", "𖣘", "♠", "♣", "♦", "♥", "⚡", "🔥", "💧", "🌪️", "❄️", "🌙", "☀️", "⭐", "🌟", "✨", "💫", "☄️"];
 
 // DOM elements
 const nameInput = document.getElementById('nameInput');
@@ -284,6 +521,8 @@ const loadingIndicator = document.getElementById('loadingIndicator');
 let isGenerating = false;
 let currentName = "";
 let generatedCount = 0;
+let allGeneratedNames = [];
+const copyHistory = [];
 
 // Apply style to a word - preserves case
 function applyStyle(word, style) {
@@ -316,7 +555,54 @@ function applySpecialChars(word, chance) {
     return result;
 }
 
-// Generate a simple name (30%)
+// Advanced text transformation functions
+function applyMixedCase(text) {
+    let result = '';
+    for (let i = 0; i < text.length; i++) {
+        if (i % 2 === 0) {
+            result += text[i].toUpperCase();
+        } else {
+            result += text[i].toLowerCase();
+        }
+    }
+    return result;
+}
+
+function applyRandomSpacing(text) {
+    let result = '';
+    for (let char of text) {
+        result += char;
+        if (Math.random() < 0.3) {
+            result += ' ';
+        }
+    }
+    return result.trim();
+}
+
+function applySymbolReplacement(text) {
+    const symbolMap = {
+        'a': ['@', '4', 'ⱥ'],
+        'e': ['3', '€', 'ɛ'],
+        'i': ['1', '!', '|'],
+        'o': ['0', '°', 'ꝋ'],
+        's': ['5', '$', 'ꜱ'],
+        't': ['7', '+', '†'],
+        'b': ['8', 'ß'],
+        'g': ['9', '&']
+    };
+    
+    let result = '';
+    for (let char of text.toLowerCase()) {
+        if (symbolMap[char] && Math.random() < 0.4) {
+            result += symbolMap[char][Math.floor(Math.random() * symbolMap[char].length)];
+        } else {
+            result += char;
+        }
+    }
+    return result;
+}
+
+// Generate a simple name (25%)
 function generateSimpleName(userName) {
     const styleKeys = Object.keys(styles);
     const randomStyle = styles[styleKeys[Math.floor(Math.random() * styleKeys.length)]];
@@ -340,7 +626,7 @@ function generateSimpleName(userName) {
     return styledName;
 }
 
-// Generate a premium name (70%) with 2-4 font styles
+// Generate a premium name (50%) with 2-4 font styles
 function generatePremiumName(userName) {
     const styleKeys = Object.keys(styles);
     
@@ -391,6 +677,54 @@ function generatePremiumName(userName) {
     return styledName;
 }
 
+// Generate advanced name (15%)
+function generateAdvancedName(userName) {
+    const styleKeys = Object.keys(styles);
+    const baseStyle = styles[styleKeys[Math.floor(Math.random() * styleKeys.length)]];
+    
+    let styledName = applyStyle(userName, baseStyle);
+    
+    // Apply advanced transformations
+    if (Math.random() < 0.3) {
+        styledName = applyMixedCase(styledName);
+    }
+    
+    if (Math.random() < 0.2) {
+        styledName = applyRandomSpacing(styledName);
+    }
+    
+    if (Math.random() < 0.25) {
+        styledName = applySymbolReplacement(styledName);
+    }
+    
+    // Apply special characters with variable chance
+    const specialChance = 0.3 + (Math.random() * 0.3);
+    styledName = applySpecialChars(styledName, specialChance);
+    
+    // Add decorations
+    const decoration = complexDecorations[Math.floor(Math.random() * complexDecorations.length)];
+    const useDecoration = Math.random() < 0.6;
+    
+    if (useDecoration) {
+        styledName = decoration.prefix + styledName + decoration.suffix;
+    }
+    
+    // Add symbols with higher probability
+    if (Math.random() < 0.7) {
+        const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+        const position = Math.random();
+        if (position < 0.4) {
+            styledName = symbol + " " + styledName;
+        } else if (position < 0.8) {
+            styledName = styledName + " " + symbol;
+        } else {
+            styledName = symbol + " " + styledName + " " + symbol;
+        }
+    }
+    
+    return styledName;
+}
+
 // Generate the specific style from the example
 function generateExampleStyle(userName) {
     // Convert to mixed case like the example: "ᴹᴿメY a h M a t i ☂️"
@@ -430,17 +764,95 @@ function generateExampleStyle(userName) {
     return mixedName;
 }
 
+// Generate ultimate name (5%)
+function generateUltimateName(userName) {
+    // Combine multiple styles in creative ways
+    const styleCount = Math.floor(Math.random() * 3) + 2;
+    const selectedStyles = [];
+    const styleKeys = Object.keys(styles);
+    
+    for (let i = 0; i < styleCount; i++) {
+        const style = styles[styleKeys[Math.floor(Math.random() * styleKeys.length)]];
+        if (!selectedStyles.includes(style)) {
+            selectedStyles.push(style);
+        }
+    }
+    
+    let result = '';
+    const words = userName.split(' ');
+    
+    words.forEach((word, index) => {
+        let styledWord = '';
+        const stylePattern = Math.floor(Math.random() * 3);
+        
+        switch (stylePattern) {
+            case 0: // Alternate styles per character
+                for (let i = 0; i < word.length; i++) {
+                    const style = selectedStyles[i % selectedStyles.length];
+                    styledWord += applyStyle(word[i], style);
+                }
+                break;
+            case 1: // Random style per character
+                for (let i = 0; i < word.length; i++) {
+                    const style = selectedStyles[Math.floor(Math.random() * selectedStyles.length)];
+                    styledWord += applyStyle(word[i], style);
+                }
+                break;
+            case 2: // Gradient style (smooth transition)
+                for (let i = 0; i < word.length; i++) {
+                    const progress = i / (word.length - 1);
+                    const styleIndex = Math.floor(progress * (selectedStyles.length - 1));
+                    const style = selectedStyles[styleIndex];
+                    styledWord += applyStyle(word[i], style);
+                }
+                break;
+        }
+        
+        // Apply special effects
+        if (Math.random() < 0.4) {
+            styledWord = applySpecialChars(styledWord, 0.5);
+        }
+        
+        result += styledWord;
+        if (index < words.length - 1) {
+            result += ' ';
+        }
+    });
+    
+    // Add ultimate decoration
+    const ultimateDecorations = [
+        { prefix: "♚✦♛", suffix: "♛✦♚" },
+        { prefix: "꧁𓆩❀𓆪", suffix: "𓆩❀𓆪꧂" },
+        { prefix: "«░▒▓█", suffix: "█▓▒░»" },
+        { prefix: "≪☯≫", suffix: "≪☯≫" },
+        { prefix: "〖█►", suffix: "◄█〗" }
+    ];
+    
+    const decoration = ultimateDecorations[Math.floor(Math.random() * ultimateDecorations.length)];
+    return decoration.prefix + result + decoration.suffix;
+}
+
+// Generate a special design name (5%)
+function generateSpecialDesign(userName) {
+    const design = specialDesigns[Math.floor(Math.random() * specialDesigns.length)];
+    return design.generate(userName);
+}
+
 // Generate a fancy name variation
 function generateVariation(userName) {
-    // 30% simple, 60% premium, 10% example style
+    // 25% simple, 50% premium, 15% advanced, 5% example style, 5% special designs
     const randomValue = Math.random();
     
-    if (randomValue < 0.3) {
+    if (randomValue < 0.25) {
         return generateSimpleName(userName);
-    } else if (randomValue < 0.9) {
+    } else if (randomValue < 0.75) {
         return generatePremiumName(userName);
-    } else {
+    } else if (randomValue < 0.9) {
+        return generateAdvancedName(userName);
+    } else if (randomValue < 0.95) {
         return generateExampleStyle(userName);
+    } else {
+        return generateSpecialDesign(userName);
     }
 }
 
@@ -475,6 +887,7 @@ function generateNames(initial = false) {
         resultsContainer.innerHTML = '';
         generatedCount = 0;
         currentName = userName;
+        allGeneratedNames = [];
     }
     
     // Generate 6 names at a time
@@ -483,6 +896,7 @@ function generateNames(initial = false) {
         const card = createResultCard(variation);
         resultsContainer.appendChild(card);
         generatedCount++;
+        allGeneratedNames.push(variation);
     }
     
     // Hide loading indicator if we have enough names
@@ -503,7 +917,19 @@ function copyToClipboard(text) {
     document.execCommand('copy');
     document.body.removeChild(textarea);
     
+    // Add to copy history
+    copyHistory.unshift({
+        text: text,
+        timestamp: new Date().toLocaleTimeString()
+    });
+    
+    // Keep only last 10 items
+    if (copyHistory.length > 10) {
+        copyHistory.pop();
+    }
+    
     // Show notification
+    notification.textContent = `✓ Copied: ${text.substring(0, 20)}${text.length > 20 ? '...' : ''}`;
     notification.classList.add('show');
     setTimeout(() => {
         notification.classList.remove('show');
@@ -527,14 +953,87 @@ function checkScroll() {
     }
 }
 
+// Search and filter functionality
+function filterResults(searchTerm) {
+    const cards = resultsContainer.querySelectorAll('.result-card');
+    cards.forEach(card => {
+        const name = card.querySelector('.result-name').textContent.toLowerCase();
+        if (name.includes(searchTerm.toLowerCase())) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Export functionality
+function exportNames() {
+    const names = allGeneratedNames.join('\n');
+    const blob = new Blob([names], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'fancy-names.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+// Initialize advanced features
+function initializeAdvancedFeatures() {
+    // Add search input if it doesn't exist
+    if (!document.getElementById('searchInput')) {
+        const searchInput = document.createElement('input');
+        searchInput.id = 'searchInput';
+        searchInput.placeholder = 'Search generated names...';
+        searchInput.className = 'search-input';
+        searchInput.style.cssText = `
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        `;
+        
+        searchInput.addEventListener('input', (e) => {
+            filterResults(e.target.value);
+        });
+        
+        resultsContainer.parentNode.insertBefore(searchInput, resultsContainer);
+    }
+    
+    // Add export button if it doesn't exist
+    if (!document.getElementById('exportBtn')) {
+        const exportBtn = document.createElement('button');
+        exportBtn.id = 'exportBtn';
+        exportBtn.textContent = '📥 Export All Names';
+        exportBtn.className = 'export-btn';
+        exportBtn.style.cssText = `
+            padding: 10px 20px;
+            margin: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        `;
+        exportBtn.addEventListener('click', exportNames);
+        
+        generateBtn.parentNode.appendChild(exportBtn);
+    }
+}
+
 // Event listeners
 generateBtn.addEventListener('click', () => {
     generateNames(true);
+    setTimeout(initializeAdvancedFeatures, 100);
 });
 
 nameInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         generateNames(true);
+        setTimeout(initializeAdvancedFeatures, 100);
     }
 });
 
@@ -545,4 +1044,7 @@ window.addEventListener('scroll', checkScroll);
 window.addEventListener('load', () => {
     nameInput.value = "Alex";
     generateNames(true);
+    setTimeout(initializeAdvancedFeatures, 100);
 });
+
+console.log('Unicode Name Generator loaded successfully!');
