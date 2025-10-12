@@ -18,37 +18,42 @@ body {
     background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
     min-height: 100vh;
     color: var(--light);
-    padding-top: 70px;
+    padding-top: 60px; /* Reduced from 100px */
 }
 
+/* Floating input section only - Made compact */
 .floating-input {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    padding: 10px 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 8px 15px; /* Reduced padding */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 1000;
+    min-height: auto;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 15px; /* Reduced padding */
+    position: relative;
+    z-index: 10;
     background: white;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px auto;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px; /* Slightly smaller radius */
+    padding: 15px; /* Reduced padding */
+    margin: 10px auto; /* Reduced margin */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    min-height: auto;
 }
 
 .input-group {
     display: flex;
-    gap: 8px;
+    gap: 8px; /* Reduced gap */
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -56,83 +61,86 @@ body {
 
 input {
     flex: 1;
-    max-width: 250px;
-    padding: 8px 12px;
+    max-width: 300px; /* Slightly smaller */
+    padding: 8px 12px; /* Reduced padding */
     border: 1.5px solid #e0e0e0;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    background: white;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 8px; /* Slightly smaller */
+    font-size: 0.9rem; /* Smaller font */
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     transition: all 0.2s ease;
 }
 
 input:focus {
     outline: none;
-    box-shadow: 0 1px 8px rgba(138, 43, 226, 0.2);
+    box-shadow: 0 2px 10px rgba(138, 43, 226, 0.25);
+    transform: translateY(-1px);
     border-color: #667eea;
 }
 
 button {
-    padding: 8px 16px;
+    padding: 8px 16px; /* Reduced padding */
     border: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
+    border-radius: 6px; /* Smaller radius */
+    font-size: 0.9rem; /* Smaller font */
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 5px; /* Reduced gap */
 }
 
 #generateBtn {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.25);
+    border-radius: 6px; /* Smaller radius */
 }
 
 #generateBtn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 3px 12px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
 }
 
 header {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Reduced margin */
+    padding-top: 0; /* Removed padding */
 }
 
 h1 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    font-size: 1.8rem; /* Smaller font */
+    margin-bottom: 5px; /* Reduced margin */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.5px; /* Reduced spacing */
 }
 
 .subtitle {
-    font-size: 0.85rem;
+    font-size: 0.85rem; /* Smaller font */
     color: var(--light);
     opacity: 0.9;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     line-height: 1.3;
 }
 
-/* Infinite Scroll Indicator - Compact */
+/* Infinite Scroll Indicator - Made more compact */
 #infiniteScrollIndicator {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
-    padding: 4px 8px;
-    margin: 3px 0;
-    border-radius: 4px;
-    font-size: 10px;
+    padding: 4px 8px; /* Reduced padding */
+    margin: 2px 0; /* Reduced margin */
+    border-radius: 4px; /* Smaller radius */
+    font-size: 10px; /* Smaller font */
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     animation: pulse 2s infinite;
-    max-width: 280px;
+    max-width: 280px; /* Smaller width */
     margin-left: auto;
     margin-right: auto;
     line-height: 1.2;
@@ -144,72 +152,76 @@ h1 {
     100% { transform: scale(1); }
 }
 
+/* Rest of the CSS remains the same as your original */
 .results-section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 15px;
-    padding-bottom: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    padding-bottom: 50px;
 }
 
 .result-card {
     background: white;
-    border-radius: 8px;
-    padding: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     border: 1px solid #e0e0e0;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    animation: fadeIn 0.4s ease;
+    animation: fadeIn 0.5s ease;
+    position: relative;
+    z-index: 20;
 }
 
 .result-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 .result-name {
-    font-size: 1.1em;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 15px;
     text-align: center;
     color: #333;
     word-break: break-word;
-    padding: 6px;
-    background: #f8f9fa;
-    border-radius: 4px;
+    padding: 10px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
     border: 1px solid #dee2e6;
     width: 100%;
-    line-height: 1.2;
+    line-height: 1.4;
     min-height: auto;
+    display: block;
 }
 
 .reaction-container {
     display: flex;
     align-items: center;
-    gap: 6px;
-    margin: 10px 0;
+    gap: 10px;
+    margin: 15px 0;
     justify-content: center;
 }
 
 .reaction-btn {
-    padding: 4px 8px;
+    padding: 8px 15px;
     border: 1px solid #ddd;
     background: white;
-    border-radius: 12px;
+    border-radius: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 3px;
-    transition: all 0.2s ease;
-    font-size: 12px;
+    gap: 5px;
+    transition: all 0.3s ease;
+    font-size: 14px;
 }
 
 .reaction-btn.active {
@@ -221,32 +233,31 @@ h1 {
 }
 
 .like-count, .dislike-count {
-    font-weight: 600;
+    font-weight: bold;
     color: #333;
-    font-size: 11px;
 }
 
 .action-container {
     display: flex;
-    gap: 6px;
-    margin-top: 10px;
+    gap: 10px;
+    margin-top: 15px;
     width: 100%;
 }
 
 .copy-btn, .share-btn {
-    padding: 6px 12px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     flex: 1;
     font-weight: 600;
-    transition: all 0.2s ease;
-    font-size: 12px;
+    transition: all 0.3s ease;
+    font-size: 14px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3px;
+    gap: 5px;
 }
 
 .copy-btn {
@@ -254,8 +265,8 @@ h1 {
 }
 
 .copy-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 6px rgba(0,123,255,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
 }
 
 .share-btn {
@@ -263,27 +274,26 @@ h1 {
 }
 
 .share-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 6px rgba(40,167,69,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40,167,69,0.3);
 }
 
 .notification {
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 30px;
+    right: 30px;
     background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
     color: white;
-    padding: 8px 15px;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(40, 167, 69, 0.2);
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
     opacity: 0;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     z-index: 1000;
     font-weight: 600;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
-    transform: translateX(200px);
-    font-size: 0.8rem;
+    transform: translateX(400px);
 }
 
 .notification.show {
@@ -292,69 +302,41 @@ h1 {
 }
 
 footer {
-    margin-top: 20px;
+    margin-top: 50px;
     text-align: center;
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.75rem;
-    padding: 10px;
+    font-size: 0.9rem;
+    padding: 20px;
 }
 
 .loading {
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
-/* Blog section compact styling */
 #blogSection {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 15px 12px;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    transition: all 0.3s ease-in-out;
+    padding: 40px 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.5s ease-in-out;
     opacity: 1;
-    max-height: 600px;
+    max-height: 1000px;
     overflow: hidden;
-    font-size: 0.8rem;
 }
 
 #blogSection.hidden {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    padding: 0 12px;
+    padding: 0 20px;
     margin: 0;
 }
 
-.blog-section {
-    font-size: 0.8rem;
-    line-height: 1.2;
-}
-
-.blog-section h2 {
-    font-size: 1.2em;
-    margin-bottom: 12px;
-}
-
-.blog-section h3 {
-    font-size: 1em;
-    margin-bottom: 6px;
-}
-
-.blog-section p, .blog-section li {
-    font-size: 0.75rem;
-    margin-bottom: 4px;
-}
-
-.blog-section > div > div {
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-/* Share modal compact styling */
 .share-modal {
     position: fixed;
     top: 0;
@@ -370,9 +352,9 @@ footer {
 
 .share-modal > div {
     background: white;
-    padding: 12px;
-    border-radius: 6px;
-    max-width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
     width: 90%;
     text-align: center;
 }
@@ -380,67 +362,79 @@ footer {
 .share-platforms {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-    margin: 12px 0;
+    gap: 10px;
+    margin: 20px 0;
 }
 
 .share-platform-btn {
-    padding: 6px;
+    padding: 10px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     color: white;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .modal-actions {
     display: flex;
-    gap: 6px;
+    gap: 10px;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .modal-btn {
-    padding: 6px 12px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     color: white;
     cursor: pointer;
-    font-size: 0.8rem;
 }
 
-/* Responsive adjustments */
+/* Blog section compact styling */
+.blog-section {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.blog-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.blog-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.blog-section p, .blog-section li {
+    font-size: 13px;
+}
+
+.blog-section > div > div {
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
 @media (max-width: 768px) {
     body {
-        padding-top: 60px;
+        padding-top: 50px; /* Adjusted for mobile */
     }
     
-    .container {
-        margin: 8px auto;
-        padding: 12px;
-        border-radius: 8px;
+    .floating-input {
+        padding: 6px 10px; /* Even more compact on mobile */
     }
     
     h1 {
-        font-size: 1.3rem;
+        font-size: 1.5rem; /* Adjusted for mobile */
     }
     
     .input-group {
         flex-direction: column;
-        gap: 8px;
-    }
-    
-    input {
-        max-width: 100%;
+        gap: 6px; /* Smaller gap on mobile */
     }
     
     .results-section {
         grid-template-columns: 1fr;
-        gap: 12px;
-    }
-    
-    .floating-input {
-        padding: 8px 12px;
     }
     
     .action-container {
@@ -452,59 +446,40 @@ footer {
     }
     
     #infiniteScrollIndicator {
-        font-size: 9px;
+        font-size: 9px; /* Smaller on mobile */
         padding: 3px 6px;
-        max-width: 220px;
+        max-width: 250px;
     }
     
     .blog-section h2 {
-        font-size: 1.1em;
+        font-size: 1.5em;
     }
     
     .blog-section h3 {
-        font-size: 0.9em;
+        font-size: 1.1em;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        margin: 5px auto;
-        padding: 10px;
+    body {
+        padding-top: 45px; /* Further reduced for small mobile */
+    }
+    
+    .floating-input {
+        padding: 5px 8px; /* Minimal padding on small screens */
     }
     
     #infiniteScrollIndicator {
         font-size: 8px;
         padding: 2px 4px;
-        max-width: 180px;
+        max-width: 200px;
     }
     
     .blog-section {
-        font-size: 0.75rem;
+        font-size: 12px;
     }
     
     .blog-section h2 {
-        font-size: 1em;
-    }
-    
-    h1 {
-        font-size: 1.1rem;
-    }
-    
-    .subtitle {
-        font-size: 0.8rem;
-    }
-    
-    .floating-input {
-        padding: 6px 10px;
-    }
-    
-    input {
-        padding: 6px 10px;
-        font-size: 0.85rem;
-    }
-    
-    button {
-        padding: 6px 12px;
-        font-size: 0.85rem;
+        font-size: 1.3em;
     }
 }
