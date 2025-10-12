@@ -597,7 +597,7 @@ const complexDecorations = [
     { prefix: "🔥💘⇨", suffix: "☔️" },
     
     // Keep original ones that work well
-    { prefix: "━ 𝗚ҽϞυ𝑖Ϟҽ𝓓ҽℊḭ𝔫ʄ๏𝑟 :･ﾟ✧", suffix: "" },
+    { prefix: "━ 𝗚ҽϞυ𝑖Ϟҽ :･ﾟ✧", suffix: "" },
     { prefix: "꧁☬⋆", suffix: "⋆☬꧂" },
     { prefix: "꧁༒", suffix: "༒꧂" },
     { prefix: "༺", suffix: "༻ᴳᵒᵈ" },
