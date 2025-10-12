@@ -841,19 +841,7 @@ let usedSpecialDesigns = new Set();
 function addBlogSection() {
     const blogSection = document.createElement('div');
     blogSection.id = 'blogSection';
-    blogSection.style.cssText = `
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 40px 20px;
-        margin: 20px 0;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        transition: all 0.5s ease-in-out;
-        opacity: 1;
-        max-height: 1000px;
-        overflow: hidden;
-    `;
-    
+    blogSection.className = 'blog-section';
     blogSection.innerHTML = `
         <div style="max-width: 1000px; margin: 0 auto;">
             <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">📝 Creative Name Generation Guide</h2>
@@ -1399,64 +1387,24 @@ function shareName(name, platform) {
 function showShareOptions(name) {
     const shareModal = document.createElement('div');
     shareModal.className = 'share-modal';
-    shareModal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    `;
     
     const shareContent = document.createElement('div');
-    shareContent.style.cssText = `
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        max-width: 400px;
-        width: 90%;
-        text-align: center;
-    `;
     
     const title = document.createElement('h3');
     title.textContent = 'Share Name';
-    title.style.marginBottom = '15px';
     
     const namePreview = document.createElement('div');
+    namePreview.className = 'name-preview';
     namePreview.textContent = name;
-    namePreview.style.cssText = `
-        background: #f5f5f5;
-        padding: 10px;
-        border-radius: 5px;
-        margin: 10px 0;
-        font-size: 1.2em;
-        word-break: break-all;
-    `;
     
     const platformsContainer = document.createElement('div');
-    platformsContainer.style.cssText = `
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin: 20px 0;
-    `;
+    platformsContainer.className = 'share-platforms';
     
     Object.keys(socialMedia).forEach(platform => {
         const platformBtn = document.createElement('button');
+        platformBtn.className = 'share-platform-btn';
         platformBtn.textContent = socialMedia[platform].name;
-        platformBtn.style.cssText = `
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background: ${socialMedia[platform].color};
-            color: white;
-            cursor: pointer;
-            font-size: 12px;
-        `;
+        platformBtn.style.backgroundColor = socialMedia[platform].color;
         platformBtn.addEventListener('click', () => {
             shareName(name, platform);
             document.body.removeChild(shareModal);
@@ -1464,42 +1412,33 @@ function showShareOptions(name) {
         platformsContainer.appendChild(platformBtn);
     });
     
+    const modalActions = document.createElement('div');
+    modalActions.className = 'modal-actions';
+    
     const copyBtn = document.createElement('button');
+    copyBtn.className = 'modal-btn';
     copyBtn.textContent = 'Copy to Clipboard';
-    copyBtn.style.cssText = `
-        padding: 10px 20px;
-        background: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin: 5px;
-    `;
+    copyBtn.style.backgroundColor = '#007bff';
     copyBtn.addEventListener('click', () => {
         copyToClipboard(name);
         document.body.removeChild(shareModal);
     });
     
     const closeBtn = document.createElement('button');
+    closeBtn.className = 'modal-btn';
     closeBtn.textContent = 'Close';
-    closeBtn.style.cssText = `
-        padding: 10px 20px;
-        background: #6c757d;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin: 5px;
-    `;
+    closeBtn.style.backgroundColor = '#6c757d';
     closeBtn.addEventListener('click', () => {
         document.body.removeChild(shareModal);
     });
     
+    modalActions.appendChild(copyBtn);
+    modalActions.appendChild(closeBtn);
+    
     shareContent.appendChild(title);
     shareContent.appendChild(namePreview);
     shareContent.appendChild(platformsContainer);
-    shareContent.appendChild(copyBtn);
-    shareContent.appendChild(closeBtn);
+    shareContent.appendChild(modalActions);
     shareModal.appendChild(shareContent);
     
     document.body.appendChild(shareModal);
@@ -1516,103 +1455,31 @@ function showShareOptions(name) {
 function createResultCard(variation) {
     const card = document.createElement('div');
     card.className = 'result-card';
-    card.style.cssText = `
-        background: white;
-        border-radius: 12px;
-        padding: 20px;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        border: 1px solid #e0e0e0;
-        transition: all 0.3s ease;
-        position: relative;
-        z-index: 20;
-    `;
     
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-5px)';
-        card.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
-        card.style.boxShadow = '0 4px 15px rgba(0,0,0,0.08)';
-    });
-
     const nameElement = document.createElement('div');
     nameElement.className = 'result-name';
     nameElement.textContent = variation;
-    nameElement.style.cssText = `
-        font-size: 1.4em;
-        font-weight: bold;
-        margin-bottom: 15px;
-        text-align: center;
-        color: #333;
-        word-break: break-word;
-        padding: 10px;
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        border-radius: 8px;
-        border: 1px solid #dee2e6;
-    `;
     
     const reactions = getReactions(variation);
     
     const reactionContainer = document.createElement('div');
     reactionContainer.className = 'reaction-container';
-    reactionContainer.style.cssText = `
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin: 15px 0;
-        justify-content: center;
-    `;
     
     const likeBtn = document.createElement('button');
     likeBtn.className = `reaction-btn like-btn ${reactions.userLiked ? 'active' : ''}`;
     likeBtn.innerHTML = '👍';
-    likeBtn.style.cssText = `
-        padding: 8px 15px;
-        border: 1px solid #ddd;
-        background: ${reactions.userLiked ? '#e3f2fd' : 'white'};
-        border-radius: 20px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        transition: all 0.3s ease;
-        font-size: 14px;
-    `;
     
     const likeCount = document.createElement('span');
     likeCount.className = 'like-count';
     likeCount.textContent = reactions.likes;
-    likeCount.style.cssText = `
-        font-weight: bold;
-        color: #333;
-    `;
     
     const dislikeBtn = document.createElement('button');
     dislikeBtn.className = `reaction-btn dislike-btn ${reactions.userDisliked ? 'active' : ''}`;
     dislikeBtn.innerHTML = '👎';
-    dislikeBtn.style.cssText = `
-        padding: 8px 15px;
-        border: 1px solid #ddd;
-        background: ${reactions.userDisliked ? '#ffebee' : 'white'};
-        border-radius: 20px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        transition: all 0.3s ease;
-        font-size: 14px;
-    `;
     
     const dislikeCount = document.createElement('span');
     dislikeCount.className = 'dislike-count';
     dislikeCount.textContent = reactions.dislikes;
-    dislikeCount.style.cssText = `
-        font-weight: bold;
-        color: #333;
-    `;
     
     likeBtn.addEventListener('click', () => {
         handleLike(variation, likeBtn, dislikeBtn, likeCount, dislikeCount);
@@ -1629,37 +1496,10 @@ function createResultCard(variation) {
     
     const actionContainer = document.createElement('div');
     actionContainer.className = 'action-container';
-    actionContainer.style.cssText = `
-        display: flex;
-        gap: 10px;
-        margin-top: 15px;
-    `;
     
     const copyBtn = document.createElement('button');
     copyBtn.className = 'copy-btn';
     copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
-    copyBtn.style.cssText = `
-        padding: 10px 20px;
-        border: none;
-        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-        color: white;
-        border-radius: 8px;
-        cursor: pointer;
-        flex: 1;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        font-size: 14px;
-    `;
-    
-    copyBtn.addEventListener('mouseenter', () => {
-        copyBtn.style.transform = 'translateY(-2px)';
-        copyBtn.style.boxShadow = '0 4px 12px rgba(0,123,255,0.3)';
-    });
-    
-    copyBtn.addEventListener('mouseleave', () => {
-        copyBtn.style.transform = 'translateY(0)';
-        copyBtn.style.boxShadow = 'none';
-    });
     
     copyBtn.addEventListener('click', () => {
         copyToClipboard(variation);
@@ -1668,28 +1508,6 @@ function createResultCard(variation) {
     const shareBtn = document.createElement('button');
     shareBtn.className = 'share-btn';
     shareBtn.innerHTML = '<i class="fas fa-share-alt"></i> Share';
-    shareBtn.style.cssText = `
-        padding: 10px 20px;
-        border: none;
-        background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
-        color: white;
-        border-radius: 8px;
-        cursor: pointer;
-        flex: 1;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        font-size: 14px;
-    `;
-    
-    shareBtn.addEventListener('mouseenter', () => {
-        shareBtn.style.transform = 'translateY(-2px)';
-        shareBtn.style.boxShadow = '0 4px 12px rgba(40,167,69,0.3)';
-    });
-    
-    shareBtn.addEventListener('mouseleave', () => {
-        shareBtn.style.transform = 'translateY(0)';
-        shareBtn.style.boxShadow = 'none';
-    });
     
     shareBtn.addEventListener('click', () => {
         showShareOptions(variation);
@@ -1714,20 +1532,7 @@ function generateNames(initial = false) {
         // Hide blog section with animation
         const blogSection = document.getElementById('blogSection');
         if (blogSection) {
-            blogSection.style.cssText = `
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                padding: 40px 20px;
-                margin: 20px 0;
-                border-radius: 15px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-                transition: all 0.5s ease-in-out;
-                opacity: 0;
-                max-height: 0;
-                overflow: hidden;
-                padding: 0 20px;
-                margin: 0;
-            `;
+            blogSection.classList.add('hidden');
         }
         
         resultsContainer.innerHTML = '';
@@ -1819,128 +1624,9 @@ function addInfiniteScrollIndicator() {
     const indicator = document.createElement('div');
     indicator.id = 'infiniteScrollIndicator';
     indicator.innerHTML = '✨ <strong>Infinite Scroll</strong> - Keep scrolling to generate more unique names automatically! ✨';
-    indicator.style.cssText = `
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        text-align: center;
-        padding: 12px;
-        margin: 10px 0;
-        border-radius: 8px;
-        font-size: 14px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        animation: pulse 2s infinite;
-    `;
-    
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-    `;
-    document.head.appendChild(style);
     
     const generateBtn = document.getElementById('generateBtn');
     generateBtn.parentNode.insertBefore(indicator, generateBtn.nextSibling);
-}
-
-// ==================== ENHANCED STYLING ====================
-
-function enhanceMainContainer() {
-    const container = document.querySelector('.container');
-    container.style.cssText = `
-        position: relative;
-        z-index: 10;
-        background: white;
-        border-radius: 20px;
-        padding: 30px;
-        margin: 20px auto;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-        border: 1px solid rgba(255,255,255,0.3);
-        max-width: 900px;
-    `;
-}
-
-function enhanceResultsContainer() {
-    const resultsContainer = document.getElementById('resultsContainer');
-    resultsContainer.style.cssText = `
-        position: relative;
-        z-index: 10;
-        background: white;
-        border-radius: 15px;
-        padding: 20px;
-        margin-top: 20px;
-        border: 1px solid #e0e0e0;
-    `;
-}
-
-function enhanceInputStyling() {
-    const nameInput = document.getElementById('nameInput');
-    const generateBtn = document.getElementById('generateBtn');
-    
-    nameInput.style.cssText = `
-        padding: 15px 20px;
-        border: 2px solid #e0e0e0;
-        border-radius: 12px;
-        font-size: 16px;
-        background: white;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    `;
-    
-    nameInput.addEventListener('focus', () => {
-        nameInput.style.borderColor = '#667eea';
-        nameInput.style.boxShadow = '0 4px 20px rgba(102, 126, 234, 0.2)';
-    });
-    
-    nameInput.addEventListener('blur', () => {
-        nameInput.style.borderColor = '#e0e0e0';
-        nameInput.style.boxShadow = '0 4px 15px rgba(0,0,0,0.05)';
-    });
-    
-    generateBtn.style.cssText = `
-        padding: 15px 30px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        border-radius: 12px;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-    `;
-    
-    generateBtn.addEventListener('mouseenter', () => {
-        generateBtn.style.transform = 'translateY(-3px)';
-        generateBtn.style.boxShadow = '0 12px 35px rgba(102, 126, 234, 0.4)';
-    });
-    
-    generateBtn.addEventListener('mouseleave', () => {
-        generateBtn.style.transform = 'translateY(0)';
-        generateBtn.style.boxShadow = '0 8px 25px rgba(102, 126, 234, 0.3)';
-    });
-}
-
-function enhanceNotification() {
-    const notification = document.getElementById('notification');
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-        color: white;
-        padding: 15px 25px;
-        border-radius: 10px;
-        box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
-        z-index: 1000;
-        transform: translateX(400px);
-        transition: transform 0.3s ease;
-        font-weight: 600;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.2);
-    `;
 }
 
 // ==================== EVENT LISTENERS ====================
@@ -1963,26 +1649,11 @@ window.addEventListener('load', () => {
     nameInput.value = "Alex";
     addBlogSection();
     addInfiniteScrollIndicator();
-    enhanceMainContainer();
-    enhanceResultsContainer();
-    enhanceInputStyling();
-    enhanceNotification();
     
     // Show blog section initially
     const blogSection = document.getElementById('blogSection');
     if (blogSection) {
-        blogSection.style.cssText = `
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 20px;
-            margin: 20px 0;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: all 0.5s ease-in-out;
-            opacity: 1;
-            max-height: 1000px;
-            overflow: hidden;
-        `;
+        blogSection.classList.remove('hidden');
     }
 });
 
