@@ -781,6 +781,11 @@ const copyHistory = [];
 // Storage for likes and dislikes
 let nameReactions = JSON.parse(localStorage.getItem('nameReactions')) || {};
 
+// Track used styles to prevent repetition
+let usedStyles = new Set();
+let usedProfessionalStyles = new Set();
+let usedSpecialDesigns = new Set();
+
 // Apply style to a word - preserves case
 function applyStyle(word, style) {
     let result = '';
@@ -859,10 +864,71 @@ function applySymbolReplacement(text) {
     return result;
 }
 
+// Get a random style that hasn't been used recently
+function getRandomStyle() {
+    const styleKeys = Object.keys(styles);
+    
+    // If all styles have been used, reset the set
+    if (usedStyles.size >= styleKeys.length * 0.7) {
+        usedStyles.clear();
+    }
+    
+    let availableStyles = styleKeys.filter(key => !usedStyles.has(key));
+    
+    // If no available styles, use any style
+    if (availableStyles.length === 0) {
+        availableStyles = styleKeys;
+    }
+    
+    const randomStyleKey = availableStyles[Math.floor(Math.random() * availableStyles.length)];
+    usedStyles.add(randomStyleKey);
+    
+    return styles[randomStyleKey];
+}
+
+// Get a random professional style that hasn't been used recently
+function getRandomProfessionalStyle() {
+    // If all professional styles have been used, reset the set
+    if (usedProfessionalStyles.size >= professionalNameStyles.length * 0.7) {
+        usedProfessionalStyles.clear();
+    }
+    
+    let availableStyles = professionalNameStyles.filter(style => !usedProfessionalStyles.has(style.name));
+    
+    // If no available styles, use any style
+    if (availableStyles.length === 0) {
+        availableStyles = professionalNameStyles;
+    }
+    
+    const randomStyle = availableStyles[Math.floor(Math.random() * availableStyles.length)];
+    usedProfessionalStyles.add(randomStyle.name);
+    
+    return randomStyle;
+}
+
+// Get a random special design that hasn't been used recently
+function getRandomSpecialDesign() {
+    // If all special designs have been used, reset the set
+    if (usedSpecialDesigns.size >= specialDesigns.length * 0.7) {
+        usedSpecialDesigns.clear();
+    }
+    
+    let availableDesigns = specialDesigns.filter(design => !usedSpecialDesigns.has(design.name));
+    
+    // If no available designs, use any design
+    if (availableDesigns.length === 0) {
+        availableDesigns = specialDesigns;
+    }
+    
+    const randomDesign = availableDesigns[Math.floor(Math.random() * availableDesigns.length)];
+    usedSpecialDesigns.add(randomDesign.name);
+    
+    return randomDesign;
+}
+
 // Generate a simple name (15%)
 function generateSimpleName(userName) {
-    const styleKeys = Object.keys(styles);
-    const randomStyle = styles[styleKeys[Math.floor(Math.random() * styleKeys.length)]];
+    const randomStyle = getRandomStyle();
     
     // Apply style to the name
     let styledName = applyStyle(userName, randomStyle);
@@ -885,18 +951,13 @@ function generateSimpleName(userName) {
 
 // Generate a premium name (25%) with 2-4 font styles
 function generatePremiumName(userName) {
-    const styleKeys = Object.keys(styles);
-    
-    // Choose a random decoration (optional)
-    const decoration = complexDecorations[Math.floor(Math.random() * complexDecorations.length)];
-    
     // Determine how many styles to use (2-4)
     const numStyles = Math.floor(Math.random() * 3) + 2;
     
     // Select random styles to use
     const selectedStyles = [];
     for (let i = 0; i < numStyles; i++) {
-        const randomStyle = styles[styleKeys[Math.floor(Math.random() * styleKeys.length)]];
+        const randomStyle = getRandomStyle();
         if (!selectedStyles.includes(randomStyle)) {
             selectedStyles.push(randomStyle);
         }
@@ -928,6 +989,7 @@ function generatePremiumName(userName) {
     
     // 30% chance to use decoration
     if (Math.random() < 0.3) {
+        const decoration = complexDecorations[Math.floor(Math.random() * complexDecorations.length)];
         styledName = decoration.prefix + styledName + decoration.suffix;
     }
     
@@ -936,8 +998,7 @@ function generatePremiumName(userName) {
 
 // Generate advanced name (10%)
 function generateAdvancedName(userName) {
-    const styleKeys = Object.keys(styles);
-    const baseStyle = styles[styleKeys[Math.floor(Math.random() * styleKeys.length)]];
+    const baseStyle = getRandomStyle();
     
     let styledName = applyStyle(userName, baseStyle);
     
@@ -1026,10 +1087,9 @@ function generateUltimateName(userName) {
     // Combine multiple styles in creative ways
     const styleCount = Math.floor(Math.random() * 3) + 2;
     const selectedStyles = [];
-    const styleKeys = Object.keys(styles);
     
     for (let i = 0; i < styleCount; i++) {
-        const style = styles[styleKeys[Math.floor(Math.random() * styleKeys.length)]];
+        const style = getRandomStyle();
         if (!selectedStyles.includes(style)) {
             selectedStyles.push(style);
         }
@@ -1091,13 +1151,13 @@ function generateUltimateName(userName) {
 
 // Generate a special design name (5%)
 function generateSpecialDesign(userName) {
-    const design = specialDesigns[Math.floor(Math.random() * specialDesigns.length)];
+    const design = getRandomSpecialDesign();
     return design.generate(userName);
 }
 
 // Generate professional style name (40%)
 function generateProfessionalName(userName) {
-    const style = professionalNameStyles[Math.floor(Math.random() * professionalNameStyles.length)];
+    const style = getRandomProfessionalStyle();
     return applyProfessionalStyle(userName, style.template);
 }
 
@@ -1488,15 +1548,26 @@ function generateNames(initial = false) {
         generatedCount = 0;
         currentName = userName;
         allGeneratedNames = [];
+        // Reset used styles when generating new names
+        usedStyles.clear();
+        usedProfessionalStyles.clear();
+        usedSpecialDesigns.clear();
     }
     
     // Generate 6 names at a time
     for (let i = 0; i < 6; i++) {
         const variation = generateVariation(userName);
-        const card = createResultCard(variation);
-        resultsContainer.appendChild(card);
-        generatedCount++;
-        allGeneratedNames.push(variation);
+        
+        // Check for duplicates before adding
+        if (!allGeneratedNames.includes(variation)) {
+            const card = createResultCard(variation);
+            resultsContainer.appendChild(card);
+            generatedCount++;
+            allGeneratedNames.push(variation);
+        } else {
+            // If duplicate, try again with a different style
+            i--;
+        }
     }
     
     // Hide loading indicator if we have enough names
@@ -1558,53 +1629,14 @@ function checkScroll() {
     }
 }
 
-// Search and filter functionality
-function filterResults(searchTerm) {
-    const cards = resultsContainer.querySelectorAll('.result-card');
-    cards.forEach(card => {
-        const name = card.querySelector('.result-name').textContent.toLowerCase();
-        if (name.includes(searchTerm.toLowerCase())) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
-
-// Initialize advanced features
-function initializeAdvancedFeatures() {
-    // Add search input if it doesn't exist
-    if (!document.getElementById('searchInput')) {
-        const searchInput = document.createElement('input');
-        searchInput.id = 'searchInput';
-        searchInput.placeholder = 'Search generated names...';
-        searchInput.className = 'search-input';
-        searchInput.style.cssText = `
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        `;
-        
-        searchInput.addEventListener('input', (e) => {
-            filterResults(e.target.value);
-        });
-        
-        resultsContainer.parentNode.insertBefore(searchInput, resultsContainer);
-    }
-}
-
 // Event listeners
 generateBtn.addEventListener('click', () => {
     generateNames(true);
-    setTimeout(initializeAdvancedFeatures, 100);
 });
 
 nameInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         generateNames(true);
-        setTimeout(initializeAdvancedFeatures, 100);
     }
 });
 
@@ -1615,7 +1647,6 @@ window.addEventListener('scroll', checkScroll);
 window.addEventListener('load', () => {
     nameInput.value = "Alex";
     generateNames(true);
-    setTimeout(initializeAdvancedFeatures, 100);
 });
 
 console.log('Unicode Name Generator loaded successfully with professional styles!');
