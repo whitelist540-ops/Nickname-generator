@@ -1,4 +1,7 @@
-// Unicode character maps for different text styles
+// Unicode Name Generator - Complete Enhanced Version
+// Includes all font styles, infinite scroll, and comprehensive blog section
+
+// ==================== UNICODE CHARACTER MAPS ====================
 const styles = {
     bold: {
         name: "Bold",
@@ -230,10 +233,88 @@ const styles = {
             K: "₭", L: "Ⱡ", M: "₥", N: "₦", O: "Ø", P: "₱", Q: "Q", R: "Ɽ", S: "₴", T: "₮",
             U: "Ʉ", V: "V", W: "₩", X: "Ӿ", Y: "Ɏ", Z: "Ⱬ",
         }
+    },
+    // ==================== NEW ADDED STYLES ====================
+    smallSuperscript: {
+        name: "Small Superscript",
+        map: {
+            a: "ᵃ", b: "ᵇ", c: "ᶜ", d: "ᵈ", e: "ₑ", f: "𝒻", g: "ᵍ", h: "ₕ", i: "ᵢ", j: "ʲ",
+            k: "ₖ", l: "ₗ", m: "ₘ", n: "ₙ", o: "ₒ", p: "ₚ", q: "𝓆", r: "ᵣ", s: "ₛ", t: "ₜ",
+            u: "ᵤ", v: "ᵥ", w: "𝓌", x: "ₓ", y: "ᵧ", z: "𝓏",
+            A: "ᴬ", B: "ᴮ", C: "ᶜ", D: "ᴰ", E: "ᴱ", F: "ᶠ", G: "ᴳ", H: "ᴴ", I: "ᴵ", J: "ᴶ",
+            K: "ᴷ", L: "ᴸ", M: "ᴹ", N: "ᴺ", O: "ᴼ", P: "ᴾ", Q: "ᵠ", R: "ᴿ", S: "ˢ", T: "ᵀ",
+            U: "ᵁ", V: "ⱽ", W: "ᵂ", X: "ˣ", Y: "ʸ", Z: "ᶻ"
+        }
+    },
+    squareAsian: {
+        name: "Square Asian",
+        map: {
+            a: "卂", b: "乃", c: "匚", d: "ᗪ", e: "乇", f: "下", g: "Ꮆ", h: "卄", i: "丨", j: "ﾌ",
+            k: "Ӿ", l: "ㄥ", m: "爪", n: "几", o: "ㄖ", p: "卩", q: "Ҝ", r: "尺", s: "丂", t: "ｲ",
+            u: "ㄩ", v: "ㄩᐯ", w: "山", x: "乂", y: "ㄚ", z: "乙",
+            A: "卂", B: "乃", C: "匚", D: "ᗪ", E: "乇", F: "下", G: "Ꮆ", H: "卄", I: "丨", J: "ﾌ",
+            K: "Ӿ", L: "ㄥ", M: "爪", N: "几", O: "ㄖ", P: "卩", Q: "Ҝ", R: "尺", S: "丂", T: "ｲ",
+            U: "ㄩ", V: "ㄩᐯ", W: "山", X: "乂", Y: "ㄚ", Z: "乙"
+        }
+    },
+    boldOutline: {
+        name: "Bold Outline",
+        map: {
+            a: "ᗩ", b: "ᗷ", c: "ᑕ", d: "ᗪ", e: "ᗴ", f: "ᖴ", g: "ᘜ", h: "ᕼ", i: "Ꭵ", j: "ᒍ",
+            k: "ᛕ", l: "ᒪ", m: "ᗰ", n: "ᑎ", o: "ᗝ", p: "ᑭ", q: "ᑫ", r: "ᖇ", s: "ᔕ", t: "丅",
+            u: "ᑌ", v: "ᐯ", w: "ᗯ", x: "᙭", y: "ᖻ", z: "ᘔ",
+            A: "ᗩ", B: "ᗷ", C: "ᑕ", D: "ᗪ", E: "ᗴ", F: "ᖴ", G: "ᘜ", H: "ᕼ", I: "Ꭵ", J: "ᒍ",
+            K: "ᛕ", L: "ᒪ", M: "ᗰ", N: "ᑎ", O: "ᗝ", P: "ᑭ", Q: "ᑫ", R: "ᖇ", S: "ᔕ", T: "丅",
+            U: "ᑌ", V: "ᐯ", W: "ᗯ", X: "᙭", Y: "ᖻ", Z: "ᘔ"
+        }
+    },
+    greekMixed: {
+        name: "Greek Mixed",
+        map: {
+            a: "Δ", b: "β", c: "ᄃ", d: "Đ", e: "Ξ", f: "Ғ", g: "G", h: "Ή", i: "Ϊ", j: "J",
+            k: "Ҝ", l: "Ł", m: "M", n: "И", o: "Ø", p: "P", q: "Ҩ", r: "Я", s: "Ѕ", t: "Γ",
+            u: "Ƭ", v: "Ц", w: "V", x: "Ɯ", y: "X", z: "Ϋ",
+            A: "Δ", B: "β", C: "ᄃ", D: "Đ", E: "Ξ", F: "Ғ", G: "G", H: "Ή", I: "Ϊ", J: "J",
+            K: "Ҝ", L: "Ł", M: "M", N: "И", O: "Ø", P: "P", Q: "Ҩ", R: "Я", S: "Ѕ", T: "Γ",
+            U: "Ƭ", V: "Ц", W: "V", X: "Ɯ", Y: "X", Z: "Ϋ"
+        }
+    },
+    bracketStyle1: {
+        name: "Bracket Style 1",
+        map: {
+            a: "【a】", b: "【b】", c: "【c】", d: "【d】", e: "【e】", f: "【f】", g: "【g】", h: "【h】", i: "【i】", j: "【j】",
+            k: "【k】", l: "【l】", m: "【m】", n: "【n】", o: "【o】", p: "【p】", q: "【q】", r: "【r】", s: "【s】", t: "【t】",
+            u: "【u】", v: "【v】", w: "【w】", x: "【x】", y: "【y】", z: "【z】",
+            A: "【A】", B: "【B】", C: "【C】", D: "【D】", E: "【E】", F: "【F】", G: "【G】", H: "【H】", I: "【I】", J: "【J】",
+            K: "【K】", L: "【L】", M: "【M】", N: "【N】", O: "【O】", P: "【P】", Q: "【Q】", R: "【R】", S: "【S】", T: "【T】",
+            U: "【U】", V: "【V】", W: "【W】", X: "【X】", Y: "【Y】", Z: "【Z】"
+        }
+    },
+    bracketStyle2: {
+        name: "Bracket Style 2",
+        map: {
+            a: "『a』", b: "『b』", c: "『c』", d: "『d』", e: "『e』", f: "『f』", g: "『g』", h: "『h』", i: "『i』", j: "『j』",
+            k: "『k』", l: "『l』", m: "『m』", n: "『n』", o: "『o』", p: "『p』", q: "『q』", r: "『r』", s: "『s』", t: "『t』",
+            u: "『u』", v: "『v』", w: "『w』", x: "『x』", y: "『y』", z: "『z』",
+            A: "『A』", B: "『B』", C: "『C』", D: "『D』", E: "『E』", F: "『F』", G: "『G』", H: "『H』", I: "『I』", J: "『J】",
+            K: "『K』", L: "『L』", M: "『M』", N: "『N』", O: "『O』", P: "『P』", Q: "『Q』", R: "『R』", S: "『S』", T: "『T』",
+            U: "『U』", V: "『V』", W: "『W』", X: "『X』", Y: "『Y』", Z: "『Z』"
+        }
+    },
+    doubleBracketStyle: {
+        name: "Double Bracket Style",
+        map: {
+            a: "⦑a⦒", b: "⦑b⦒", c: "⦑c⦒", d: "⦑d⦒", e: "⦑e⦒", f: "⦑f⦒", g: "⦑g⦒", h: "⦑h⦒", i: "⦑i⦒", j: "⦑j⦒",
+            k: "⦑k⦒", l: "⦑l⦒", m: "⦑m⦒", n: "⦑n⦒", o: "⦑o⦒", p: "⦑p⦒", q: "⦑q⦒", r: "⦑r⦒", s: "⦑s⦒", t: "⦑t⦒",
+            u: "⦑u⦒", v: "⦑v⦒", w: "⦑w⦒", x: "⦑x⦒", y: "⦑y⦒", z: "⦑z⦒",
+            A: "⦑A⦒", B: "⦑B⦒", C: "⦑C⦒", D: "⦑D⦒", E: "⦑E⦒", F: "⦑F⦒", G: "⦑G⦒", H: "⦑H⦒", I: "⦑I⦒", J: "⦑J⦒",
+            K: "⦑K⦒", L: "⦑L⦒", M: "⦑M⦒", N: "⦑N⦒", O: "⦑O⦒", P: "⦑P⦒", Q: "⦑Q⦒", R: "⦑R⦒", S: "⦑S⦒", T: "⦑T⦒",
+            U: "⦑U⦒", V: "⦑V⦒", W: "⦑W⦒", X: "⦑X⦒", Y: "⦑Y⦒", Z: "⦑Z⦒"
+        }
     }
 };
 
-// Special Unicode character substitutions
+// ==================== SPECIAL CHARACTER SUBSTITUTIONS ====================
 const specialChars = {
     a: ["ą", "ค", "ά", "ặ", "ꫀ", "α", "ａ", "₳", "ᴀ", "ᵃ", "ǟ", "ǡ", "ã", "â", "ä", "å", "ą", "ɑ"],
     b: ["ḃ", "β", "ḅ", "ḇ", "ｂ", "ʙ", "ᵇ"],
@@ -287,13 +368,12 @@ const specialChars = {
     X: ["Ẋ", "Ẍ", "Ｘ", "ˣ"],
     Y: ["Ý", "Ÿ", "Ұ", "Ɏ", "Ү", "Ｙ", "ʸ"],
     Z: ["Ž", "Ź", "Ż", "Ｚ", "ᶻ", "Ȥ"],
-    // Combined characters
     th: ["þ", "ð", "ṯ", "ṱ"],
     sh: ["š", "ṩ", "ṣ", "ŝ"],
     ch: ["č", "ć", "ç", "ĉ", "ḉ"]
 };
 
-// Add new prefix words for the small text before names
+// ==================== PREFIX WORDS ====================
 const prefixWords = {
     iam: "ᴵᴬᴹ",
     boss: "ᴮᴼˢˢ",
@@ -334,7 +414,7 @@ const prefixWords = {
     eternal: "ᴱᵀᴱᴿᴺᴬᴸ"
 };
 
-// Professional name styles with exact character mappings from your examples
+// ==================== PROFESSIONAL NAME STYLES ====================
 const professionalNameStyles = [
     {
         name: "Quote Bubble Style",
@@ -547,30 +627,8 @@ const professionalNameStyles = [
     }
 ];
 
-// Function to apply professional name styling
-function applyProfessionalStyle(userName, styleTemplate) {
-    let styledName = "";
-    const nameLower = userName.toLowerCase();
-    
-    for (let i = 0; i < nameLower.length; i++) {
-        const char = nameLower[i];
-        styledName += styleTemplate.mapping[char] || char;
-    }
-    
-    let finalName = styleTemplate.prefix + styledName + styleTemplate.suffix;
-    
-    // Add prefix word if specified
-    if (styleTemplate.addPrefix) {
-        const prefixKey = Object.keys(prefixWords)[Math.floor(Math.random() * Object.keys(prefixWords).length)];
-        finalName = prefixWords[prefixKey] + " " + finalName;
-    }
-    
-    return finalName;
-}
-
-// Complex decorations
+// ==================== COMPLEX DECORATIONS ====================
 const complexDecorations = [
-    // Professional styles from examples
     { prefix: "°\"", suffix: "\"°" },
     { prefix: "꧁乂✰", suffix: "✰乂꧂" },
     { prefix: "𑁍┊", suffix: "" },
@@ -595,8 +653,6 @@ const complexDecorations = [
     { prefix: "⚡", suffix: "|₂₂₀⚡" },
     { prefix: "🌊 .·:*¨", suffix: "¨*:·. 🌊" },
     { prefix: "🔥💘⇨", suffix: "☔️" },
-    
-    // Keep original ones that work well
     { prefix: "━ 𝗚ҽϞυ𝑖Ϟҽ :･ﾟ✧", suffix: "" },
     { prefix: "꧁☬⋆", suffix: "⋆☬꧂" },
     { prefix: "꧁༒", suffix: "༒꧂" },
@@ -613,7 +669,7 @@ const complexDecorations = [
     { prefix: "👑", suffix: "👑" },
 ];
 
-// Special design templates
+// ==================== SPECIAL DESIGNS ====================
 const specialDesigns = [
     {
         name: "Hacker Style",
@@ -727,10 +783,10 @@ const specialDesigns = [
     }
 ];
 
-// Emojis and symbols
+// ==================== SYMBOLS AND EMOJIS ====================
 const symbols = ["☯", "⚡", "🔥", "💫", "🌟", "⭐", "✨", "🎮", "⚔️", "🛡️", "💎", "🕊️", "💀", "🐉", "🐲", "🌙", "☀️", "🌺", "🌼", "🍀", "🦋", "🦅", "🦁", "🐺", "メ", "ツ", "亗", "♚", "♛", "⚚", "𓂀", "ꕤ", "𒊹", "⟢", "⌬", "⍟", "⎈", "⋆", "༄", "𖤓", "𓋼", "★", "☆", "■", "✦", "◈", "卐", "ᛟ", "𒀱", "ꕥ", "𖣘", "♠", "♣", "♦", "♥", "⚡", "🔥", "💧", "🌪️", "❄️", "🌙", "☀️", "⭐", "🌟", "✨", "💫", "☄️"];
 
-// Social media platforms for sharing
+// ==================== SOCIAL MEDIA PLATFORMS ====================
 const socialMedia = {
     facebook: {
         name: "Facebook",
@@ -764,49 +820,43 @@ const socialMedia = {
     }
 };
 
-// DOM elements
+// ==================== DOM ELEMENTS ====================
 const nameInput = document.getElementById('nameInput');
 const generateBtn = document.getElementById('generateBtn');
 const resultsContainer = document.getElementById('resultsContainer');
 const notification = document.getElementById('notification');
 const loadingIndicator = document.getElementById('loadingIndicator');
 
-// Variables for auto-generation
+// ==================== GLOBAL VARIABLES ====================
 let isGenerating = false;
 let currentName = "";
 let generatedCount = 0;
 let allGeneratedNames = [];
 const copyHistory = [];
-
-// Storage for likes and dislikes
 let nameReactions = JSON.parse(localStorage.getItem('nameReactions')) || {};
-
-// Track used styles to prevent repetition
 let usedStyles = new Set();
 let usedProfessionalStyles = new Set();
 let usedSpecialDesigns = new Set();
+
+// ==================== CORE FUNCTIONS ====================
 
 // Apply style to a word - preserves case
 function applyStyle(word, style) {
     let result = '';
     for (let char of word) {
-        // Check if character is uppercase or lowercase and apply appropriate style
         if (char === char.toUpperCase() && char !== char.toLowerCase()) {
-            // Uppercase character
             result += style.map[char] || char;
         } else {
-            // Lowercase character
             result += style.map[char] || char;
         }
     }
     return result;
 }
 
-// Apply special characters to a word - preserves case
+// Apply special characters to a word
 function applySpecialChars(word, chance) {
     let result = '';
     for (let char of word) {
-        // Apply special character substitution with given chance
         if (Math.random() < chance && specialChars[char]) {
             const options = specialChars[char];
             result += options[Math.floor(Math.random() * options.length)];
@@ -817,7 +867,7 @@ function applySpecialChars(word, chance) {
     return result;
 }
 
-// Advanced text transformation functions
+// Advanced text transformations
 function applyMixedCase(text) {
     let result = '';
     for (let i = 0; i < text.length; i++) {
@@ -864,18 +914,14 @@ function applySymbolReplacement(text) {
     return result;
 }
 
-// Get a random style that hasn't been used recently
+// Style management functions
 function getRandomStyle() {
     const styleKeys = Object.keys(styles);
-    
-    // If all styles have been used, reset the set
     if (usedStyles.size >= styleKeys.length * 0.7) {
         usedStyles.clear();
     }
     
     let availableStyles = styleKeys.filter(key => !usedStyles.has(key));
-    
-    // If no available styles, use any style
     if (availableStyles.length === 0) {
         availableStyles = styleKeys;
     }
@@ -886,16 +932,12 @@ function getRandomStyle() {
     return styles[randomStyleKey];
 }
 
-// Get a random professional style that hasn't been used recently
 function getRandomProfessionalStyle() {
-    // If all professional styles have been used, reset the set
     if (usedProfessionalStyles.size >= professionalNameStyles.length * 0.7) {
         usedProfessionalStyles.clear();
     }
     
     let availableStyles = professionalNameStyles.filter(style => !usedProfessionalStyles.has(style.name));
-    
-    // If no available styles, use any style
     if (availableStyles.length === 0) {
         availableStyles = professionalNameStyles;
     }
@@ -906,16 +948,12 @@ function getRandomProfessionalStyle() {
     return randomStyle;
 }
 
-// Get a random special design that hasn't been used recently
 function getRandomSpecialDesign() {
-    // If all special designs have been used, reset the set
     if (usedSpecialDesigns.size >= specialDesigns.length * 0.7) {
         usedSpecialDesigns.clear();
     }
     
     let availableDesigns = specialDesigns.filter(design => !usedSpecialDesigns.has(design.name));
-    
-    // If no available designs, use any design
     if (availableDesigns.length === 0) {
         availableDesigns = specialDesigns;
     }
@@ -926,36 +964,46 @@ function getRandomSpecialDesign() {
     return randomDesign;
 }
 
-// Generate a simple name (15%)
+// ==================== NAME GENERATION FUNCTIONS ====================
+
+// Apply professional name styling
+function applyProfessionalStyle(userName, styleTemplate) {
+    let styledName = "";
+    const nameLower = userName.toLowerCase();
+    
+    for (let i = 0; i < nameLower.length; i++) {
+        const char = nameLower[i];
+        styledName += styleTemplate.mapping[char] || char;
+    }
+    
+    let finalName = styleTemplate.prefix + styledName + styleTemplate.suffix;
+    
+    if (styleTemplate.addPrefix) {
+        const prefixKey = Object.keys(prefixWords)[Math.floor(Math.random() * Object.keys(prefixWords).length)];
+        finalName = prefixWords[prefixKey] + " " + finalName;
+    }
+    
+    return finalName;
+}
+
+// Different name generation types
 function generateSimpleName(userName) {
     const randomStyle = getRandomStyle();
-    
-    // Apply style to the name
     let styledName = applyStyle(userName, randomStyle);
-    
-    // Apply special characters with 20% chance per character
     styledName = applySpecialChars(styledName, 0.2);
     
-    // 30% chance to add a symbol at the beginning or end (not in the middle)
     if (Math.random() < 0.3) {
         const symbol = symbols[Math.floor(Math.random() * symbols.length)];
-        if (Math.random() < 0.5) {
-            styledName = symbol + " " + styledName;
-        } else {
-            styledName = styledName + " " + symbol;
-        }
+        styledName = Math.random() < 0.5 ? symbol + " " + styledName : styledName + " " + symbol;
     }
     
     return styledName;
 }
 
-// Generate a premium name (25%) with 2-4 font styles
 function generatePremiumName(userName) {
-    // Determine how many styles to use (2-4)
     const numStyles = Math.floor(Math.random() * 3) + 2;
-    
-    // Select random styles to use
     const selectedStyles = [];
+    
     for (let i = 0; i < numStyles; i++) {
         const randomStyle = getRandomStyle();
         if (!selectedStyles.includes(randomStyle)) {
@@ -963,31 +1011,21 @@ function generatePremiumName(userName) {
         }
     }
     
-    // Apply different styles to different characters
     let styledName = "";
     for (let i = 0; i < userName.length; i++) {
         const char = userName[i];
         const styleIndex = i % selectedStyles.length;
         const selectedStyle = selectedStyles[styleIndex];
-        
         styledName += applyStyle(char, selectedStyle);
     }
     
-    // Apply special characters with 30% chance per character
     styledName = applySpecialChars(styledName, 0.3);
     
-    // Add symbols at the beginning or end (not in the middle) with 50% chance
     if (Math.random() < 0.5) {
         const symbol = symbols[Math.floor(Math.random() * symbols.length)];
-        // Only add at the beginning or end
-        if (Math.random() < 0.5) {
-            styledName = symbol + " " + styledName;
-        } else {
-            styledName = styledName + " " + symbol;
-        }
+        styledName = Math.random() < 0.5 ? symbol + " " + styledName : styledName + " " + symbol;
     }
     
-    // 30% chance to use decoration
     if (Math.random() < 0.3) {
         const decoration = complexDecorations[Math.floor(Math.random() * complexDecorations.length)];
         styledName = decoration.prefix + styledName + decoration.suffix;
@@ -996,38 +1034,23 @@ function generatePremiumName(userName) {
     return styledName;
 }
 
-// Generate advanced name (10%)
 function generateAdvancedName(userName) {
     const baseStyle = getRandomStyle();
-    
     let styledName = applyStyle(userName, baseStyle);
     
-    // Apply advanced transformations
-    if (Math.random() < 0.3) {
-        styledName = applyMixedCase(styledName);
-    }
+    if (Math.random() < 0.3) styledName = applyMixedCase(styledName);
+    if (Math.random() < 0.2) styledName = applyRandomSpacing(styledName);
+    if (Math.random() < 0.25) styledName = applySymbolReplacement(styledName);
     
-    if (Math.random() < 0.2) {
-        styledName = applyRandomSpacing(styledName);
-    }
-    
-    if (Math.random() < 0.25) {
-        styledName = applySymbolReplacement(styledName);
-    }
-    
-    // Apply special characters with variable chance
     const specialChance = 0.3 + (Math.random() * 0.3);
     styledName = applySpecialChars(styledName, specialChance);
     
-    // Add decorations
-    const decoration = complexDecorations[Math.floor(Math.random() * complexDecorations.length)];
     const useDecoration = Math.random() < 0.6;
-    
     if (useDecoration) {
+        const decoration = complexDecorations[Math.floor(Math.random() * complexDecorations.length)];
         styledName = decoration.prefix + styledName + decoration.suffix;
     }
     
-    // Add symbols with higher probability
     if (Math.random() < 0.7) {
         const symbol = symbols[Math.floor(Math.random() * symbols.length)];
         const position = Math.random();
@@ -1043,38 +1066,22 @@ function generateAdvancedName(userName) {
     return styledName;
 }
 
-// Generate the specific style from the example
 function generateExampleStyle(userName) {
-    // Convert to mixed case like the example: "ᴹᴿメY a h M a t i ☂️"
     let mixedName = "";
     for (let i = 0; i < userName.length; i++) {
         const char = userName[i];
-        // Randomly make characters uppercase or lowercase
-        if (Math.random() < 0.5) {
-            mixedName += char.toUpperCase();
-        } else {
-            mixedName += char.toLowerCase();
-        }
+        mixedName += Math.random() < 0.5 ? char.toUpperCase() : char.toLowerCase();
     }
     
-    // Add small caps for first two characters if possible
     if (userName.length >= 2) {
         const firstTwo = userName.substring(0, 2);
         mixedName = applyStyle(firstTwo, styles.smallCaps) + mixedName.substring(2);
     }
     
-    // Add Japanese symbol at the beginning or end (not in the middle)
     const japaneseSymbols = ["メ", "ツ"];
     const symbol = japaneseSymbols[Math.floor(Math.random() * japaneseSymbols.length)];
+    mixedName = Math.random() < 0.5 ? symbol + " " + mixedName : mixedName + " " + symbol;
     
-    // Only add at the beginning or end
-    if (Math.random() < 0.5) {
-        mixedName = symbol + " " + mixedName;
-    } else {
-        mixedName = mixedName + " " + symbol;
-    }
-    
-    // Add emoji at the end
     const emojis = ["☂️", "✨", "🌟", "⚡", "🔥"];
     const emoji = emojis[Math.floor(Math.random() * emojis.length)];
     mixedName += " " + emoji;
@@ -1082,9 +1089,7 @@ function generateExampleStyle(userName) {
     return mixedName;
 }
 
-// Generate ultimate name (5%)
 function generateUltimateName(userName) {
-    // Combine multiple styles in creative ways
     const styleCount = Math.floor(Math.random() * 3) + 2;
     const selectedStyles = [];
     
@@ -1103,19 +1108,19 @@ function generateUltimateName(userName) {
         const stylePattern = Math.floor(Math.random() * 3);
         
         switch (stylePattern) {
-            case 0: // Alternate styles per character
+            case 0:
                 for (let i = 0; i < word.length; i++) {
                     const style = selectedStyles[i % selectedStyles.length];
                     styledWord += applyStyle(word[i], style);
                 }
                 break;
-            case 1: // Random style per character
+            case 1:
                 for (let i = 0; i < word.length; i++) {
                     const style = selectedStyles[Math.floor(Math.random() * selectedStyles.length)];
                     styledWord += applyStyle(word[i], style);
                 }
                 break;
-            case 2: // Gradient style (smooth transition)
+            case 2:
                 for (let i = 0; i < word.length; i++) {
                     const progress = i / (word.length - 1);
                     const styleIndex = Math.floor(progress * (selectedStyles.length - 1));
@@ -1125,7 +1130,6 @@ function generateUltimateName(userName) {
                 break;
         }
         
-        // Apply special effects
         if (Math.random() < 0.4) {
             styledWord = applySpecialChars(styledWord, 0.5);
         }
@@ -1136,7 +1140,6 @@ function generateUltimateName(userName) {
         }
     });
     
-    // Add ultimate decoration
     const ultimateDecorations = [
         { prefix: "♚✦♛", suffix: "♛✦♚" },
         { prefix: "꧁𓆩❀𓆪", suffix: "𓆩❀𓆪꧂" },
@@ -1149,31 +1152,45 @@ function generateUltimateName(userName) {
     return decoration.prefix + result + decoration.suffix;
 }
 
-// Generate a special design name (5%)
 function generateSpecialDesign(userName) {
     const design = getRandomSpecialDesign();
     return design.generate(userName);
 }
 
-// Generate professional style name (40%)
 function generateProfessionalName(userName) {
     const style = getRandomProfessionalStyle();
     return applyProfessionalStyle(userName, style.template);
 }
 
-// Generate a fancy name variation
+function generateNewStyleName(userName) {
+    const newStyleKeys = ['smallSuperscript', 'squareAsian', 'boldOutline', 'greekMixed', 'bracketStyle1', 'bracketStyle2', 'doubleBracketStyle'];
+    const randomStyleKey = newStyleKeys[Math.floor(Math.random() * newStyleKeys.length)];
+    const selectedStyle = styles[randomStyleKey];
+    
+    let styledName = applyStyle(userName, selectedStyle);
+    
+    if (Math.random() < 0.4) {
+        const decoration = complexDecorations[Math.floor(Math.random() * complexDecorations.length)];
+        styledName = decoration.prefix + styledName + decoration.suffix;
+    }
+    
+    return styledName;
+}
+
+// Main variation generator
 function generateVariation(userName) {
-    // 40% professional, 25% premium, 15% simple, 10% advanced, 5% example style, 5% special designs
     const randomValue = Math.random();
     
-    if (randomValue < 0.4) {
+    if (randomValue < 0.35) {
         return generateProfessionalName(userName);
-    } else if (randomValue < 0.65) {
+    } else if (randomValue < 0.55) {
         return generatePremiumName(userName);
-    } else if (randomValue < 0.8) {
+    } else if (randomValue < 0.70) {
         return generateSimpleName(userName);
-    } else if (randomValue < 0.9) {
+    } else if (randomValue < 0.80) {
         return generateAdvancedName(userName);
+    } else if (randomValue < 0.90) {
+        return generateNewStyleName(userName);
     } else if (randomValue < 0.95) {
         return generateExampleStyle(userName);
     } else {
@@ -1181,10 +1198,10 @@ function generateVariation(userName) {
     }
 }
 
-// Get reactions for a name
+// ==================== REACTION AND INTERACTION FUNCTIONS ====================
+
 function getReactions(name) {
     if (!nameReactions[name]) {
-        // Initialize with random likes and dislikes
         nameReactions[name] = {
             likes: Math.floor(Math.random() * 50),
             dislikes: Math.floor(Math.random() * 20),
@@ -1195,27 +1212,22 @@ function getReactions(name) {
     return nameReactions[name];
 }
 
-// Save reactions to localStorage
 function saveReactions() {
     localStorage.setItem('nameReactions', JSON.stringify(nameReactions));
 }
 
-// Handle like action
 function handleLike(name, likeBtn, dislikeBtn, likeCount, dislikeCount) {
     const reactions = getReactions(name);
     
     if (reactions.userLiked) {
-        // Unlike
         reactions.likes--;
         reactions.userLiked = false;
         likeBtn.classList.remove('active');
     } else {
-        // Like
         reactions.likes++;
         reactions.userLiked = true;
         likeBtn.classList.add('active');
         
-        // If previously disliked, remove dislike
         if (reactions.userDisliked) {
             reactions.dislikes--;
             reactions.userDisliked = false;
@@ -1228,22 +1240,18 @@ function handleLike(name, likeBtn, dislikeBtn, likeCount, dislikeCount) {
     saveReactions();
 }
 
-// Handle dislike action
 function handleDislike(name, likeBtn, dislikeBtn, likeCount, dislikeCount) {
     const reactions = getReactions(name);
     
     if (reactions.userDisliked) {
-        // Remove dislike
         reactions.dislikes--;
         reactions.userDisliked = false;
         dislikeBtn.classList.remove('active');
     } else {
-        // Dislike
         reactions.dislikes++;
         reactions.userDisliked = true;
         dislikeBtn.classList.add('active');
         
-        // If previously liked, remove like
         if (reactions.userLiked) {
             reactions.likes--;
             reactions.userLiked = false;
@@ -1256,7 +1264,8 @@ function handleDislike(name, likeBtn, dislikeBtn, likeCount, dislikeCount) {
     saveReactions();
 }
 
-// Share name to social media
+// ==================== SHARING FUNCTIONS ====================
+
 function shareName(name, platform) {
     const encodedText = encodeURIComponent(`Check out this cool name: ${name}`);
     const encodedUrl = encodeURIComponent(window.location.href);
@@ -1280,7 +1289,6 @@ function shareName(name, platform) {
             shareUrl = `${socialMedia.reddit.url}${encodedText}&url=${encodedUrl}`;
             break;
         default:
-            // Default to copying to clipboard
             copyToClipboard(name);
             showNotification('Name copied to clipboard! You can now share it anywhere.');
             return;
@@ -1289,9 +1297,7 @@ function shareName(name, platform) {
     window.open(shareUrl, '_blank', 'width=600,height=400');
 }
 
-// Show share options
 function showShareOptions(name) {
-    // Create share modal
     const shareModal = document.createElement('div');
     shareModal.className = 'share-modal';
     shareModal.style.cssText = `
@@ -1340,7 +1346,6 @@ function showShareOptions(name) {
         margin: 20px 0;
     `;
     
-    // Create platform buttons
     Object.keys(socialMedia).forEach(platform => {
         const platformBtn = document.createElement('button');
         platformBtn.textContent = socialMedia[platform].name;
@@ -1400,7 +1405,6 @@ function showShareOptions(name) {
     
     document.body.appendChild(shareModal);
     
-    // Close modal when clicking outside
     shareModal.addEventListener('click', (e) => {
         if (e.target === shareModal) {
             document.body.removeChild(shareModal);
@@ -1408,7 +1412,8 @@ function showShareOptions(name) {
     });
 }
 
-// Create a result card
+// ==================== UI COMPONENTS ====================
+
 function createResultCard(variation) {
     const card = document.createElement('div');
     card.className = 'result-card';
@@ -1417,10 +1422,8 @@ function createResultCard(variation) {
     nameElement.className = 'result-name';
     nameElement.textContent = variation;
     
-    // Get reactions for this name
     const reactions = getReactions(variation);
     
-    // Create reaction buttons container
     const reactionContainer = document.createElement('div');
     reactionContainer.className = 'reaction-container';
     reactionContainer.style.cssText = `
@@ -1430,7 +1433,6 @@ function createResultCard(variation) {
         margin: 10px 0;
     `;
     
-    // Like button
     const likeBtn = document.createElement('button');
     likeBtn.className = `reaction-btn like-btn ${reactions.userLiked ? 'active' : ''}`;
     likeBtn.innerHTML = '👍';
@@ -1449,7 +1451,6 @@ function createResultCard(variation) {
     likeCount.className = 'like-count';
     likeCount.textContent = reactions.likes;
     
-    // Dislike button
     const dislikeBtn = document.createElement('button');
     dislikeBtn.className = `reaction-btn dislike-btn ${reactions.userDisliked ? 'active' : ''}`;
     dislikeBtn.innerHTML = '👎';
@@ -1468,7 +1469,6 @@ function createResultCard(variation) {
     dislikeCount.className = 'dislike-count';
     dislikeCount.textContent = reactions.dislikes;
     
-    // Add event listeners for reactions
     likeBtn.addEventListener('click', () => {
         handleLike(variation, likeBtn, dislikeBtn, likeCount, dislikeCount);
     });
@@ -1477,13 +1477,11 @@ function createResultCard(variation) {
         handleDislike(variation, likeBtn, dislikeBtn, likeCount, dislikeCount);
     });
     
-    // Assemble reaction container
     likeBtn.appendChild(likeCount);
     dislikeBtn.appendChild(dislikeCount);
     reactionContainer.appendChild(likeBtn);
     reactionContainer.appendChild(dislikeBtn);
     
-    // Create action buttons container
     const actionContainer = document.createElement('div');
     actionContainer.className = 'action-container';
     actionContainer.style.cssText = `
@@ -1492,7 +1490,6 @@ function createResultCard(variation) {
         margin-top: 10px;
     `;
     
-    // Copy button
     const copyBtn = document.createElement('button');
     copyBtn.className = 'copy-btn';
     copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
@@ -1510,7 +1507,6 @@ function createResultCard(variation) {
         copyToClipboard(variation);
     });
     
-    // Share button
     const shareBtn = document.createElement('button');
     shareBtn.className = 'share-btn';
     shareBtn.innerHTML = '<i class="fas fa-share-alt"></i> Share';
@@ -1531,7 +1527,6 @@ function createResultCard(variation) {
     actionContainer.appendChild(copyBtn);
     actionContainer.appendChild(shareBtn);
     
-    // Assemble card
     card.appendChild(nameElement);
     card.appendChild(reactionContainer);
     card.appendChild(actionContainer);
@@ -1539,7 +1534,8 @@ function createResultCard(variation) {
     return card;
 }
 
-// Generate multiple name variations
+// ==================== CORE APPLICATION FUNCTIONS ====================
+
 function generateNames(initial = false) {
     const userName = nameInput.value.trim() || "User";
     
@@ -1548,29 +1544,24 @@ function generateNames(initial = false) {
         generatedCount = 0;
         currentName = userName;
         allGeneratedNames = [];
-        // Reset used styles when generating new names
         usedStyles.clear();
         usedProfessionalStyles.clear();
         usedSpecialDesigns.clear();
     }
     
-    // Generate 6 names at a time
     for (let i = 0; i < 6; i++) {
         const variation = generateVariation(userName);
         
-        // Check for duplicates before adding
         if (!allGeneratedNames.includes(variation)) {
             const card = createResultCard(variation);
             resultsContainer.appendChild(card);
             generatedCount++;
             allGeneratedNames.push(variation);
         } else {
-            // If duplicate, try again with a different style
             i--;
         }
     }
     
-    // Hide loading indicator if we have enough names
     if (generatedCount >= 30) {
         loadingIndicator.style.display = 'none';
     } else {
@@ -1578,9 +1569,7 @@ function generateNames(initial = false) {
     }
 }
 
-// Copy text to clipboard
 function copyToClipboard(text) {
-    // Create a temporary textarea element
     const textarea = document.createElement('textarea');
     textarea.value = text;
     document.body.appendChild(textarea);
@@ -1588,22 +1577,18 @@ function copyToClipboard(text) {
     document.execCommand('copy');
     document.body.removeChild(textarea);
     
-    // Add to copy history
     copyHistory.unshift({
         text: text,
         timestamp: new Date().toLocaleTimeString()
     });
     
-    // Keep only last 10 items
     if (copyHistory.length > 10) {
         copyHistory.pop();
     }
     
-    // Show notification
     showNotification(`✓ Copied: ${text.substring(0, 20)}${text.length > 20 ? '...' : ''}`);
 }
 
-// Show notification
 function showNotification(message) {
     notification.textContent = message;
     notification.classList.add('show');
@@ -1612,13 +1597,12 @@ function showNotification(message) {
     }, 2000);
 }
 
-// Check if we need to generate more names on scroll
 function checkScroll() {
     if (isGenerating) return;
     
     const scrollPosition = window.innerHeight + window.scrollY;
     const pageHeight = document.documentElement.scrollHeight;
-    const threshold = 500; // pixels from bottom
+    const threshold = 500;
     
     if (scrollPosition >= pageHeight - threshold) {
         isGenerating = true;
@@ -1629,7 +1613,151 @@ function checkScroll() {
     }
 }
 
-// Event listeners
+// ==================== NEW FEATURES ====================
+
+function addInfiniteScrollIndicator() {
+    const indicator = document.createElement('div');
+    indicator.id = 'infiniteScrollIndicator';
+    indicator.innerHTML = '✨ <strong>Infinite Scroll</strong> - Keep scrolling to generate more unique names automatically! ✨';
+    indicator.style.cssText = `
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 8px;
+        font-size: 14px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        animation: pulse 2s infinite;
+    `;
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    const generateBtn = document.getElementById('generateBtn');
+    generateBtn.parentNode.insertBefore(indicator, generateBtn.nextSibling);
+}
+
+function addBlogSection() {
+    const blogSection = document.createElement('div');
+    blogSection.id = 'blogSection';
+    blogSection.style.cssText = `
+        margin-top: 50px;
+        padding: 30px;
+        background: #f8f9fa;
+        border-radius: 15px;
+        border-left: 5px solid #667eea;
+    `;
+    
+    blogSection.innerHTML = `
+        <h2 style="color: #333; margin-bottom: 20px; text-align: center;">📝 Creative Name Generation Guide</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h3 style="color: #667eea;">What is a Nickname?</h3>
+            <p style="line-height: 1.6; margin-bottom: 20px;">
+                A nickname is a substitute for the proper name of a familiar person, place, or thing. 
+                In the digital age, nicknames have evolved into creative usernames and gamertags that 
+                represent your identity online. They can be derived from your real name, interests, 
+                personality traits, or completely imaginative creations.
+            </p>
+            
+            <h3 style="color: #667eea;">How to Use This Generator</h3>
+            <p style="line-height: 1.6; margin-bottom: 20px;">
+                <strong>Step 1:</strong> Enter your name or desired username in the input field<br>
+                <strong>Step 2:</strong> Click "Generate Names" or press Enter<br>
+                <strong>Step 3:</strong> Scroll down to see infinite variations automatically<br>
+                <strong>Step 4:</strong> Use the reaction buttons (👍/👎) to rate names<br>
+                <strong>Step 5:</strong> Copy your favorite names with one click<br>
+                <strong>Step 6:</strong> Share directly to social media platforms
+            </p>
+            
+            <h3 style="color: #667eea;">Where to Use Creative Names</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+                <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h4 style="color: #28a745; margin: 0 0 10px 0;">🎮 Gaming Platforms</h4>
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>Fortnite, PUBG, COD</li>
+                        <li>Steam, Epic Games</li>
+                        <li>Xbox Live, PSN</li>
+                        <li>Minecraft, Roblox</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h4 style="color: #007bff; margin: 0 0 10px 0;">📱 Social Media</h4>
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>Instagram, TikTok</li>
+                        <li>Twitter, Facebook</li>
+                        <li>Discord, Telegram</li>
+                        <li>YouTube, Twitch</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h4 style="color: #6f42c1; margin: 0 0 10px 0;">💼 Professional Use</h4>
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>Email addresses</li>
+                        <li>Brand names</li>
+                        <li>Creative projects</li>
+                        <li>Online portfolios</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 style="color: #667eea;">Key Features Explained</h3>
+            <div style="background: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h4 style="color: #e44d26;">🎨 Font Styles Available</h4>
+                <p>Our generator includes <strong>20+ unique font styles</strong>:</p>
+                <ul style="columns: 2; list-style: none; padding: 0;">
+                    <li>✓ Bold & Italic Styles</li>
+                    <li>✓ Script & Cursive Fonts</li>
+                    <li>✓ Small Superscript Text</li>
+                    <li>✓ Square Asian Characters</li>
+                    <li>✓ Greek Mixed Symbols</li>
+                    <li>✓ Bracket Decorations</li>
+                    <li>✓ Gothic & Medieval</li>
+                    <li>✓ Cyber & Tech Styles</li>
+                </ul>
+                
+                <h4 style="color: #e44d26; margin-top: 20px;">🔄 Infinite Scroll Technology</h4>
+                <p>Our <strong>Infinite Scroll</strong> feature automatically generates new name variations as you scroll down. 
+                No need to click repeatedly - just keep scrolling to discover endless creative possibilities!</p>
+                
+                <h4 style="color: #e44d26; margin-top: 20px;">❤️ Smart Rating System</h4>
+                <p>Like or dislike generated names to help our algorithm learn your preferences and suggest better variations.</p>
+            </div>
+            
+            <h3 style="color: #667eea;">Pro Tips for Best Results</h3>
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px;">
+                <ul style="margin: 0;">
+                    <li><strong>Mix Styles:</strong> Combine different font styles for unique looks</li>
+                    <li><strong>Use Symbols:</strong> Add emojis and symbols for extra flair</li>
+                    <li><strong>Keep it Readable:</strong> Ensure your name is easy to remember</li>
+                    <li><strong>Check Availability:</strong> Verify username availability on your platform</li>
+                    <li><strong>Be Original:</strong> Create a name that truly represents you</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: #e9ecef; border-radius: 10px;">
+                <h4 style="color: #333; margin: 0;">Ready to Create Your Perfect Username?</h4>
+                <p style="margin: 10px 0 0 0;">Start generating unique names now and stand out from the crowd!</p>
+            </div>
+        </div>
+    `;
+    
+    const container = document.querySelector('.container');
+    container.appendChild(blogSection);
+}
+
+// ==================== EVENT LISTENERS ====================
+
 generateBtn.addEventListener('click', () => {
     generateNames(true);
 });
@@ -1640,13 +1768,15 @@ nameInput.addEventListener('keypress', (e) => {
     }
 });
 
-// Scroll event listener for auto-generation
 window.addEventListener('scroll', checkScroll);
 
-// Generate initial names with a sample name
+// ==================== INITIALIZATION ====================
+
 window.addEventListener('load', () => {
     nameInput.value = "Alex";
     generateNames(true);
+    addInfiniteScrollIndicator();
+    addBlogSection();
 });
 
-console.log('Unicode Name Generator loaded successfully with professional styles!');
+console.log('Enhanced Unicode Name Generator loaded successfully with all features!');
