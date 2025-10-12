@@ -234,6 +234,7 @@ const styles = {
             U: "Ʉ", V: "V", W: "₩", X: "Ӿ", Y: "Ɏ", Z: "Ⱬ",
         }
     },
+    // ==================== NEW ADDED STYLES ====================
     smallSuperscript: {
         name: "Small Superscript",
         map: {
@@ -292,7 +293,7 @@ const styles = {
     bracketStyle2: {
         name: "Bracket Style 2",
         map: {
-            a: "『a』", b: "『b』", c: "『c』", d: "『d』", e: "『e』", f: "『f』", g: "『g』", h: "『h』", i: "『i』", j: "『j】",
+            a: "『a』", b: "『b』", c: "『c』", d: "『d』", e: "『e』", f: "『f』", g: "『g』", h: "『h』", i: "『i』", j: "『j』",
             k: "『k』", l: "『l』", m: "『m』", n: "『n』", o: "『o』", p: "『p』", q: "『q』", r: "『r』", s: "『s』", t: "『t』",
             u: "『u』", v: "『v』", w: "『w』", x: "『x』", y: "『y』", z: "『z』",
             A: "『A』", B: "『B』", C: "『C』", D: "『D』", E: "『E』", F: "『F』", G: "『G』", H: "『H』", I: "『I』", J: "『J】",
@@ -696,7 +697,7 @@ const specialDesigns = [
         name: "Shark Badboy Style",
         generate: function(userName) {
             const smallCapsName = applyStyle(userName, styles.smallCaps);
-            return "『" + smallCapsName + "』•ᴮᴬᴰʙᴏʸツ";
+            return "『" + smallCapsName + "』•ᴮᴬᴰʙᴏʏツ";
         }
     },
     {
@@ -836,106 +837,6 @@ let nameReactions = JSON.parse(localStorage.getItem('nameReactions')) || {};
 let usedStyles = new Set();
 let usedProfessionalStyles = new Set();
 let usedSpecialDesigns = new Set();
-
-// ==================== BLOG SECTION ====================
-function addBlogSection() {
-    const blogSection = document.createElement('div');
-    blogSection.id = 'blogSection';
-    blogSection.style.cssText = `
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 40px 20px;
-        margin: 20px 0;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        transition: all 0.5s ease-in-out;
-        opacity: 1;
-        max-height: 1000px;
-        overflow: hidden;
-    `;
-    
-    blogSection.innerHTML = `
-        <div style="max-width: 1000px; margin: 0 auto;">
-            <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">📝 Creative Name Generation Guide</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">🎯 What is a Nickname?</h3>
-                    <p style="line-height: 1.6; font-size: 16px;">
-                        A nickname is a substitute for the proper name of a familiar person, place, or thing. 
-                        In the digital age, nicknames have evolved into creative usernames and gamertags that 
-                        represent your identity online across various platforms.
-                    </p>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">🚀 How to Use This Generator</h3>
-                    <ol style="line-height: 1.8; font-size: 15px; padding-left: 20px;">
-                        <li><strong>Enter</strong> your name in the input field</li>
-                        <li><strong>Click</strong> "Generate Names" button</li>
-                        <li><strong>Scroll</strong> to see infinite variations</li>
-                        <li><strong>Rate</strong> names with 👍/👎 buttons</li>
-                        <li><strong>Copy</strong> your favorite names instantly</li>
-                        <li><strong>Share</strong> directly to social media</li>
-                    </ol>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">🎮 Where to Use Creative Names</h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <div>
-                            <h4 style="color: #4cd964; margin: 10px 0;">Gaming</h4>
-                            <ul style="font-size: 14px;">
-                                <li>Fortnite, PUBG</li>
-                                <li>Minecraft, Roblox</li>
-                                <li>Steam, Epic Games</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 style="color: #007aff; margin: 10px 0;">Social Media</h4>
-                            <ul style="font-size: 14px;">
-                                <li>Instagram, TikTok</li>
-                                <li>Discord, Twitter</li>
-                                <li>YouTube, Twitch</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px); grid-column: 1 / -1;">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">✨ Pro Tips for Best Results</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                        <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">🎨</div>
-                            <p>Mix different font styles for unique looks</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">⚡</div>
-                            <p>Add symbols and emojis for extra flair</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">📱</div>
-                            <p>Ensure your name is memorable and readable</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">🌟</div>
-                            <p>Create a name that truly represents you</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.3);">
-                <p style="font-size: 1.2em; font-style: italic; margin: 0;">
-                    "Your username is your digital identity - make it unforgettable!"
-                </p>
-            </div>
-        </div>
-    `;
-    
-    const container = document.querySelector('.container');
-    container.appendChild(blogSection);
-}
 
 // ==================== CORE FUNCTIONS ====================
 
@@ -1516,43 +1417,10 @@ function showShareOptions(name) {
 function createResultCard(variation) {
     const card = document.createElement('div');
     card.className = 'result-card';
-    card.style.cssText = `
-        background: white;
-        border-radius: 12px;
-        padding: 20px;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        border: 1px solid #e0e0e0;
-        transition: all 0.3s ease;
-        position: relative;
-        z-index: 20;
-    `;
     
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-5px)';
-        card.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
-        card.style.boxShadow = '0 4px 15px rgba(0,0,0,0.08)';
-    });
-
     const nameElement = document.createElement('div');
     nameElement.className = 'result-name';
     nameElement.textContent = variation;
-    nameElement.style.cssText = `
-        font-size: 1.4em;
-        font-weight: bold;
-        margin-bottom: 15px;
-        text-align: center;
-        color: #333;
-        word-break: break-word;
-        padding: 10px;
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        border-radius: 8px;
-        border: 1px solid #dee2e6;
-    `;
     
     const reactions = getReactions(variation);
     
@@ -1562,15 +1430,14 @@ function createResultCard(variation) {
         display: flex;
         align-items: center;
         gap: 10px;
-        margin: 15px 0;
-        justify-content: center;
+        margin: 10px 0;
     `;
     
     const likeBtn = document.createElement('button');
     likeBtn.className = `reaction-btn like-btn ${reactions.userLiked ? 'active' : ''}`;
     likeBtn.innerHTML = '👍';
     likeBtn.style.cssText = `
-        padding: 8px 15px;
+        padding: 5px 10px;
         border: 1px solid #ddd;
         background: ${reactions.userLiked ? '#e3f2fd' : 'white'};
         border-radius: 20px;
@@ -1578,23 +1445,17 @@ function createResultCard(variation) {
         display: flex;
         align-items: center;
         gap: 5px;
-        transition: all 0.3s ease;
-        font-size: 14px;
     `;
     
     const likeCount = document.createElement('span');
     likeCount.className = 'like-count';
     likeCount.textContent = reactions.likes;
-    likeCount.style.cssText = `
-        font-weight: bold;
-        color: #333;
-    `;
     
     const dislikeBtn = document.createElement('button');
     dislikeBtn.className = `reaction-btn dislike-btn ${reactions.userDisliked ? 'active' : ''}`;
     dislikeBtn.innerHTML = '👎';
     dislikeBtn.style.cssText = `
-        padding: 8px 15px;
+        padding: 5px 10px;
         border: 1px solid #ddd;
         background: ${reactions.userDisliked ? '#ffebee' : 'white'};
         border-radius: 20px;
@@ -1602,17 +1463,11 @@ function createResultCard(variation) {
         display: flex;
         align-items: center;
         gap: 5px;
-        transition: all 0.3s ease;
-        font-size: 14px;
     `;
     
     const dislikeCount = document.createElement('span');
     dislikeCount.className = 'dislike-count';
     dislikeCount.textContent = reactions.dislikes;
-    dislikeCount.style.cssText = `
-        font-weight: bold;
-        color: #333;
-    `;
     
     likeBtn.addEventListener('click', () => {
         handleLike(variation, likeBtn, dislikeBtn, likeCount, dislikeCount);
@@ -1632,34 +1487,21 @@ function createResultCard(variation) {
     actionContainer.style.cssText = `
         display: flex;
         gap: 10px;
-        margin-top: 15px;
+        margin-top: 10px;
     `;
     
     const copyBtn = document.createElement('button');
     copyBtn.className = 'copy-btn';
     copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
     copyBtn.style.cssText = `
-        padding: 10px 20px;
+        padding: 8px 15px;
         border: none;
-        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        background: #007bff;
         color: white;
-        border-radius: 8px;
+        border-radius: 5px;
         cursor: pointer;
         flex: 1;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        font-size: 14px;
     `;
-    
-    copyBtn.addEventListener('mouseenter', () => {
-        copyBtn.style.transform = 'translateY(-2px)';
-        copyBtn.style.boxShadow = '0 4px 12px rgba(0,123,255,0.3)';
-    });
-    
-    copyBtn.addEventListener('mouseleave', () => {
-        copyBtn.style.transform = 'translateY(0)';
-        copyBtn.style.boxShadow = 'none';
-    });
     
     copyBtn.addEventListener('click', () => {
         copyToClipboard(variation);
@@ -1669,27 +1511,14 @@ function createResultCard(variation) {
     shareBtn.className = 'share-btn';
     shareBtn.innerHTML = '<i class="fas fa-share-alt"></i> Share';
     shareBtn.style.cssText = `
-        padding: 10px 20px;
+        padding: 8px 15px;
         border: none;
-        background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+        background: #28a745;
         color: white;
-        border-radius: 8px;
+        border-radius: 5px;
         cursor: pointer;
         flex: 1;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        font-size: 14px;
     `;
-    
-    shareBtn.addEventListener('mouseenter', () => {
-        shareBtn.style.transform = 'translateY(-2px)';
-        shareBtn.style.boxShadow = '0 4px 12px rgba(40,167,69,0.3)';
-    });
-    
-    shareBtn.addEventListener('mouseleave', () => {
-        shareBtn.style.transform = 'translateY(0)';
-        shareBtn.style.boxShadow = 'none';
-    });
     
     shareBtn.addEventListener('click', () => {
         showShareOptions(variation);
@@ -1711,25 +1540,6 @@ function generateNames(initial = false) {
     const userName = nameInput.value.trim() || "User";
     
     if (initial) {
-        // Hide blog section with animation
-        const blogSection = document.getElementById('blogSection');
-        if (blogSection) {
-            blogSection.style.cssText = `
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                padding: 40px 20px;
-                margin: 20px 0;
-                border-radius: 15px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-                transition: all 0.5s ease-in-out;
-                opacity: 0;
-                max-height: 0;
-                overflow: hidden;
-                padding: 0 20px;
-                margin: 0;
-            `;
-        }
-        
         resultsContainer.innerHTML = '';
         generatedCount = 0;
         currentName = userName;
@@ -1737,17 +1547,8 @@ function generateNames(initial = false) {
         usedStyles.clear();
         usedProfessionalStyles.clear();
         usedSpecialDesigns.clear();
-        
-        // Show loading indicator
-        loadingIndicator.style.display = 'block';
-        
-        // Scroll to results after a short delay
-        setTimeout(() => {
-            resultsContainer.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
     }
     
-    // Generate names
     for (let i = 0; i < 6; i++) {
         const variation = generateVariation(userName);
         
@@ -1761,7 +1562,6 @@ function generateNames(initial = false) {
         }
     }
     
-    // Hide loading indicator when enough names are generated
     if (generatedCount >= 30) {
         loadingIndicator.style.display = 'none';
     } else {
@@ -1845,102 +1645,56 @@ function addInfiniteScrollIndicator() {
     generateBtn.parentNode.insertBefore(indicator, generateBtn.nextSibling);
 }
 
-// ==================== ENHANCED STYLING ====================
 
-function enhanceMainContainer() {
+            
+            <h3 style="color: #667eea;">How to Use This Generator</h3>
+            <p style="line-height: 1.6; margin-bottom: 20px;">
+                <strong>Step 1:</strong> Enter your name or desired username in the input field<br>
+                <strong>Step 2:</strong> Click "Generate Names" or press Enter<br>
+                <strong>Step 3:</strong> Scroll down to see infinite variations automatically<br>
+                <strong>Step 4:</strong> Use the reaction buttons (👍/👎) to rate names<br>
+                <strong>Step 5:</strong> Copy your favorite names with one click<br>
+                <strong>Step 6:</strong> Share directly to social media platforms
+            </p>
+            
+            <h3 style="color: #667eea;">Where to Use Creative Names</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+                <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h4 style="color: #28a745; margin: 0 0 10px 0;">🎮 Gaming Platforms</h4>
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>Fortnite, PUBG, COD</li>
+                        <li>Steam, Epic Games</li>
+                        <li>Xbox Live, PSN</li>
+                        <li>Minecraft, Roblox</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h4 style="color: #007bff; margin: 0 0 10px 0;">📱 Social Media</h4>
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>Instagram, TikTok</li>
+                        <li>Twitter, Facebook</li>
+                        <li>Discord, Telegram</li>
+                        <li>YouTube, Twitch</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h4 style="color: #6f42c1; margin: 0 0 10px 0;">💼 Professional Use</h4>
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>Email addresses</li>
+                        <li>Brand names</li>
+                        <li>Creative projects</li>
+                        <li>Online portfolios</li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+    `;
+    
     const container = document.querySelector('.container');
-    container.style.cssText = `
-        position: relative;
-        z-index: 10;
-        background: white;
-        border-radius: 20px;
-        padding: 30px;
-        margin: 20px auto;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-        border: 1px solid rgba(255,255,255,0.3);
-        max-width: 900px;
-    `;
-}
-
-function enhanceResultsContainer() {
-    const resultsContainer = document.getElementById('resultsContainer');
-    resultsContainer.style.cssText = `
-        position: relative;
-        z-index: 10;
-        background: white;
-        border-radius: 15px;
-        padding: 20px;
-        margin-top: 20px;
-        border: 1px solid #e0e0e0;
-    `;
-}
-
-function enhanceInputStyling() {
-    const nameInput = document.getElementById('nameInput');
-    const generateBtn = document.getElementById('generateBtn');
-    
-    nameInput.style.cssText = `
-        padding: 15px 20px;
-        border: 2px solid #e0e0e0;
-        border-radius: 12px;
-        font-size: 16px;
-        background: white;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    `;
-    
-    nameInput.addEventListener('focus', () => {
-        nameInput.style.borderColor = '#667eea';
-        nameInput.style.boxShadow = '0 4px 20px rgba(102, 126, 234, 0.2)';
-    });
-    
-    nameInput.addEventListener('blur', () => {
-        nameInput.style.borderColor = '#e0e0e0';
-        nameInput.style.boxShadow = '0 4px 15px rgba(0,0,0,0.05)';
-    });
-    
-    generateBtn.style.cssText = `
-        padding: 15px 30px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        border-radius: 12px;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-    `;
-    
-    generateBtn.addEventListener('mouseenter', () => {
-        generateBtn.style.transform = 'translateY(-3px)';
-        generateBtn.style.boxShadow = '0 12px 35px rgba(102, 126, 234, 0.4)';
-    });
-    
-    generateBtn.addEventListener('mouseleave', () => {
-        generateBtn.style.transform = 'translateY(0)';
-        generateBtn.style.boxShadow = '0 8px 25px rgba(102, 126, 234, 0.3)';
-    });
-}
-
-function enhanceNotification() {
-    const notification = document.getElementById('notification');
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-        color: white;
-        padding: 15px 25px;
-        border-radius: 10px;
-        box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
-        z-index: 1000;
-        transform: translateX(400px);
-        transition: transform 0.3s ease;
-        font-weight: 600;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.2);
-    `;
+    container.appendChild(blogSection);
 }
 
 // ==================== EVENT LISTENERS ====================
@@ -1961,29 +1715,9 @@ window.addEventListener('scroll', checkScroll);
 
 window.addEventListener('load', () => {
     nameInput.value = "Alex";
-    addBlogSection();
+    generateNames(true);
     addInfiniteScrollIndicator();
-    enhanceMainContainer();
-    enhanceResultsContainer();
-    enhanceInputStyling();
-    enhanceNotification();
-    
-    // Show blog section initially
-    const blogSection = document.getElementById('blogSection');
-    if (blogSection) {
-        blogSection.style.cssText = `
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 20px;
-            margin: 20px 0;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: all 0.5s ease-in-out;
-            opacity: 1;
-            max-height: 1000px;
-            overflow: hidden;
-        `;
-    }
+    addBlogSection();
 });
 
-console.log('Enhanced Unicode Name Generator loaded successfully with blog hiding feature!');
+console.log('Enhanced Unicode Name Generator loaded successfully with all features!');
