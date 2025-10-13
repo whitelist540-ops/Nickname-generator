@@ -18,10 +18,11 @@ body {
     background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
     min-height: 100vh;
     color: var(--light);
+    /* No padding-top - content starts from top */
 }
 
-/* Fixed floating section */
-.floating-input {
+/* Floating section - fixed position and takes its own space */
+.floating-section {
     position: fixed;
     top: 0;
     left: 0;
@@ -33,6 +34,10 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 1000;
     min-height: auto;
+    height: 60px; /* Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .floating-container {
@@ -121,12 +126,13 @@ button {
     100% { transform: scale(1); }
 }
 
-/* Main content starts after floating section */
+/* Main content starts right after floating section */
 .main-content {
-    margin-top: 70px; /* Space for floating section */
+    margin-top: 60px; /* Same as floating section height */
     width: 100%;
 }
 
+/* Container for the rest of the content */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -469,12 +475,13 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .floating-input {
+    .floating-section {
+        height: 55px; /* Slightly smaller on mobile */
         padding: 6px 10px;
     }
     
     .main-content {
-        margin-top: 65px;
+        margin-top: 55px; /* Adjusted for mobile */
     }
     
     h1 {
@@ -518,17 +525,18 @@ footer {
     }
     
     .notification {
-        top: 65px;
+        top: 65px; /* Adjusted for mobile */
     }
 }
 
 @media (max-width: 480px) {
-    .floating-input {
+    .floating-section {
+        height: 50px; /* Even smaller on very small screens */
         padding: 5px 8px;
     }
     
     .main-content {
-        margin-top: 60px;
+        margin-top: 50px; /* Further reduced for small mobile */
     }
     
     #infiniteScrollIndicator {
@@ -555,7 +563,7 @@ footer {
     }
     
     .notification {
-        top: 60px;
+        top: 60px; /* Adjusted for very small screens */
         right: 15px;
         padding: 10px 20px;
     }
