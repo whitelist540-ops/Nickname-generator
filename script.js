@@ -1646,7 +1646,7 @@ window.addEventListener('scroll', checkScroll);
 // ==================== INITIALIZATION ====================
 
 window.addEventListener('load', () => {
-    nameInput.value = "Alex";
+       
     addBlogSection();
     addInfiniteScrollIndicator();
     
