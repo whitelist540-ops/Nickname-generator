@@ -152,7 +152,80 @@ h1 {
     100% { transform: scale(1); }
 }
 
-/* Rest of the CSS remains the same as your original */
+/* Blog section with scroll fix */
+#blogSection {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: all 0.4s ease-in-out;
+    opacity: 1;
+    max-height: 400px; /* Fixed height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scroll */
+}
+
+#blogSection.hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    margin: 0;
+}
+
+/* Custom scrollbar for blog section */
+#blogSection::-webkit-scrollbar {
+    width: 6px;
+}
+
+#blogSection::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+#blogSection::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+#blogSection::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.blog-section {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.blog-section h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.blog-section h3 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #ffd700;
+}
+
+.blog-section p, .blog-section li {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.blog-section > div > div {
+    padding: 12px;
+    margin-bottom: 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+/* Rest of the CSS remains the same */
 .results-section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -316,27 +389,6 @@ footer {
     font-size: 1.2rem;
 }
 
-#blogSection {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 40px 20px;
-    margin: 20px 0;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    transition: all 0.5s ease-in-out;
-    opacity: 1;
-    max-height: 1000px;
-    overflow: hidden;
-}
-
-#blogSection.hidden {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 20px;
-    margin: 0;
-}
-
 .share-modal {
     position: fixed;
     top: 0;
@@ -390,31 +442,6 @@ footer {
     cursor: pointer;
 }
 
-/* Blog section compact styling */
-.blog-section {
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-.blog-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-.blog-section h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.blog-section p, .blog-section li {
-    font-size: 13px;
-}
-
-.blog-section > div > div {
-    padding: 15px;
-    margin-bottom: 15px;
-}
-
 @media (max-width: 768px) {
     body {
         padding-top: 50px; /* Adjusted for mobile */
@@ -451,8 +478,13 @@ footer {
         max-width: 250px;
     }
     
+    #blogSection {
+        max-height: 350px; /* Slightly smaller on mobile */
+        padding: 20px 15px;
+    }
+    
     .blog-section h2 {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
     
     .blog-section h3 {
@@ -473,6 +505,11 @@ footer {
         font-size: 8px;
         padding: 2px 4px;
         max-width: 200px;
+    }
+    
+    #blogSection {
+        max-height: 300px; /* Even smaller on very small screens */
+        padding: 15px 12px;
     }
     
     .blog-section {
