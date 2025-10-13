@@ -18,20 +18,21 @@ body {
     background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
     min-height: 100vh;
     color: var(--light);
-    /* No padding-top - content starts from top */
+    /* Add padding at bottom for floating section */
+    padding-bottom: 60px;
 }
 
-/* Floating section - fixed position and takes its own space */
+/* Floating section - fixed at bottom */
 .floating-section {
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(8px);
     padding: 8px 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 1000;
     min-height: auto;
     height: 60px; /* Fixed height */
@@ -103,33 +104,32 @@ button {
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
 }
 
-/* Infinite Scroll Indicator */
+/* Infinite Scroll Indicator - Placed in main content */
 #infiniteScrollIndicator {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
-    padding: 4px 8px;
-    margin: 2px 0;
-    border-radius: 4px;
-    font-size: 10px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    padding: 8px 12px;
+    margin: 15px auto;
+    border-radius: 8px;
+    font-size: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     animation: pulse 2s infinite;
-    max-width: 280px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.2;
+    max-width: 300px;
+    line-height: 1.3;
+    font-weight: 600;
 }
 
 @keyframes pulse {
     0% { transform: scale(1); }
-    50% { transform: scale(1.005); }
+    50% { transform: scale(1.02); }
     100% { transform: scale(1); }
 }
 
-/* Main content starts right after floating section */
+/* Main content - no top margin needed since floating section is at bottom */
 .main-content {
-    margin-top: 60px; /* Same as floating section height */
     width: 100%;
+    padding: 20px 0;
 }
 
 /* Container for the rest of the content */
@@ -385,7 +385,7 @@ h1 {
 
 .notification {
     position: fixed;
-    top: 70px; /* Below floating section */
+    bottom: 80px; /* Above floating section */
     right: 30px;
     background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
     color: white;
@@ -480,8 +480,8 @@ footer {
         padding: 6px 10px;
     }
     
-    .main-content {
-        margin-top: 55px; /* Adjusted for mobile */
+    body {
+        padding-bottom: 55px; /* Adjusted for mobile */
     }
     
     h1 {
@@ -506,8 +506,8 @@ footer {
     }
     
     #infiniteScrollIndicator {
-        font-size: 9px;
-        padding: 3px 6px;
+        font-size: 11px;
+        padding: 6px 10px;
         max-width: 250px;
     }
     
@@ -525,7 +525,8 @@ footer {
     }
     
     .notification {
-        top: 65px; /* Adjusted for mobile */
+        bottom: 70px; /* Adjusted for mobile */
+        right: 15px;
     }
 }
 
@@ -535,13 +536,13 @@ footer {
         padding: 5px 8px;
     }
     
-    .main-content {
-        margin-top: 50px; /* Further reduced for small mobile */
+    body {
+        padding-bottom: 50px; /* Further reduced for small mobile */
     }
     
     #infiniteScrollIndicator {
-        font-size: 8px;
-        padding: 2px 4px;
+        font-size: 10px;
+        padding: 5px 8px;
         max-width: 200px;
     }
     
@@ -563,8 +564,8 @@ footer {
     }
     
     .notification {
-        top: 60px; /* Adjusted for very small screens */
-        right: 15px;
+        bottom: 65px; /* Adjusted for very small screens */
+        right: 10px;
         padding: 10px 20px;
     }
 }
