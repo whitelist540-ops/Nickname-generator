@@ -1623,7 +1623,7 @@ function checkScroll() {
 function addInfiniteScrollIndicator() {
     const indicator = document.createElement('div');
     indicator.id = 'infiniteScrollIndicator';
-    indicator.innerHTML = '✨ <strong>Infinite Scroll</strong>✨'
+    indicator.innerHTML = '✨ <strong>Infinite Scroll</strong> - Keep scrolling to generate more unique names automatically! ✨';
     
     const generateBtn = document.getElementById('generateBtn');
     generateBtn.parentNode.insertBefore(indicator, generateBtn.nextSibling);
