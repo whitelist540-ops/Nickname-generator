@@ -819,6 +819,13 @@ const socialMedia = {
     }
 };
 
+
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('active');
+}
+
+
+
 // ==================== DOM ELEMENTS ====================
 const nameInput = document.getElementById('nameInput');
 const generateBtn = document.getElementById('generateBtn');
