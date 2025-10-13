@@ -18,11 +18,10 @@ body {
     background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
     min-height: 100vh;
     color: var(--light);
-    /* No padding-top - content starts from top */
 }
 
-/* Floating section - fixed position and takes its own space */
-.floating-section {
+/* Fixed floating section */
+.floating-input {
     position: fixed;
     top: 0;
     left: 0;
@@ -34,10 +33,6 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 1000;
     min-height: auto;
-    height: 60px; /* Fixed height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .floating-container {
@@ -126,13 +121,12 @@ button {
     100% { transform: scale(1); }
 }
 
-/* Main content starts right after floating section */
+/* Main content starts after floating section */
 .main-content {
-    margin-top: 60px; /* Same as floating section height */
+    margin-top: 70px; /* Space for floating section */
     width: 100%;
 }
 
-/* Container for the rest of the content */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -475,13 +469,12 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .floating-section {
-        height: 55px; /* Slightly smaller on mobile */
+    .floating-input {
         padding: 6px 10px;
     }
     
     .main-content {
-        margin-top: 55px; /* Adjusted for mobile */
+        margin-top: 65px;
     }
     
     h1 {
@@ -525,18 +518,17 @@ footer {
     }
     
     .notification {
-        top: 65px; /* Adjusted for mobile */
+        top: 65px;
     }
 }
 
 @media (max-width: 480px) {
-    .floating-section {
-        height: 50px; /* Even smaller on very small screens */
+    .floating-input {
         padding: 5px 8px;
     }
     
     .main-content {
-        margin-top: 50px; /* Further reduced for small mobile */
+        margin-top: 60px;
     }
     
     #infiniteScrollIndicator {
@@ -563,77 +555,8 @@ footer {
     }
     
     .notification {
-        top: 60px; /* Adjusted for very small screens */
+        top: 60px;
         right: 15px;
         padding: 10px 20px;
     }
-}
-
-
-
-/* ---------- Navigation Bar ---------- */
-.navbar {
-  background: #111;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #00bcd4;
-}
-
-/* ---------- Responsive Menu ---------- */
-.menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.8rem;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #111;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    text-align: right;
-    padding: 15px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-btn {
-    display: block;
-  }
 }
