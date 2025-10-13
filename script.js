@@ -1918,77 +1918,48 @@ function showAbout() {
 
 
 // EmailJS integration for contact form
-function handleContactFormSubmit(event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const submitBtn = form.querySelector('.submit-btn');
-    const formMessage = document.getElementById('formMessage');
-    
-    // Get form data
-    const formData = new FormData(form);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Basic validation
-    if (!name || !email || !subject || !message) {
-        formMessage.textContent = 'Please fill in all fields.';
-        formMessage.className = 'form-message error';
-        return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        formMessage.textContent = 'Please enter a valid email address.';
-        formMessage.className = 'form-message error';
-        return;
-    }
-    
-    // Disable button and show loading
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    
-    // EmailJS configuration
-    const templateParams = {
-        from_name: name,
-        from_email: email,
-        subject: subject,
-        message: message,
-        to_email: 'support@nicknamegen.com'
-    };
-    
-    // Send email using EmailJS
-    emailjs.send('service_qpfld6e', 'template_9izy39n', templateParams, 'RfqTBprRQQhducrd9')
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            formMessage.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
-            formMessage.className = 'form-message success';
-            form.reset();
-        })
-        .catch(function(error) {
-            console.log('FAILED...', error);
-            formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or email us directly.';
-            formMessage.className = 'form-message error';
-        })
-        .finally(function() {
-            // Re-enable button
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-        });
+function showContact() {
+    modalTitle.textContent = 'Contact Us';
+    modalBody.innerHTML = `
+        <div class="contact-form">
+            <p>Have questions or suggestions? We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
+            
+            <form id="contactForm" onsubmit="handleContactFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+            
+            <div id="formMessage" class="form-message"></div>
+            
+            <div class="contact-info">
+                <h4>Other Ways to Reach Us</h4>
+                <p><i class="fas fa-envelope"></i> support@nicknamegen.com</p>
+                <p><i class="fas fa-clock"></i> Response Time: 24-48 hours</p>
+                <p><i class="fas fa-heart"></i> We appreciate your feedback!</p>
+            </div>
+        </div>
+    `;
+    modal.classList.add('active');
+    sidebar.classList.remove('active');
 }
-
-// Initialize EmailJS
-(function() {
-    // Initialize EmailJS with your Public Key
-    emailjs.init("RfqTBprRQQhducrd9");
-    
-    // Check if EmailJS is loaded properly
-    if (typeof emailjs !== 'undefined') {
-        console.log('EmailJS initialized successfully');
-    } else {
-        console.error('EmailJS failed to load');
-    }
-})();
