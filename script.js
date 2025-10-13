@@ -1657,4 +1657,17 @@ window.addEventListener('load', () => {
     }
 });
 
+// Scroll to fixed header functionality
+window.addEventListener('scroll', function() {
+    const searchSection = document.querySelector('.search-section');
+    const scrollPosition = window.scrollY;
+    
+    if (scrollPosition > 100) { // Start floating after 100px scroll
+        searchSection.classList.add('fixed');
+    } else {
+        searchSection.classList.remove('fixed');
+    }
+});
+
+
 console.log('Enhanced Unicode Name Generator loaded successfully with blog hiding feature!');
