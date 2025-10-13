@@ -1926,6 +1926,18 @@ emailjs.send("service_qpfld6e", "template_9izy39n", {
 
 emailjs.init("RfqTBprRQQhducrd9");
 
+const form = document.getElementById("contactForm");
+if (form) {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    ...
+  });
+}
+formStatus.textContent = "Sending...";
+
+{status: 200, text: "OK"}
+
+
 
 function showContact() {
     modalTitle.textContent = 'Contact Us';
