@@ -30,18 +30,52 @@
 <body>
 
 <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <h2 class="logo">MySite</h2>
-    <ul class="nav-list">
-      <li><a href="#"><i class="icon">🏠</i> Home</a></li>
-      <li><a href="#"><i class="icon">📄</i> About</a></li>
-      <li><a href="#"><i class="icon">💼</i> Services</a></li>
-      <li><a href="#"><i class="icon">📞</i> Contact</a></li>
-    </ul>
-  </div>
+<div class="sidebar">
+    <div class="sidebar-header">
+        <h3>Menu</h3>
+        <button class="sidebar-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="sidebar-content">
+        <a href="#" class="sidebar-link" onclick="showContact()">
+            <i class="fas fa-envelope"></i>
+            Contact Us
+        </a>
+        <a href="#" class="sidebar-link" onclick="showPrivacy()">
+            <i class="fas fa-shield-alt"></i>
+            Privacy Policy
+        </a>
+        <a href="#" class="sidebar-link" onclick="showTerms()">
+            <i class="fas fa-file-contract"></i>
+            Terms & Conditions
+        </a>
+        <a href="#" class="sidebar-link" onclick="showAbout()">
+            <i class="fas fa-info-circle"></i>
+            About Us
+        </a>
+    </div>
+</div>
 
-    <!-- Toggle Button -->
-<div class="toggle-btn" id="toggleBtn">☰</div>
+<!-- Sidebar Toggle Button -->
+<button class="sidebar-toggle">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Modal for sidebar content -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle">Modal Title</h3>
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body" id="modalBody">
+            <!-- Content will be inserted here -->
+        </div>
+    </div>
+</div>
     
     
     <div class="search-section">
