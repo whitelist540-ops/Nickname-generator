@@ -8,44 +8,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <title>Stylish Name Generator | Cool Fancy Nicknames Online</title>
-  <meta name="description" content="Generate stylish names and fancy nicknames for your profile, games, or social media. 100% free stylish name generator!">
-  <meta name="keywords" content="stylish name generator, nickname maker, nickfinder, fancy text, cool names">
-  <meta name="author" content="Your Name or Website Name">
+    <title>Stylish Name Generator | Cool Fancy Nicknames Online</title>
+    <meta name="description" content="Generate stylish names and fancy nicknames for your profile, games, or social media. 100% free stylish name generator!">
+    <meta name="keywords" content="stylish name generator, nickname maker, nickfinder, fancy text, cool names">
+    <meta name="author" content="Your Name or Website Name">
 
-  <!-- Mobile-friendly -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Stylish Name Generator">
+    <meta property="og:description" content="Generate stylish nicknames and fancy text for free!">
+    <meta property="og:image" content="https://nicknamegen.com/preview.png">
+    <meta property="og:url" content="https://nicknamegen.com/">
+    <meta property="og:type" content="website">
 
-  <!-- Open Graph (for Facebook, WhatsApp preview) -->
-  <meta property="og:title" content="Stylish Name Generator">
-  <meta property="og:description" content="Generate stylish nicknames and fancy text for free!">
-  <meta property="og:image" content="https://nicknamegen.com/preview.png">
-  <meta property="og:url" content="https://nicknamegen.com/">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Stylish Name Generator">
-  <meta name="twitter:description" content="Create stylish names and fancy nicknames easily!">
-  <meta name="twitter:image" content="https://nicknamegen.com/preview.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stylish Name Generator">
+    <meta name="twitter:description" content="Create stylish names and fancy nicknames easily!">
+    <meta name="twitter:image" content="https://nicknamegen.com/preview.png">
 
 </head>
 <body>
 
-    <!-- Change this div from floating-input to search-section -->
     <div class="search-section">
-        <div class="container">
+        <div class="search-container">
             <div class="input-group">
-                
+                <input type="text" id="nameInput" placeholder="Enter your name..." value="">
                 <button id="generateBtn">
                     <i class="fas fa-magic"></i>
                     Generate Names
                 </button>
             </div>
+            <!-- Infinite Scroll Indicator এখানে move করুন -->
+            <div id="infiniteScrollIndicator">
+                ✨ Infinite Scroll - Keep scrolling to generate more unique names automatically! ✨
+            </div>
         </div>
     </div>
 
-    <!-- Add main-content wrapper -->
     <div class="main-content">
         <div class="container">
             <header>
@@ -53,16 +52,10 @@
                 <p class="subtitle">Create unique and stylish nicknames using fancy fonts, symbols, and emojis!</p>
             </header>
             
-            <!-- Add Infinite Scroll Indicator -->
-            <div id="infiniteScrollIndicator">
-                ✨ Infinite Scroll - Keep scrolling to generate more unique names automatically! ✨
-            </div>
-            
             <section class="results-section" id="resultsContainer">
                 <!-- Results will be generated here -->
             </section>
 
-            
             <div class="loading" id="loadingIndicator">Generating more names...</div>
             
             <footer>
@@ -75,14 +68,13 @@
 
     <script src="script.js"></script>
 
-    <!-- Add this JavaScript code here -->
     <script>
     // Scroll to fixed header functionality
     window.addEventListener('scroll', function() {
         const searchSection = document.querySelector('.search-section');
         const scrollPosition = window.scrollY;
         
-        if (scrollPosition > 100) { // Start floating after 100px scroll
+        if (scrollPosition > 100) {
             searchSection.classList.add('fixed');
         } else {
             searchSection.classList.remove('fixed');
