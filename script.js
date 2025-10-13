@@ -1698,21 +1698,132 @@ modal.addEventListener('click', function(event) {
     }
 });
 
+// Contact form handling
+function handleContactFormSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const submitBtn = form.querySelector('.submit-btn');
+    const formMessage = document.getElementById('formMessage');
+    
+    // Get form data
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+    
+    // Basic validation
+    if (!name || !email || !subject || !message) {
+        formMessage.textContent = 'Please fill in all fields.';
+        formMessage.className = 'form-message error';
+        return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        formMessage.textContent = 'Please enter a valid email address.';
+        formMessage.className = 'form-message error';
+        return;
+    }
+    
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    // Simulate email sending (in a real app, you'd send to a server)
+    setTimeout(() => {
+        // Here you would typically send the data to your server
+        // For demo purposes, we'll just show a success message
+        formMessage.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
+        formMessage.className = 'form-message success';
+        
+        // Reset form
+        form.reset();
+        
+        // Re-enable button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+        
+        // In a real application, you would send the data to your server like this:
+        /*
+        fetch('/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                formMessage.className = 'form-message success';
+                form.reset();
+            } else {
+                throw new Error('Failed to send message');
+            }
+        })
+        .catch(error => {
+            formMessage.textContent = 'Sorry, there was an error sending your message. Please try again.';
+            formMessage.className = 'form-message error';
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        });
+        */
+    }, 2000);
+}
+
 // Sidebar content functions
 function showContact() {
     modalTitle.textContent = 'Contact Us';
     modalBody.innerHTML = `
-        <h4>Get In Touch</h4>
-        <p>We'd love to hear from you! Here's how you can reach us:</p>
-        
-        <h4>Email</h4>
-        <p>support@nicknamegen.com</p>
-        
-        <h4>Response Time</h4>
-        <p>We typically respond within 24-48 hours.</p>
-        
-        <h4>Feedback</h4>
-        <p>Your feedback helps us improve our name generator. Let us know what features you'd like to see!</p>
+        <div class="contact-form">
+            <p>Have questions or suggestions? We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
+            
+            <form id="contactForm" onsubmit="handleContactFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+            
+            <div id="formMessage" class="form-message"></div>
+            
+            <div class="contact-info">
+                <h4>Other Ways to Reach Us</h4>
+                <p><i class="fas fa-envelope"></i> support@nicknamegen.com</p>
+                <p><i class="fas fa-clock"></i> Response Time: 24-48 hours</p>
+                <p><i class="fas fa-heart"></i> We appreciate your feedback!</p>
+            </div>
+        </div>
     `;
     modal.classList.add('active');
     sidebar.classList.remove('active');
@@ -1739,6 +1850,9 @@ function showPrivacy() {
         
         <h4>Third Parties</h4>
         <p>We don't sell or share your personal information with third parties.</p>
+        
+        <h4>Cookies</h4>
+        <p>We use only essential cookies for website functionality.</p>
     `;
     modal.classList.add('active');
     sidebar.classList.remove('active');
@@ -1765,6 +1879,9 @@ function showTerms() {
         
         <h4>Service Availability</h4>
         <p>We strive for 99.9% uptime but can't guarantee uninterrupted service.</p>
+        
+        <h4>Changes to Terms</h4>
+        <p>We may update these terms periodically. Continued use means acceptance of changes.</p>
     `;
     modal.classList.add('active');
     sidebar.classList.remove('active');
@@ -1790,6 +1907,9 @@ function showAbout() {
         
         <h4>Always Improving</h4>
         <p>We regularly update our generator with new styles and features based on user feedback.</p>
+        
+        <h4>Our Commitment</h4>
+        <p>We're committed to providing a free, accessible tool for everyone to create amazing online identities.</p>
     `;
     modal.classList.add('active');
     sidebar.classList.remove('active');
