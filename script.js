@@ -413,219 +413,6 @@ const prefixWords = {
     eternal: "ᴱᵀᴱᴿᴺᴬᴸ"
 };
 
-// ==================== PROFESSIONAL NAME STYLES ====================
-const professionalNameStyles = [
-    {
-        name: "Quote Bubble Style",
-        template: {
-            prefix: "°\"",
-            suffix: "\"°",
-            mapping: { r: "ℛ", a: "ค", y: "Ў", h: "ⲏ", n: "𐌽" }
-        }
-    },
-    {
-        name: "Elegant Border Style",
-        template: {
-            prefix: "꧁乂✰",
-            suffix: "✰乂꧂",
-            mapping: { r: "ⴽ", a: "ค", y: "𝕪", h: "𝓱", n: "ꫜ" }
-        }
-    },
-    {
-        name: "Simple Elegant Style",
-        template: {
-            prefix: "𑁍┊",
-            suffix: "",
-            mapping: { r: "℟", a: "𝔞", y: "ʸ", h: "Ꮵ", n: "𝑛" }
-        }
-    },
-    {
-        name: "Prefix Arrow Style",
-        template: {
-            prefix: "➳",
-            suffix: "➳",
-            mapping: { r: "ꋪ", a: "ą", y: "𐍅", h: "𝚑", n: "𝚗" },
-            addPrefix: true
-        }
-    },
-    {
-        name: "Flower Decoration Style",
-        template: {
-            prefix: "✿.｡",
-            suffix: ".:* ☆",
-            mapping: { r: "Ꮢ", a: "ᤂ", y: "ℽ", h: "𝓱", n: "ⲡ" }
-        }
-    },
-    {
-        name: "Bubble Special Style",
-        template: {
-            prefix: "°🫧•𖨆٭ ",
-            suffix: "꙳○𖨆°",
-            mapping: { r: "ꋪ", a: "𝗮", y: "ץ", h: "ʱ", n: "η" }
-        }
-    },
-    {
-        name: "Arrow Star Style",
-        template: {
-            prefix: "⇶✴☞",
-            suffix: "❈",
-            mapping: { r: "ꭱ", a: "α", y: "ᵞ", h: "ĥ", n: "ᴻ" }
-        }
-    },
-    {
-        name: "Dot Border Style",
-        template: {
-            prefix: "•.•.",
-            suffix: ".•.•",
-            mapping: { r: "ℛ", a: "ⲗ", y: "ʸ", h: "𝕙", n: "𝗇" }
-        }
-    },
-    {
-        name: "Flower Symbol Style",
-        template: {
-            prefix: "𖥻៹",
-            suffix: "🌻✨",
-            mapping: { r: "𝑅", a: "ᥲ", y: "𝓎", h: "ħ", n: "ꫛ" }
-        }
-    },
-    {
-        name: "Cloud Heart Style",
-        template: {
-            prefix: "☁♡⭒",
-            suffix: "⭒♡☁",
-            mapping: { r: "𝗥", a: "ᤂ", y: "𝔂", h: "ʱ", n: "Ϟ" }
-        }
-    },
-    {
-        name: "Kaomoji Style",
-        template: {
-            prefix: "+｡:.ﾟ",
-            suffix: "\\ (•◡•) /",
-            mapping: { r: "𝐑", a: "ศ", y: "ᵞ", h: "𝚑", n: "𝖓" }
-        }
-    },
-    {
-        name: "Star Line Style",
-        template: {
-            prefix: "—͟͞͞★",
-            suffix: "—͟͞͞★",
-            mapping: { r: "𝑅", a: "ɑ", y: "𝚢", h: "𝐡", n: "ɳ" }
-        }
-    },
-    {
-        name: "Book Border Style",
-        template: {
-            prefix: "《.•°~[",
-            suffix: "]~°•.》",
-            mapping: { r: "ꭱ", a: "𝒶", y: "ᵞ", h: "𝘩", n: "𝓷" }
-        }
-    },
-    {
-        name: "Star Cluster Style",
-        template: {
-            prefix: "★⁂⁙",
-            suffix: "⁙⁂★",
-            mapping: { r: "Ｒ", a: "ẳ", y: "𝒚", h: "ℏ", n: "𝓃" }
-        }
-    },
-    {
-        name: "Heart Fire Style",
-        template: {
-            prefix: "❤️‍🔥♡",
-            suffix: "♡❤️‍🔥",
-            mapping: { r: "℟", a: "ᤂ", y: "𝚢", h: "𝘩", n: "ⲡ" }
-        }
-    },
-    {
-        name: "Rose Fire Style",
-        template: {
-            prefix: "🔥🥀",
-            suffix: "🥀🔥",
-            mapping: { r: "𝗥", a: "𝓪", y: "ʸ", h: "ʱ", n: "𝔫" }
-        }
-    },
-    {
-        name: "Heart Border Style",
-        template: {
-            prefix: "꧁⪻♥",
-            suffix: "♥⪼꧂",
-            mapping: { r: "ʀ", a: "ᵃ", y: "ყ", h: "𝚑", n: "𝘯" }
-        }
-    },
-    {
-        name: "Square Text Style",
-        template: {
-            prefix: "",
-            suffix: "",
-            mapping: { r: "🅁", a: "𝗮", y: "🅈", h: "𝗵", n: "𝗻" }
-        }
-    },
-    {
-        name: "Star Line Variant Style",
-        template: {
-            prefix: "—͟͞͞★ ",
-            suffix: " ★",
-            mapping: { r: "𝐑", a: "ꪋ", y: "ყ", h: "ʰ", n: "ก" }
-        }
-    },
-    {
-        name: "Butterfly Style",
-        template: {
-            prefix: "🦋✨",
-            suffix: "✨🦋",
-            mapping: { r: "Ɍ", a: "ᤂ", y: "ʸ", h: "Ꮵ", n: "ᶯ" }
-        }
-    },
-    {
-        name: "Heart Star Style",
-        template: {
-            prefix: "°♡✧*",
-            suffix: "*✧♡°",
-            mapping: { r: "ʀ", a: "ᤂ", y: "¥", h: "ĥ", n: "𝗻" }
-        }
-    },
-    {
-        name: "Chain Style",
-        template: {
-            prefix: "⛓ 💯",
-            suffix: "⛓",
-            mapping: { r: "ꭱ", a: "ศ", y: "Ў", h: "𝗵", n: "𝗇" }
-        }
-    },
-    {
-        name: "Sunflower Style",
-        template: {
-            prefix: "🌻x",
-            suffix: "x🌻",
-            mapping: { r: "ᚱ", a: "𝒂", y: "у", h: "ɦ", n: "ƞ" }
-        }
-    },
-    {
-        name: "Lightning Style",
-        template: {
-            prefix: "⚡",
-            suffix: "|₂₂₀⚡",
-            mapping: { r: "Ꮢ", a: "ǟ", y: "ᵞ", h: "𝕙", n: "ᶰ" }
-        }
-    },
-    {
-        name: "Wave Style",
-        template: {
-            prefix: "🌊 .·:*¨",
-            suffix: "¨*:·. 🌊",
-            mapping: { r: "℟", a: "ᵃ", y: "у", h: "ʰ", n: "ᶰ" }
-        }
-    },
-    {
-        name: "Arrow Heart Style",
-        template: {
-            prefix: "🔥💘⇨",
-            suffix: "☔️",
-            mapping: { r: "ᴿ", a: "ᥲ", y: "ℽ", h: "𝖍", n: "ท" }
-        }
-    }
-];
-
 // ==================== COMPLEX DECORATIONS ====================
 const complexDecorations = [
     { prefix: "°\"", suffix: "\"°" },
@@ -666,120 +453,6 @@ const complexDecorations = [
     { prefix: "【", suffix: "】" },
     { prefix: "♛", suffix: "♛" },
     { prefix: "👑", suffix: "👑" },
-];
-
-// ==================== SPECIAL DESIGNS ====================
-const specialDesigns = [
-    {
-        name: "Hacker Style",
-        generate: function(userName) {
-            const styledName = applyStyle(userName, styles.hacker);
-            return "꧁" + styledName + "꧂";
-        }
-    },
-    {
-        name: "Lucifer Style",
-        generate: function(userName) {
-            const smallCapsPart = applyStyle(userName.substring(0, 2), styles.smallCaps);
-            const boldPart = applyStyle(userName.substring(2), styles.bold);
-            const spacedName = boldPart.split('').join(' ');
-            return "➳" + smallCapsPart + "メ " + spacedName + "亗";
-        }
-    },
-    {
-        name: "Black Panther Style",
-        generate: function(userName) {
-            return userName.split('').map(char => applyStyle(char, styles.squared)).join('');
-        }
-    },
-    {
-        name: "Shark Badboy Style",
-        generate: function(userName) {
-            const smallCapsName = applyStyle(userName, styles.smallCaps);
-            return "『" + smallCapsName + "』•ᴮᴬᴰʙᴏʸツ";
-        }
-    },
-    {
-        name: "Legends Style",
-        generate: function(userName) {
-            const specialName = applyStyle(userName, styles.specialUnicode);
-            return "꧁༒" + specialName + "༒꧂";
-        }
-    },
-    {
-        name: "Dark Fire Style",
-        generate: function(userName) {
-            const specialName = applyStyle(userName, styles.specialUnicode);
-            return "꧁࿇" + specialName + "࿇꧂";
-        }
-    },
-    {
-        name: "Royal Gothic",
-        generate: function(userName) {
-            const gothicName = applyStyle(userName, styles.gothic);
-            return "♚ " + gothicName + " ♚";
-        }
-    },
-    {
-        name: "Cyber Warrior",
-        generate: function(userName) {
-            const cyberName = applyStyle(userName, styles.cyber);
-            return "⚙️ " + cyberName + " ⚙️";
-        }
-    },
-    {
-        name: "Ancient Rune",
-        generate: function(userName) {
-            const ancientName = applyStyle(userName, styles.ancient);
-            return "ᛟ " + ancientName + " ᛟ";
-        }
-    },
-    {
-        name: "Magic Spell",
-        generate: function(userName) {
-            const magicName = applyStyle(userName, styles.magic);
-            return "☤ " + magicName + " ☤";
-        }
-    },
-    {
-        name: "Medieval Knight",
-        generate: function(userName) {
-            const medievalName = applyStyle(userName, styles.medieval);
-            return "⚔️ " + medievalName + " 🛡️";
-        }
-    },
-    {
-        name: "Elemental Master",
-        generate: function(userName) {
-            const elements = ["🔥", "💧", "🌪️", "❄️", "⚡"];
-            const element = elements[Math.floor(Math.random() * elements.length)];
-            const styledName = applyStyle(userName, styles.bold);
-            return element + " " + styledName + " " + element;
-        }
-    },
-    {
-        name: "Digital Ghost",
-        generate: function(userName) {
-            let ghostName = "";
-            for (let char of userName) {
-                if (Math.random() > 0.3) {
-                    ghostName += applyStyle(char, styles.monospace);
-                } else {
-                    ghostName += "�";
-                }
-            }
-            return "[" + ghostName + "]";
-        }
-    },
-    {
-        name: "Mythical Beast",
-        generate: function(userName) {
-            const beastName = applyStyle(userName, styles.fraktur);
-            const beasts = ["🐉", "🐲", "🦁", "🐺", "🦅"];
-            const beast = beasts[Math.floor(Math.random() * beasts.length)];
-            return beast + " " + beastName + " " + beast;
-        }
-    }
 ];
 
 // ==================== SYMBOLS AND EMOJIS ====================
@@ -825,6 +498,7 @@ const generateBtn = document.getElementById('generateBtn');
 const resultsContainer = document.getElementById('resultsContainer');
 const notification = document.getElementById('notification');
 const loadingIndicator = document.getElementById('loadingIndicator');
+const infiniteScrollIndicator = document.getElementById('infiniteScrollIndicator');
 
 // ==================== GLOBAL VARIABLES ====================
 let isGenerating = false;
@@ -836,94 +510,6 @@ let nameReactions = JSON.parse(localStorage.getItem('nameReactions')) || {};
 let usedStyles = new Set();
 let usedProfessionalStyles = new Set();
 let usedSpecialDesigns = new Set();
-
-// ==================== BLOG SECTION ====================
-function addBlogSection() {
-    const blogSection = document.createElement('div');
-    blogSection.id = 'blogSection';
-    blogSection.className = 'blog-section';
-    blogSection.innerHTML = `
-        <div style="max-width: 1000px; margin: 0 auto;">
-            <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">📝 Creative Name Generation Guide</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">🎯 What is a Nickname?</h3>
-                    <p style="line-height: 1.6; font-size: 16px;">
-                        A nickname is a substitute for the proper name of a familiar person, place, or thing. 
-                        In the digital age, nicknames have evolved into creative usernames and gamertags that 
-                        represent your identity online across various platforms.
-                    </p>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">🚀 How to Use This Generator</h3>
-                    <ol style="line-height: 1.8; font-size: 15px; padding-left: 20px;">
-                        <li><strong>Enter</strong> your name in the input field</li>
-                        <li><strong>Click</strong> "Generate Names" button</li>
-                        <li><strong>Scroll</strong> to see infinite variations</li>
-                        <li><strong>Rate</strong> names with 👍/👎 buttons</li>
-                        <li><strong>Copy</strong> your favorite names instantly</li>
-                        <li><strong>Share</strong> directly to social media</li>
-                    </ol>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">🎮 Where to Use Creative Names</h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <div>
-                            <h4 style="color: #4cd964; margin: 10px 0;">Gaming</h4>
-                            <ul style="font-size: 14px;">
-                                <li>Fortnite, PUBG</li>
-                                <li>Minecraft, Roblox</li>
-                                <li>Steam, Epic Games</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 style="color: #007aff; margin: 10px 0;">Social Media</h4>
-                            <ul style="font-size: 14px;">
-                                <li>Instagram, TikTok</li>
-                                <li>Discord, Twitter</li>
-                                <li>YouTube, Twitch</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px); grid-column: 1 / -1;">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">✨ Pro Tips for Best Results</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                        <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">🎨</div>
-                            <p>Mix different font styles for unique looks</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">⚡</div>
-                            <p>Add symbols and emojis for extra flair</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">📱</div>
-                            <p>Ensure your name is memorable and readable</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">🌟</div>
-                            <p>Create a name that truly represents you</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.3);">
-                <p style="font-size: 1.2em; font-style: italic; margin: 0;">
-                    "Your username is your digital identity - make it unforgettable!"
-                </p>
-            </div>
-        </div>
-    `;
-    
-    const container = document.querySelector('.container');
-    container.appendChild(blogSection);
-}
 
 // ==================== CORE FUNCTIONS ====================
 
@@ -1017,60 +603,6 @@ function getRandomStyle() {
     usedStyles.add(randomStyleKey);
     
     return styles[randomStyleKey];
-}
-
-function getRandomProfessionalStyle() {
-    if (usedProfessionalStyles.size >= professionalNameStyles.length * 0.7) {
-        usedProfessionalStyles.clear();
-    }
-    
-    let availableStyles = professionalNameStyles.filter(style => !usedProfessionalStyles.has(style.name));
-    if (availableStyles.length === 0) {
-        availableStyles = professionalNameStyles;
-    }
-    
-    const randomStyle = availableStyles[Math.floor(Math.random() * availableStyles.length)];
-    usedProfessionalStyles.add(randomStyle.name);
-    
-    return randomStyle;
-}
-
-function getRandomSpecialDesign() {
-    if (usedSpecialDesigns.size >= specialDesigns.length * 0.7) {
-        usedSpecialDesigns.clear();
-    }
-    
-    let availableDesigns = specialDesigns.filter(design => !usedSpecialDesigns.has(design.name));
-    if (availableDesigns.length === 0) {
-        availableDesigns = specialDesigns;
-    }
-    
-    const randomDesign = availableDesigns[Math.floor(Math.random() * availableDesigns.length)];
-    usedSpecialDesigns.add(randomDesign.name);
-    
-    return randomDesign;
-}
-
-// ==================== NAME GENERATION FUNCTIONS ====================
-
-// Apply professional name styling
-function applyProfessionalStyle(userName, styleTemplate) {
-    let styledName = "";
-    const nameLower = userName.toLowerCase();
-    
-    for (let i = 0; i < nameLower.length; i++) {
-        const char = nameLower[i];
-        styledName += styleTemplate.mapping[char] || char;
-    }
-    
-    let finalName = styleTemplate.prefix + styledName + styleTemplate.suffix;
-    
-    if (styleTemplate.addPrefix) {
-        const prefixKey = Object.keys(prefixWords)[Math.floor(Math.random() * Object.keys(prefixWords).length)];
-        finalName = prefixWords[prefixKey] + " " + finalName;
-    }
-    
-    return finalName;
 }
 
 // Different name generation types
@@ -1239,16 +771,6 @@ function generateUltimateName(userName) {
     return decoration.prefix + result + decoration.suffix;
 }
 
-function generateSpecialDesign(userName) {
-    const design = getRandomSpecialDesign();
-    return design.generate(userName);
-}
-
-function generateProfessionalName(userName) {
-    const style = getRandomProfessionalStyle();
-    return applyProfessionalStyle(userName, style.template);
-}
-
 function generateNewStyleName(userName) {
     const newStyleKeys = ['smallSuperscript', 'squareAsian', 'boldOutline', 'greekMixed', 'bracketStyle1', 'bracketStyle2', 'doubleBracketStyle'];
     const randomStyleKey = newStyleKeys[Math.floor(Math.random() * newStyleKeys.length)];
@@ -1269,19 +791,17 @@ function generateVariation(userName) {
     const randomValue = Math.random();
     
     if (randomValue < 0.35) {
-        return generateProfessionalName(userName);
-    } else if (randomValue < 0.55) {
         return generatePremiumName(userName);
-    } else if (randomValue < 0.70) {
+    } else if (randomValue < 0.55) {
         return generateSimpleName(userName);
-    } else if (randomValue < 0.80) {
+    } else if (randomValue < 0.70) {
         return generateAdvancedName(userName);
-    } else if (randomValue < 0.90) {
+    } else if (randomValue < 0.85) {
         return generateNewStyleName(userName);
     } else if (randomValue < 0.95) {
         return generateExampleStyle(userName);
     } else {
-        return generateSpecialDesign(userName);
+        return generateUltimateName(userName);
     }
 }
 
@@ -1529,12 +1049,6 @@ function generateNames(initial = false) {
     const userName = nameInput.value.trim() || "User";
     
     if (initial) {
-        // Hide blog section with animation
-        const blogSection = document.getElementById('blogSection');
-        if (blogSection) {
-            blogSection.classList.add('hidden');
-        }
-        
         resultsContainer.innerHTML = '';
         generatedCount = 0;
         currentName = userName;
@@ -1618,17 +1132,6 @@ function checkScroll() {
     }
 }
 
-// ==================== NEW FEATURES ====================
-
-function addInfiniteScrollIndicator() {
-    const indicator = document.createElement('div');
-    indicator.id = 'infiniteScrollIndicator';
-    indicator.innerHTML = '✨ <strong>Infinite Scroll</strong> - Keep scrolling to generate more unique names automatically! ✨';
-    
-    const generateBtn = document.getElementById('generateBtn');
-    generateBtn.parentNode.insertBefore(indicator, generateBtn.nextSibling);
-}
-
 // ==================== EVENT LISTENERS ====================
 
 generateBtn.addEventListener('click', () => {
@@ -1645,10 +1148,9 @@ window.addEventListener('scroll', checkScroll);
 
 // ==================== INITIALIZATION ====================
 
-  
-       
+window.addEventListener('load', () => {
+    // nameInput.value = ""; // Keep input empty
     addBlogSection();
-    addInfiniteScrollIndicator();
     
     // Show blog section initially
     const blogSection = document.getElementById('blogSection');
@@ -1657,5 +1159,93 @@ window.addEventListener('scroll', checkScroll);
     }
 });
 
+// Blog section function
+function addBlogSection() {
+    const blogSection = document.createElement('div');
+    blogSection.id = 'blogSection';
+    blogSection.className = 'blog-section';
+    blogSection.innerHTML = `
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">📝 Creative Name Generation Guide</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #ffd700; margin-bottom: 15px;">🎯 What is a Nickname?</h3>
+                    <p style="line-height: 1.6; font-size: 16px;">
+                        A nickname is a substitute for the proper name of a familiar person, place, or thing. 
+                        In the digital age, nicknames have evolved into creative usernames and gamertags that 
+                        represent your identity online across various platforms.
+                    </p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #ffd700; margin-bottom: 15px;">🚀 How to Use This Generator</h3>
+                    <ol style="line-height: 1.8; font-size: 15px; padding-left: 20px;">
+                        <li><strong>Enter</strong> your name in the input field</li>
+                        <li><strong>Click</strong> "Generate Names" button</li>
+                        <li><strong>Scroll</strong> to see infinite variations</li>
+                        <li><strong>Rate</strong> names with 👍/👎 buttons</li>
+                        <li><strong>Copy</strong> your favorite names instantly</li>
+                        <li><strong>Share</strong> directly to social media</li>
+                    </ol>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #ffd700; margin-bottom: 15px;">🎮 Where to Use Creative Names</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div>
+                            <h4 style="color: #4cd964; margin: 10px 0;">Gaming</h4>
+                            <ul style="font-size: 14px;">
+                                <li>Fortnite, PUBG</li>
+                                <li>Minecraft, Roblox</li>
+                                <li>Steam, Epic Games</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #007aff; margin: 10px 0;">Social Media</h4>
+                            <ul style="font-size: 14px;">
+                                <li>Instagram, TikTok</li>
+                                <li>Discord, Twitter</li>
+                                <li>YouTube, Twitch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px); grid-column: 1 / -1;">
+                    <h3 style="color: #ffd700; margin-bottom: 15px;">✨ Pro Tips for Best Results</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; margin-bottom: 10px;">🎨</div>
+                            <p>Mix different font styles for unique looks</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; margin-bottom: 10px;">⚡</div>
+                            <p>Add symbols and emojis for extra flair</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; margin-bottom: 10px;">📱</div>
+                            <p>Ensure your name is memorable and readable</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; margin-bottom: 10px;">🌟</div>
+                            <p>Create a name that truly represents you</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.3);">
+                <p style="font-size: 1.2em; font-style: italic; margin: 0;">
+                    "Your username is your digital identity - make it unforgettable!"
+                </p>
+            </div>
+        </div>
+    `;
+    
+    const container = document.querySelector('.container');
+    const resultsSection = document.getElementById('resultsContainer');
+    container.insertBefore(blogSection, resultsSection);
+}
 
-console.log('Enhanced Unicode Name Generator loaded successfully with blog hiding feature!');
+console.log('Enhanced Unicode Name Generator loaded successfully!');
