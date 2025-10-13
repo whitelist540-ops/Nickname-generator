@@ -1918,6 +1918,12 @@ function showAbout() {
 
 
 // EmailJS integration for contact form
+emailjs.send("service_qpfld6e", "template_9izy39n", {
+  from_name: name,
+  from_email: email,
+  message: message
+})
+
 function showContact() {
     modalTitle.textContent = 'Contact Us';
     modalBody.innerHTML = `
