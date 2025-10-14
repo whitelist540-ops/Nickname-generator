@@ -844,77 +844,77 @@ function addBlogSection() {
     blogSection.className = 'blog-section';
     blogSection.innerHTML = `
         <div style="max-width: 1000px; margin: 0 auto;">
-            <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">📝 Creative Name Generation Guide</h2>
+            <h2 style="text-align: center; margin-bottom: 20px; font-size: 1.8em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); color: #ffd700;">📝 Creative Name Generation Guide</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">🎯 What is a Nickname?</h3>
-                    <p style="line-height: 1.6; font-size: 16px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; backdrop-filter: blur(5px);">
+                    <h3 style="color: #ffd700; margin-bottom: 12px; font-size: 1.2em;">🎯 What is a Nickname?</h3>
+                    <p style="line-height: 1.5; font-size: 13px; margin-bottom: 10px;">
                         A nickname is a substitute for the proper name of a familiar person, place, or thing. 
                         In the digital age, nicknames have evolved into creative usernames and gamertags that 
                         represent your identity online across various platforms.
                     </p>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">🚀 How to Use This Generator</h3>
-                    <ol style="line-height: 1.8; font-size: 15px; padding-left: 20px;">
-                        <li><strong>Enter</strong> your name in the input field</li>
-                        <li><strong>Click</strong> "Generate Names" button</li>
-                        <li><strong>Scroll</strong> to see infinite variations</li>
-                        <li><strong>Rate</strong> names with 👍/👎 buttons</li>
-                        <li><strong>Copy</strong> your favorite names instantly</li>
-                        <li><strong>Share</strong> directly to social media</li>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; backdrop-filter: blur(5px);">
+                    <h3 style="color: #ffd700; margin-bottom: 12px; font-size: 1.2em;">🚀 How to Use This Generator</h3>
+                    <ol style="line-height: 1.5; font-size: 13px; padding-left: 18px; margin-bottom: 10px;">
+                        <li style="margin-bottom: 6px;"><strong>Enter</strong> your name in the input field</li>
+                        <li style="margin-bottom: 6px;"><strong>Click</strong> "Generate Names" button</li>
+                        <li style="margin-bottom: 6px;"><strong>Scroll</strong> to see infinite variations</li>
+                        <li style="margin-bottom: 6px;"><strong>Rate</strong> names with 👍/👎 buttons</li>
+                        <li style="margin-bottom: 6px;"><strong>Copy</strong> your favorite names instantly</li>
+                        <li style="margin-bottom: 6px;"><strong>Share</strong> directly to social media</li>
                     </ol>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">🎮 Where to Use Creative Names</h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; backdrop-filter: blur(5px);">
+                    <h3 style="color: #ffd700; margin-bottom: 12px; font-size: 1.2em;">🎮 Where to Use Creative Names</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
                         <div>
-                            <h4 style="color: #4cd964; margin: 10px 0;">Gaming</h4>
-                            <ul style="font-size: 14px;">
-                                <li>Fortnite, PUBG</li>
-                                <li>Minecraft, Roblox</li>
-                                <li>Steam, Epic Games</li>
+                            <h4 style="color: #4cd964; margin: 8px 0 5px 0; font-size: 1em;">Gaming</h4>
+                            <ul style="font-size: 12px; padding-left: 15px;">
+                                <li style="margin-bottom: 4px;">Fortnite, PUBG</li>
+                                <li style="margin-bottom: 4px;">Minecraft, Roblox</li>
+                                <li style="margin-bottom: 4px;">Steam, Epic Games</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 style="color: #007aff; margin: 10px 0;">Social Media</h4>
-                            <ul style="font-size: 14px;">
-                                <li>Instagram, TikTok</li>
-                                <li>Discord, Twitter</li>
-                                <li>YouTube, Twitch</li>
+                            <h4 style="color: #007aff; margin: 8px 0 5px 0; font-size: 1em;">Social Media</h4>
+                            <ul style="font-size: 12px; padding-left: 15px;">
+                                <li style="margin-bottom: 4px;">Instagram, TikTok</li>
+                                <li style="margin-bottom: 4px;">Discord, Twitter</li>
+                                <li style="margin-bottom: 4px;">YouTube, Twitch</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px); grid-column: 1 / -1;">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">✨ Pro Tips for Best Results</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; backdrop-filter: blur(5px); grid-column: 1 / -1;">
+                    <h3 style="color: #ffd700; margin-bottom: 12px; font-size: 1.2em; text-align: center;">✨ Pro Tips for Best Results</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
                         <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">🎨</div>
-                            <p>Mix different font styles for unique looks</p>
+                            <div style="font-size: 1.8em; margin-bottom: 8px;">🎨</div>
+                            <p style="font-size: 12px; margin: 0;">Mix different font styles for unique looks</p>
                         </div>
                         <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">⚡</div>
-                            <p>Add symbols and emojis for extra flair</p>
+                            <div style="font-size: 1.8em; margin-bottom: 8px;">⚡</div>
+                            <p style="font-size: 12px; margin: 0;">Add symbols and emojis for extra flair</p>
                         </div>
                         <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">📱</div>
-                            <p>Ensure your name is memorable and readable</p>
+                            <div style="font-size: 1.8em; margin-bottom: 8px;">📱</div>
+                            <p style="font-size: 12px; margin: 0;">Ensure your name is memorable and readable</p>
                         </div>
                         <div style="text-align: center;">
-                            <div style="font-size: 2em; margin-bottom: 10px;">🌟</div>
-                            <p>Create a name that truly represents you</p>
+                            <div style="font-size: 1.8em; margin-bottom: 8px;">🌟</div>
+                            <p style="font-size: 12px; margin: 0;">Create a name that truly represents you</p>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.3);">
-                <p style="font-size: 1.2em; font-style: italic; margin: 0;">
+            <div style="text-align: center; margin-top: 20px; padding-top: 15px; border-top: 2px solid rgba(255,255,255,0.3);">
+                <p style="font-size: 1em; font-style: italic; margin: 0; color: #ffd700;">
                     "Your username is your digital identity - make it unforgettable!"
                 </p>
             </div>
@@ -922,7 +922,9 @@ function addBlogSection() {
     `;
     
     const container = document.querySelector('.container');
-    container.appendChild(blogSection);
+    // Insert blog section at the top of the container, right after the header
+    const header = container.querySelector('header');
+    container.insertBefore(blogSection, header.nextSibling);
 }
 
 // ==================== CORE FUNCTIONS ====================
@@ -1643,23 +1645,7 @@ nameInput.addEventListener('keypress', (e) => {
 
 window.addEventListener('scroll', checkScroll);
 
-// ==================== INITIALIZATION ====================
-
-window.addEventListener('load', () => {
-    nameInput.value = "Alex";
-    addBlogSection();
-    addInfiniteScrollIndicator();
-    
-    // Show blog section initially
-    const blogSection = document.getElementById('blogSection');
-    if (blogSection) {
-        blogSection.classList.remove('hidden');
-    }
-});
-
-console.log('Enhanced Unicode Name Generator loaded successfully with blog hiding feature!');
-
-
+// ==================== SIDEBAR AND MODAL FUNCTIONALITY ====================
 
 // Sidebar functionality
 const sidebar = document.querySelector('.sidebar');
@@ -1745,40 +1731,6 @@ function handleContactFormSubmit(event) {
         // Re-enable button
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send Message';
-        
-        // In a real application, you would send the data to your server like this:
-        /*
-        fetch('/send-email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                subject: subject,
-                message: message
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                formMessage.textContent = 'Thank you! Your message has been sent successfully.';
-                formMessage.className = 'form-message success';
-                form.reset();
-            } else {
-                throw new Error('Failed to send message');
-            }
-        })
-        .catch(error => {
-            formMessage.textContent = 'Sorry, there was an error sending your message. Please try again.';
-            formMessage.className = 'form-message error';
-        })
-        .finally(() => {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-        });
-        */
     }, 2000);
 }
 
@@ -1915,72 +1867,18 @@ function showAbout() {
     sidebar.classList.remove('active');
 }
 
+// ==================== INITIALIZATION ====================
 
+window.addEventListener('load', () => {
+    nameInput.value = "Alex";
+    addBlogSection();
+    addInfiniteScrollIndicator();
+    
+    // Show blog section initially
+    const blogSection = document.getElementById('blogSection');
+    if (blogSection) {
+        blogSection.classList.remove('hidden');
+    }
+});
 
-// EmailJS integration for contact form
-emailjs.send("service_qpfld6e", "template_9izy39n", {
-  from_name: name,
-  from_email: email,
-  message: message
-})
-
-emailjs.init("RfqTBprRQQhducrd9");
-
-const form = document.getElementById("contactForm");
-if (form) {
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    ...
-  });
-}
-formStatus.textContent = "Sending...";
-
-{status: 200, text: "OK"}
-
-
-
-function showContact() {
-    modalTitle.textContent = 'Contact Us';
-    modalBody.innerHTML = `
-        <div class="contact-form">
-            <p>Have questions or suggestions? We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
-            
-            <form id="contactForm" onsubmit="handleContactFormSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Your Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Your Email *</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Your Message *</label>
-                    <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> Send Message
-                </button>
-            </form>
-            
-            <div id="formMessage" class="form-message"></div>
-            
-            <div class="contact-info">
-                <h4>Other Ways to Reach Us</h4>
-                <p><i class="fas fa-envelope"></i> support@nicknamegen.com</p>
-                <p><i class="fas fa-clock"></i> Response Time: 24-48 hours</p>
-                <p><i class="fas fa-heart"></i> We appreciate your feedback!</p>
-            </div>
-        </div>
-    `;
-    modal.classList.add('active');
-    sidebar.classList.remove('active');
-}
+console.log('Enhanced Unicode Name Generator loaded successfully with blog hiding feature!');
