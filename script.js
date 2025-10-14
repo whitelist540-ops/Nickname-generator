@@ -1882,3 +1882,77 @@ window.addEventListener('load', () => {
 });
 
 console.log('Enhanced Unicode Name Generator loaded successfully with blog hiding feature!');
+
+
+
+// Fallback contact form handling
+function handleContactFormSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const submitBtn = form.querySelector('.submit-btn');
+    const formMessage = document.getElementById('formMessage');
+    
+    // Get form data
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+    
+    // Basic validation
+    if (!name || !email || !subject || !message) {
+        formMessage.textContent = 'Please fill in all fields.';
+        formMessage.className = 'form-message error';
+        return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        formMessage.textContent = 'Please enter a valid email address.';
+        formMessage.className = 'form-message error';
+        return;
+    }
+    
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    // Try EmailJS first, fallback to direct email
+    try {
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message
+        };
+        
+        emailjs.send(emailjsConfig.serviceID, emailjsConfig.templateID, templateParams, emailjsConfig.userID)
+            .then(function(response) {
+                formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                formMessage.className = 'form-message success';
+                form.reset();
+            })
+            .catch(function(error) {
+                // Fallback to mailto link
+                fallbackEmail(name, email, subject, message, formMessage);
+            })
+            .finally(function() {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            });
+    } catch (error) {
+        // Fallback if EmailJS fails
+        fallbackEmail(name, email, subject, message, formMessage);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+    }
+}
+
+function fallbackEmail(name, email, subject, message, formMessage) {
+    const mailtoLink = `mailto:support@nicknamegen.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    window.location.href = mailtoLink;
+    formMessage.textContent = 'Email client opened. If it did not open, please email us at support@nicknamegen.com';
+    formMessage.className = 'form-message info';
+}
