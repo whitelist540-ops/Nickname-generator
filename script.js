@@ -1297,7 +1297,7 @@ function showContact() {
         <p>We'd love to hear from you! Here's how you can reach us:</p>
         
         <h4>Email</h4>
-        <p>support@nicknamegen.com</p>
+        <p>notmy8623@gmail.com</p>
         
         <h4>Response Time</h4>
         <p>We typically respond within 24-48 hours.</p>
