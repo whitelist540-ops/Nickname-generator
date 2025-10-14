@@ -413,219 +413,6 @@ const prefixWords = {
     eternal: "ᴱᵀᴱᴿᴺᴬᴸ"
 };
 
-// ==================== PROFESSIONAL NAME STYLES ====================
-const professionalNameStyles = [
-    {
-        name: "Quote Bubble Style",
-        template: {
-            prefix: "°\"",
-            suffix: "\"°",
-            mapping: { r: "ℛ", a: "ค", y: "Ў", h: "ⲏ", n: "𐌽" }
-        }
-    },
-    {
-        name: "Elegant Border Style",
-        template: {
-            prefix: "꧁乂✰",
-            suffix: "✰乂꧂",
-            mapping: { r: "ⴽ", a: "ค", y: "𝕪", h: "𝓱", n: "ꫜ" }
-        }
-    },
-    {
-        name: "Simple Elegant Style",
-        template: {
-            prefix: "𑁍┊",
-            suffix: "",
-            mapping: { r: "℟", a: "𝔞", y: "ʸ", h: "Ꮵ", n: "𝑛" }
-        }
-    },
-    {
-        name: "Prefix Arrow Style",
-        template: {
-            prefix: "➳",
-            suffix: "➳",
-            mapping: { r: "ꋪ", a: "ą", y: "𐍅", h: "𝚑", n: "𝚗" },
-            addPrefix: true
-        }
-    },
-    {
-        name: "Flower Decoration Style",
-        template: {
-            prefix: "✿.｡",
-            suffix: ".:* ☆",
-            mapping: { r: "Ꮢ", a: "ᤂ", y: "ℽ", h: "𝓱", n: "ⲡ" }
-        }
-    },
-    {
-        name: "Bubble Special Style",
-        template: {
-            prefix: "°🫧•𖨆٭ ",
-            suffix: "꙳○𖨆°",
-            mapping: { r: "ꋪ", a: "𝗮", y: "ץ", h: "ʱ", n: "η" }
-        }
-    },
-    {
-        name: "Arrow Star Style",
-        template: {
-            prefix: "⇶✴☞",
-            suffix: "❈",
-            mapping: { r: "ꭱ", a: "α", y: "ᵞ", h: "ĥ", n: "ᴻ" }
-        }
-    },
-    {
-        name: "Dot Border Style",
-        template: {
-            prefix: "•.•.",
-            suffix: ".•.•",
-            mapping: { r: "ℛ", a: "ⲗ", y: "ʸ", h: "𝕙", n: "𝗇" }
-        }
-    },
-    {
-        name: "Flower Symbol Style",
-        template: {
-            prefix: "𖥻៹",
-            suffix: "🌻✨",
-            mapping: { r: "𝑅", a: "ᥲ", y: "𝓎", h: "ħ", n: "ꫛ" }
-        }
-    },
-    {
-        name: "Cloud Heart Style",
-        template: {
-            prefix: "☁♡⭒",
-            suffix: "⭒♡☁",
-            mapping: { r: "𝗥", a: "ᤂ", y: "𝔂", h: "ʱ", n: "Ϟ" }
-        }
-    },
-    {
-        name: "Kaomoji Style",
-        template: {
-            prefix: "+｡:.ﾟ",
-            suffix: "\\ (•◡•) /",
-            mapping: { r: "𝐑", a: "ศ", y: "ᵞ", h: "𝚑", n: "𝖓" }
-        }
-    },
-    {
-        name: "Star Line Style",
-        template: {
-            prefix: "—͟͞͞★",
-            suffix: "—͟͞͞★",
-            mapping: { r: "𝑅", a: "ɑ", y: "𝚢", h: "𝐡", n: "ɳ" }
-        }
-    },
-    {
-        name: "Book Border Style",
-        template: {
-            prefix: "《.•°~[",
-            suffix: "]~°•.》",
-            mapping: { r: "ꭱ", a: "𝒶", y: "ᵞ", h: "𝘩", n: "𝓷" }
-        }
-    },
-    {
-        name: "Star Cluster Style",
-        template: {
-            prefix: "★⁂⁙",
-            suffix: "⁙⁂★",
-            mapping: { r: "Ｒ", a: "ẳ", y: "𝒚", h: "ℏ", n: "𝓃" }
-        }
-    },
-    {
-        name: "Heart Fire Style",
-        template: {
-            prefix: "❤️‍🔥♡",
-            suffix: "♡❤️‍🔥",
-            mapping: { r: "℟", a: "ᤂ", y: "𝚢", h: "𝘩", n: "ⲡ" }
-        }
-    },
-    {
-        name: "Rose Fire Style",
-        template: {
-            prefix: "🔥🥀",
-            suffix: "🥀🔥",
-            mapping: { r: "𝗥", a: "𝓪", y: "ʸ", h: "ʱ", n: "𝔫" }
-        }
-    },
-    {
-        name: "Heart Border Style",
-        template: {
-            prefix: "꧁⪻♥",
-            suffix: "♥⪼꧂",
-            mapping: { r: "ʀ", a: "ᵃ", y: "ყ", h: "𝚑", n: "𝘯" }
-        }
-    },
-    {
-        name: "Square Text Style",
-        template: {
-            prefix: "",
-            suffix: "",
-            mapping: { r: "🅁", a: "𝗮", y: "🅈", h: "𝗵", n: "𝗻" }
-        }
-    },
-    {
-        name: "Star Line Variant Style",
-        template: {
-            prefix: "—͟͞͞★ ",
-            suffix: " ★",
-            mapping: { r: "𝐑", a: "ꪋ", y: "ყ", h: "ʰ", n: "ก" }
-        }
-    },
-    {
-        name: "Butterfly Style",
-        template: {
-            prefix: "🦋✨",
-            suffix: "✨🦋",
-            mapping: { r: "Ɍ", a: "ᤂ", y: "ʸ", h: "Ꮵ", n: "ᶯ" }
-        }
-    },
-    {
-        name: "Heart Star Style",
-        template: {
-            prefix: "°♡✧*",
-            suffix: "*✧♡°",
-            mapping: { r: "ʀ", a: "ᤂ", y: "¥", h: "ĥ", n: "𝗻" }
-        }
-    },
-    {
-        name: "Chain Style",
-        template: {
-            prefix: "⛓ 💯",
-            suffix: "⛓",
-            mapping: { r: "ꭱ", a: "ศ", y: "Ў", h: "𝗵", n: "𝗇" }
-        }
-    },
-    {
-        name: "Sunflower Style",
-        template: {
-            prefix: "🌻x",
-            suffix: "x🌻",
-            mapping: { r: "ᚱ", a: "𝒂", y: "у", h: "ɦ", n: "ƞ" }
-        }
-    },
-    {
-        name: "Lightning Style",
-        template: {
-            prefix: "⚡",
-            suffix: "|₂₂₀⚡",
-            mapping: { r: "Ꮢ", a: "ǟ", y: "ᵞ", h: "𝕙", n: "ᶰ" }
-        }
-    },
-    {
-        name: "Wave Style",
-        template: {
-            prefix: "🌊 .·:*¨",
-            suffix: "¨*:·. 🌊",
-            mapping: { r: "℟", a: "ᵃ", y: "у", h: "ʰ", n: "ᶰ" }
-        }
-    },
-    {
-        name: "Arrow Heart Style",
-        template: {
-            prefix: "🔥💘⇨",
-            suffix: "☔️",
-            mapping: { r: "ᴿ", a: "ᥲ", y: "ℽ", h: "𝖍", n: "ท" }
-        }
-    }
-];
-
 // ==================== COMPLEX DECORATIONS ====================
 const complexDecorations = [
     { prefix: "°\"", suffix: "\"°" },
@@ -666,120 +453,6 @@ const complexDecorations = [
     { prefix: "【", suffix: "】" },
     { prefix: "♛", suffix: "♛" },
     { prefix: "👑", suffix: "👑" },
-];
-
-// ==================== SPECIAL DESIGNS ====================
-const specialDesigns = [
-    {
-        name: "Hacker Style",
-        generate: function(userName) {
-            const styledName = applyStyle(userName, styles.hacker);
-            return "꧁" + styledName + "꧂";
-        }
-    },
-    {
-        name: "Lucifer Style",
-        generate: function(userName) {
-            const smallCapsPart = applyStyle(userName.substring(0, 2), styles.smallCaps);
-            const boldPart = applyStyle(userName.substring(2), styles.bold);
-            const spacedName = boldPart.split('').join(' ');
-            return "➳" + smallCapsPart + "メ " + spacedName + "亗";
-        }
-    },
-    {
-        name: "Black Panther Style",
-        generate: function(userName) {
-            return userName.split('').map(char => applyStyle(char, styles.squared)).join('');
-        }
-    },
-    {
-        name: "Shark Badboy Style",
-        generate: function(userName) {
-            const smallCapsName = applyStyle(userName, styles.smallCaps);
-            return "『" + smallCapsName + "』•ᴮᴬᴰʙᴏʸツ";
-        }
-    },
-    {
-        name: "Legends Style",
-        generate: function(userName) {
-            const specialName = applyStyle(userName, styles.specialUnicode);
-            return "꧁༒" + specialName + "༒꧂";
-        }
-    },
-    {
-        name: "Dark Fire Style",
-        generate: function(userName) {
-            const specialName = applyStyle(userName, styles.specialUnicode);
-            return "꧁࿇" + specialName + "࿇꧂";
-        }
-    },
-    {
-        name: "Royal Gothic",
-        generate: function(userName) {
-            const gothicName = applyStyle(userName, styles.gothic);
-            return "♚ " + gothicName + " ♚";
-        }
-    },
-    {
-        name: "Cyber Warrior",
-        generate: function(userName) {
-            const cyberName = applyStyle(userName, styles.cyber);
-            return "⚙️ " + cyberName + " ⚙️";
-        }
-    },
-    {
-        name: "Ancient Rune",
-        generate: function(userName) {
-            const ancientName = applyStyle(userName, styles.ancient);
-            return "ᛟ " + ancientName + " ᛟ";
-        }
-    },
-    {
-        name: "Magic Spell",
-        generate: function(userName) {
-            const magicName = applyStyle(userName, styles.magic);
-            return "☤ " + magicName + " ☤";
-        }
-    },
-    {
-        name: "Medieval Knight",
-        generate: function(userName) {
-            const medievalName = applyStyle(userName, styles.medieval);
-            return "⚔️ " + medievalName + " 🛡️";
-        }
-    },
-    {
-        name: "Elemental Master",
-        generate: function(userName) {
-            const elements = ["🔥", "💧", "🌪️", "❄️", "⚡"];
-            const element = elements[Math.floor(Math.random() * elements.length)];
-            const styledName = applyStyle(userName, styles.bold);
-            return element + " " + styledName + " " + element;
-        }
-    },
-    {
-        name: "Digital Ghost",
-        generate: function(userName) {
-            let ghostName = "";
-            for (let char of userName) {
-                if (Math.random() > 0.3) {
-                    ghostName += applyStyle(char, styles.monospace);
-                } else {
-                    ghostName += "�";
-                }
-            }
-            return "[" + ghostName + "]";
-        }
-    },
-    {
-        name: "Mythical Beast",
-        generate: function(userName) {
-            const beastName = applyStyle(userName, styles.fraktur);
-            const beasts = ["🐉", "🐲", "🦁", "🐺", "🦅"];
-            const beast = beasts[Math.floor(Math.random() * beasts.length)];
-            return beast + " " + beastName + " " + beast;
-        }
-    }
 ];
 
 // ==================== SYMBOLS AND EMOJIS ====================
@@ -825,6 +498,7 @@ const generateBtn = document.getElementById('generateBtn');
 const resultsContainer = document.getElementById('resultsContainer');
 const notification = document.getElementById('notification');
 const loadingIndicator = document.getElementById('loadingIndicator');
+const infiniteScrollIndicator = document.getElementById('infiniteScrollIndicator');
 
 // ==================== GLOBAL VARIABLES ====================
 let isGenerating = false;
@@ -836,96 +510,6 @@ let nameReactions = JSON.parse(localStorage.getItem('nameReactions')) || {};
 let usedStyles = new Set();
 let usedProfessionalStyles = new Set();
 let usedSpecialDesigns = new Set();
-
-// ==================== BLOG SECTION ====================
-function addBlogSection() {
-    const blogSection = document.createElement('div');
-    blogSection.id = 'blogSection';
-    blogSection.className = 'blog-section';
-    blogSection.innerHTML = `
-        <div style="max-width: 1000px; margin: 0 auto;">
-            <h2 style="text-align: center; margin-bottom: 20px; font-size: 1.8em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); color: #ffd700;">📝 Creative Name Generation Guide</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; backdrop-filter: blur(5px);">
-                    <h3 style="color: #ffd700; margin-bottom: 12px; font-size: 1.2em;">🎯 What is a Nickname?</h3>
-                    <p style="line-height: 1.5; font-size: 13px; margin-bottom: 10px;">
-                        A nickname is a substitute for the proper name of a familiar person, place, or thing. 
-                        In the digital age, nicknames have evolved into creative usernames and gamertags that 
-                        represent your identity online across various platforms.
-                    </p>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; backdrop-filter: blur(5px);">
-                    <h3 style="color: #ffd700; margin-bottom: 12px; font-size: 1.2em;">🚀 How to Use This Generator</h3>
-                    <ol style="line-height: 1.5; font-size: 13px; padding-left: 18px; margin-bottom: 10px;">
-                        <li style="margin-bottom: 6px;"><strong>Enter</strong> your name in the input field</li>
-                        <li style="margin-bottom: 6px;"><strong>Click</strong> "Generate Names" button</li>
-                        <li style="margin-bottom: 6px;"><strong>Scroll</strong> to see infinite variations</li>
-                        <li style="margin-bottom: 6px;"><strong>Rate</strong> names with 👍/👎 buttons</li>
-                        <li style="margin-bottom: 6px;"><strong>Copy</strong> your favorite names instantly</li>
-                        <li style="margin-bottom: 6px;"><strong>Share</strong> directly to social media</li>
-                    </ol>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; backdrop-filter: blur(5px);">
-                    <h3 style="color: #ffd700; margin-bottom: 12px; font-size: 1.2em;">🎮 Where to Use Creative Names</h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                        <div>
-                            <h4 style="color: #4cd964; margin: 8px 0 5px 0; font-size: 1em;">Gaming</h4>
-                            <ul style="font-size: 12px; padding-left: 15px;">
-                                <li style="margin-bottom: 4px;">Fortnite, PUBG</li>
-                                <li style="margin-bottom: 4px;">Minecraft, Roblox</li>
-                                <li style="margin-bottom: 4px;">Steam, Epic Games</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 style="color: #007aff; margin: 8px 0 5px 0; font-size: 1em;">Social Media</h4>
-                            <ul style="font-size: 12px; padding-left: 15px;">
-                                <li style="margin-bottom: 4px;">Instagram, TikTok</li>
-                                <li style="margin-bottom: 4px;">Discord, Twitter</li>
-                                <li style="margin-bottom: 4px;">YouTube, Twitch</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; backdrop-filter: blur(5px); grid-column: 1 / -1;">
-                    <h3 style="color: #ffd700; margin-bottom: 12px; font-size: 1.2em; text-align: center;">✨ Pro Tips for Best Results</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
-                        <div style="text-align: center;">
-                            <div style="font-size: 1.8em; margin-bottom: 8px;">🎨</div>
-                            <p style="font-size: 12px; margin: 0;">Mix different font styles for unique looks</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 1.8em; margin-bottom: 8px;">⚡</div>
-                            <p style="font-size: 12px; margin: 0;">Add symbols and emojis for extra flair</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 1.8em; margin-bottom: 8px;">📱</div>
-                            <p style="font-size: 12px; margin: 0;">Ensure your name is memorable and readable</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 1.8em; margin-bottom: 8px;">🌟</div>
-                            <p style="font-size: 12px; margin: 0;">Create a name that truly represents you</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 20px; padding-top: 15px; border-top: 2px solid rgba(255,255,255,0.3);">
-                <p style="font-size: 1em; font-style: italic; margin: 0; color: #ffd700;">
-                    "Your username is your digital identity - make it unforgettable!"
-                </p>
-            </div>
-        </div>
-    `;
-    
-    const container = document.querySelector('.container');
-    // Insert blog section at the top of the container, right after the header
-    const header = container.querySelector('header');
-    container.insertBefore(blogSection, header.nextSibling);
-}
 
 // ==================== CORE FUNCTIONS ====================
 
@@ -1019,60 +603,6 @@ function getRandomStyle() {
     usedStyles.add(randomStyleKey);
     
     return styles[randomStyleKey];
-}
-
-function getRandomProfessionalStyle() {
-    if (usedProfessionalStyles.size >= professionalNameStyles.length * 0.7) {
-        usedProfessionalStyles.clear();
-    }
-    
-    let availableStyles = professionalNameStyles.filter(style => !usedProfessionalStyles.has(style.name));
-    if (availableStyles.length === 0) {
-        availableStyles = professionalNameStyles;
-    }
-    
-    const randomStyle = availableStyles[Math.floor(Math.random() * availableStyles.length)];
-    usedProfessionalStyles.add(randomStyle.name);
-    
-    return randomStyle;
-}
-
-function getRandomSpecialDesign() {
-    if (usedSpecialDesigns.size >= specialDesigns.length * 0.7) {
-        usedSpecialDesigns.clear();
-    }
-    
-    let availableDesigns = specialDesigns.filter(design => !usedSpecialDesigns.has(design.name));
-    if (availableDesigns.length === 0) {
-        availableDesigns = specialDesigns;
-    }
-    
-    const randomDesign = availableDesigns[Math.floor(Math.random() * availableDesigns.length)];
-    usedSpecialDesigns.add(randomDesign.name);
-    
-    return randomDesign;
-}
-
-// ==================== NAME GENERATION FUNCTIONS ====================
-
-// Apply professional name styling
-function applyProfessionalStyle(userName, styleTemplate) {
-    let styledName = "";
-    const nameLower = userName.toLowerCase();
-    
-    for (let i = 0; i < nameLower.length; i++) {
-        const char = nameLower[i];
-        styledName += styleTemplate.mapping[char] || char;
-    }
-    
-    let finalName = styleTemplate.prefix + styledName + styleTemplate.suffix;
-    
-    if (styleTemplate.addPrefix) {
-        const prefixKey = Object.keys(prefixWords)[Math.floor(Math.random() * Object.keys(prefixWords).length)];
-        finalName = prefixWords[prefixKey] + " " + finalName;
-    }
-    
-    return finalName;
 }
 
 // Different name generation types
@@ -1241,16 +771,6 @@ function generateUltimateName(userName) {
     return decoration.prefix + result + decoration.suffix;
 }
 
-function generateSpecialDesign(userName) {
-    const design = getRandomSpecialDesign();
-    return design.generate(userName);
-}
-
-function generateProfessionalName(userName) {
-    const style = getRandomProfessionalStyle();
-    return applyProfessionalStyle(userName, style.template);
-}
-
 function generateNewStyleName(userName) {
     const newStyleKeys = ['smallSuperscript', 'squareAsian', 'boldOutline', 'greekMixed', 'bracketStyle1', 'bracketStyle2', 'doubleBracketStyle'];
     const randomStyleKey = newStyleKeys[Math.floor(Math.random() * newStyleKeys.length)];
@@ -1271,19 +791,17 @@ function generateVariation(userName) {
     const randomValue = Math.random();
     
     if (randomValue < 0.35) {
-        return generateProfessionalName(userName);
-    } else if (randomValue < 0.55) {
         return generatePremiumName(userName);
-    } else if (randomValue < 0.70) {
+    } else if (randomValue < 0.55) {
         return generateSimpleName(userName);
-    } else if (randomValue < 0.80) {
+    } else if (randomValue < 0.70) {
         return generateAdvancedName(userName);
-    } else if (randomValue < 0.90) {
+    } else if (randomValue < 0.85) {
         return generateNewStyleName(userName);
     } else if (randomValue < 0.95) {
         return generateExampleStyle(userName);
     } else {
-        return generateSpecialDesign(userName);
+        return generateUltimateName(userName);
     }
 }
 
@@ -1531,12 +1049,6 @@ function generateNames(initial = false) {
     const userName = nameInput.value.trim() || "User";
     
     if (initial) {
-        // Hide blog section with animation
-        const blogSection = document.getElementById('blogSection');
-        if (blogSection) {
-            blogSection.classList.add('hidden');
-        }
-        
         resultsContainer.innerHTML = '';
         generatedCount = 0;
         currentName = userName;
@@ -1620,17 +1132,6 @@ function checkScroll() {
     }
 }
 
-// ==================== NEW FEATURES ====================
-
-function addInfiniteScrollIndicator() {
-    const indicator = document.createElement('div');
-    indicator.id = 'infiniteScrollIndicator';
-    indicator.innerHTML = '✨ <strong>Infinite Scroll</strong> - Keep scrolling to generate more unique names automatically! ✨';
-    
-    const generateBtn = document.getElementById('generateBtn');
-    generateBtn.parentNode.insertBefore(indicator, generateBtn.nextSibling);
-}
-
 // ==================== EVENT LISTENERS ====================
 
 generateBtn.addEventListener('click', () => {
@@ -1645,234 +1146,11 @@ nameInput.addEventListener('keypress', (e) => {
 
 window.addEventListener('scroll', checkScroll);
 
-// ==================== SIDEBAR AND MODAL FUNCTIONALITY ====================
-
-// Sidebar functionality
-const sidebar = document.querySelector('.sidebar');
-const sidebarToggle = document.querySelector('.sidebar-toggle');
-const sidebarClose = document.querySelector('.sidebar-close');
-const modal = document.getElementById('modal');
-const modalClose = document.querySelector('.modal-close');
-const modalTitle = document.getElementById('modalTitle');
-const modalBody = document.getElementById('modalBody');
-
-// Toggle sidebar
-sidebarToggle.addEventListener('click', function() {
-    sidebar.classList.add('active');
-});
-
-sidebarClose.addEventListener('click', function() {
-    sidebar.classList.remove('active');
-});
-
-// Close sidebar when clicking outside
-document.addEventListener('click', function(event) {
-    if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
-        sidebar.classList.remove('active');
-    }
-});
-
-// Modal functionality
-modalClose.addEventListener('click', function() {
-    modal.classList.remove('active');
-});
-
-// Close modal when clicking outside
-modal.addEventListener('click', function(event) {
-    if (event.target === modal) {
-        modal.classList.remove('active');
-    }
-});
-
-// Contact form handling
-function handleContactFormSubmit(event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const submitBtn = form.querySelector('.submit-btn');
-    const formMessage = document.getElementById('formMessage');
-    
-    // Get form data
-    const formData = new FormData(form);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Basic validation
-    if (!name || !email || !subject || !message) {
-        formMessage.textContent = 'Please fill in all fields.';
-        formMessage.className = 'form-message error';
-        return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        formMessage.textContent = 'Please enter a valid email address.';
-        formMessage.className = 'form-message error';
-        return;
-    }
-    
-    // Disable button and show loading
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    
-    // Simulate email sending (in a real app, you'd send to a server)
-    setTimeout(() => {
-        // Here you would typically send the data to your server
-        // For demo purposes, we'll just show a success message
-        formMessage.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
-        formMessage.className = 'form-message success';
-        
-        // Reset form
-        form.reset();
-        
-        // Re-enable button
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-    }, 2000);
-}
-
-// Sidebar content functions
-function showContact() {
-    modalTitle.textContent = 'Contact Us';
-    modalBody.innerHTML = `
-        <div class="contact-form">
-            <p>Have questions or suggestions? We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
-            
-            <form id="contactForm" onsubmit="handleContactFormSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Your Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Your Email *</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Your Message *</label>
-                    <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> Send Message
-                </button>
-            </form>
-            
-            <div id="formMessage" class="form-message"></div>
-            
-            <div class="contact-info">
-                <h4>Other Ways to Reach Us</h4>
-                <p><i class="fas fa-envelope"></i> support@nicknamegen.com</p>
-                <p><i class="fas fa-clock"></i> Response Time: 24-48 hours</p>
-                <p><i class="fas fa-heart"></i> We appreciate your feedback!</p>
-            </div>
-        </div>
-    `;
-    modal.classList.add('active');
-    sidebar.classList.remove('active');
-}
-
-function showPrivacy() {
-    modalTitle.textContent = 'Privacy Policy';
-    modalBody.innerHTML = `
-        <h4>Information We Collect</h4>
-        <p>We value your privacy. Our name generator operates with minimal data collection:</p>
-        <ul>
-            <li>Names you input for generation (not stored)</li>
-            <li>Usage statistics for improvement</li>
-            <li>Browser information for compatibility</li>
-        </ul>
-        
-        <h4>Data Usage</h4>
-        <p>Your data is used solely for:</p>
-        <ul>
-            <li>Generating nickname variations</li>
-            <li>Improving our service quality</li>
-            <li>Ensuring proper functionality</li>
-        </ul>
-        
-        <h4>Third Parties</h4>
-        <p>We don't sell or share your personal information with third parties.</p>
-        
-        <h4>Cookies</h4>
-        <p>We use only essential cookies for website functionality.</p>
-    `;
-    modal.classList.add('active');
-    sidebar.classList.remove('active');
-}
-
-function showTerms() {
-    modalTitle.textContent = 'Terms & Conditions';
-    modalBody.innerHTML = `
-        <h4>Service Usage</h4>
-        <p>By using our nickname generator, you agree to:</p>
-        <ul>
-            <li>Use the service for personal purposes only</li>
-            <li>Not abuse or overload our servers</li>
-            <li>Respect our intellectual property</li>
-        </ul>
-        
-        <h4>Generated Content</h4>
-        <p>All generated names are suggestions only. We're not responsible for:</p>
-        <ul>
-            <li>Name availability on platforms</li>
-            <li>Name appropriateness for your use case</li>
-            <li>Any issues arising from name usage</li>
-        </ul>
-        
-        <h4>Service Availability</h4>
-        <p>We strive for 99.9% uptime but can't guarantee uninterrupted service.</p>
-        
-        <h4>Changes to Terms</h4>
-        <p>We may update these terms periodically. Continued use means acceptance of changes.</p>
-    `;
-    modal.classList.add('active');
-    sidebar.classList.remove('active');
-}
-
-function showAbout() {
-    modalTitle.textContent = 'About Us';
-    modalBody.innerHTML = `
-        <h4>Our Mission</h4>
-        <p>We created this stylish name generator to help people express their creativity and find unique identities online.</p>
-        
-        <h4>What We Offer</h4>
-        <ul>
-            <li>100+ font styles and variations</li>
-            <li>Unicode character support</li>
-            <li>Real-time name generation</li>
-            <li>Mobile-friendly design</li>
-            <li>Completely free service</li>
-        </ul>
-        
-        <h4>Technology</h4>
-        <p>Built with modern web technologies including HTML5, CSS3, and JavaScript for the best user experience.</p>
-        
-        <h4>Always Improving</h4>
-        <p>We regularly update our generator with new styles and features based on user feedback.</p>
-        
-        <h4>Our Commitment</h4>
-        <p>We're committed to providing a free, accessible tool for everyone to create amazing online identities.</p>
-    `;
-    modal.classList.add('active');
-    sidebar.classList.remove('active');
-}
-
 // ==================== INITIALIZATION ====================
 
 window.addEventListener('load', () => {
-    nameInput.value = "Alex";
+    // nameInput.value = ""; // Keep input empty
     addBlogSection();
-    addInfiniteScrollIndicator();
     
     // Show blog section initially
     const blogSection = document.getElementById('blogSection');
@@ -1881,462 +1159,93 @@ window.addEventListener('load', () => {
     }
 });
 
-console.log('Enhanced Unicode Name Generator loaded successfully with blog hiding feature!');
-
-
-
-// Fallback contact form handling
-function handleContactFormSubmit(event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const submitBtn = form.querySelector('.submit-btn');
-    const formMessage = document.getElementById('formMessage');
-    
-    // Get form data
-    const formData = new FormData(form);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Basic validation
-    if (!name || !email || !subject || !message) {
-        formMessage.textContent = 'Please fill in all fields.';
-        formMessage.className = 'form-message error';
-        return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        formMessage.textContent = 'Please enter a valid email address.';
-        formMessage.className = 'form-message error';
-        return;
-    }
-    
-    // Disable button and show loading
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    
-    // Try EmailJS first, fallback to direct email
-    try {
-        const templateParams = {
-            from_name: name,
-            from_email: email,
-            subject: subject,
-            message: message
-        };
-        
-        emailjs.send(emailjsConfig.serviceID, emailjsConfig.templateID, templateParams, emailjsConfig.userID)
-            .then(function(response) {
-                formMessage.textContent = 'Thank you! Your message has been sent successfully.';
-                formMessage.className = 'form-message success';
-                form.reset();
-            })
-            .catch(function(error) {
-                // Fallback to mailto link
-                fallbackEmail(name, email, subject, message, formMessage);
-            })
-            .finally(function() {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-            });
-    } catch (error) {
-        // Fallback if EmailJS fails
-        fallbackEmail(name, email, subject, message, formMessage);
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-    }
-}
-
-function fallbackEmail(name, email, subject, message, formMessage) {
-    const mailtoLink = `mailto:support@nicknamegen.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-    window.location.href = mailtoLink;
-    formMessage.textContent = 'Email client opened. If it did not open, please email us at support@nicknamegen.com';
-    formMessage.className = 'form-message info';
-}
-
-
-const emailjsConfig = {
-    serviceID: 'service_qpfld6e', // আপনার Service ID
-    templateID: 'template_9izy39n', // আপনার Template ID
-    userID: 'RfqTBprRQQhducrd9' // আপনার Public Key
-};
-
-
-// ==================== EMAILJS INTEGRATION ====================
-
-// EmailJS configuration
-const emailjsConfig = {
-    serviceID: 'service_qpfld6e', // Replace with your EmailJS service ID
-    templateID: 'template_9izy39n', // Replace with your EmailJS template ID
-    userID: 'RfqTBprRQQhducrd9' // Replace with your EmailJS public key
-};
-
-// Initialize EmailJS
-function initEmailJS() {
-    // EmailJS is typically initialized by including their SDK in HTML
-    // If you need to initialize manually, you can do it here
-    console.log('EmailJS initialized');
-}
-
-// Updated contact form handling with EmailJS
-function handleContactFormSubmit(event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const submitBtn = form.querySelector('.submit-btn');
-    const formMessage = document.getElementById('formMessage');
-    
-    // Get form data
-    const formData = new FormData(form);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Basic validation
-    if (!name || !email || !subject || !message) {
-        formMessage.textContent = 'Please fill in all fields.';
-        formMessage.className = 'form-message error';
-        return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        formMessage.textContent = 'Please enter a valid email address.';
-        formMessage.className = 'form-message error';
-        return;
-    }
-    
-    // Disable button and show loading
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    
-    // Prepare template parameters for EmailJS
-    const templateParams = {
-        from_name: name,
-        from_email: email,
-        subject: subject,
-        message: message,
-        to_email: 'support@nicknamegen.com', // Your support email
-        reply_to: email
-    };
-    
-    // Send email using EmailJS
-    emailjs.send(emailjsConfig.serviceID, emailjsConfig.templateID, templateParams, emailjsConfig.userID)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            formMessage.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
-            formMessage.className = 'form-message success';
+// Blog section function
+function addBlogSection() {
+    const blogSection = document.createElement('div');
+    blogSection.id = 'blogSection';
+    blogSection.className = 'blog-section';
+    blogSection.innerHTML = `
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">📝 Creative Name Generation Guide</h2>
             
-            // Reset form
-            form.reset();
-        })
-        .catch(function(error) {
-            console.log('FAILED...', error);
-            formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly at support@nicknamegen.com';
-            formMessage.className = 'form-message error';
-        })
-        .finally(function() {
-            // Re-enable button
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-        });
-}
-
-// Updated showContact function with EmailJS integration
-function showContact() {
-    modalTitle.textContent = 'Contact Us';
-    modalBody.innerHTML = `
-        <div class="contact-form">
-            <p>Have questions or suggestions? We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
-            
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Your Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #ffd700; margin-bottom: 15px;">🎯 What is a Nickname?</h3>
+                    <p style="line-height: 1.6; font-size: 16px;">
+                        A nickname is a substitute for the proper name of a familiar person, place, or thing. 
+                        In the digital age, nicknames have evolved into creative usernames and gamertags that 
+                        represent your identity online across various platforms.
+                    </p>
                 </div>
                 
-                <div class="form-group">
-                    <label for="email">Your Email *</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #ffd700; margin-bottom: 15px;">🚀 How to Use This Generator</h3>
+                    <ol style="line-height: 1.8; font-size: 15px; padding-left: 20px;">
+                        <li><strong>Enter</strong> your name in the input field</li>
+                        <li><strong>Click</strong> "Generate Names" button</li>
+                        <li><strong>Scroll</strong> to see infinite variations</li>
+                        <li><strong>Rate</strong> names with 👍/👎 buttons</li>
+                        <li><strong>Copy</strong> your favorite names instantly</li>
+                        <li><strong>Share</strong> directly to social media</li>
+                    </ol>
                 </div>
                 
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #ffd700; margin-bottom: 15px;">🎮 Where to Use Creative Names</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div>
+                            <h4 style="color: #4cd964; margin: 10px 0;">Gaming</h4>
+                            <ul style="font-size: 14px;">
+                                <li>Fortnite, PUBG</li>
+                                <li>Minecraft, Roblox</li>
+                                <li>Steam, Epic Games</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #007aff; margin: 10px 0;">Social Media</h4>
+                            <ul style="font-size: 14px;">
+                                <li>Instagram, TikTok</li>
+                                <li>Discord, Twitter</li>
+                                <li>YouTube, Twitch</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="message">Your Message *</label>
-                    <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..." rows="5"></textarea>
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px); grid-column: 1 / -1;">
+                    <h3 style="color: #ffd700; margin-bottom: 15px;">✨ Pro Tips for Best Results</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; margin-bottom: 10px;">🎨</div>
+                            <p>Mix different font styles for unique looks</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; margin-bottom: 10px;">⚡</div>
+                            <p>Add symbols and emojis for extra flair</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; margin-bottom: 10px;">📱</div>
+                            <p>Ensure your name is memorable and readable</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; margin-bottom: 10px;">🌟</div>
+                            <p>Create a name that truly represents you</p>
+                        </div>
+                    </div>
                 </div>
-                
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> Send Message
-                </button>
-            </form>
+            </div>
             
-            <div id="formMessage" class="form-message"></div>
-            
-            <div class="contact-info">
-                <h4>Other Ways to Reach Us</h4>
-                <p><i class="fas fa-envelope"></i> support@nicknamegen.com</p>
-                <p><i class="fas fa-clock"></i> Response Time: 24-48 hours</p>
-                <p><i class="fas fa-heart"></i> We appreciate your feedback!</p>
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.3);">
+                <p style="font-size: 1.2em; font-style: italic; margin: 0;">
+                    "Your username is your digital identity - make it unforgettable!"
+                </p>
             </div>
         </div>
     `;
     
-    modal.classList.add('active');
-    sidebar.classList.remove('active');
-    
-    // Add event listener to the form after it's added to DOM
-    setTimeout(() => {
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', handleContactFormSubmit);
-        }
-    }, 100);
+    const container = document.querySelector('.container');
+    const resultsSection = document.getElementById('resultsContainer');
+    container.insertBefore(blogSection, resultsSection);
 }
 
-// ==================== ENHANCED CONTACT FORM VALIDATION ====================
-
-function validateContactForm(formData) {
-    const errors = [];
-    
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Name validation
-    if (!name || name.trim().length < 2) {
-        errors.push('Name must be at least 2 characters long');
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRegex.test(email)) {
-        errors.push('Please enter a valid email address');
-    }
-    
-    // Subject validation
-    if (!subject || subject.trim().length < 5) {
-        errors.push('Subject must be at least 5 characters long');
-    }
-    
-    // Message validation
-    if (!message || message.trim().length < 10) {
-        errors.push('Message must be at least 10 characters long');
-    }
-    
-    return errors;
-}
-
-// ==================== EMAILJS TEMPLATE EXAMPLE ====================
-/*
-EmailJS Template Example:
-
-Template Name: Contact Form Submission
-
-Subject:
-New Contact Form Submission from {{from_name}}
-
-Body:
-Name: {{from_name}}
-Email: {{from_email}}
-Subject: {{subject}}
-
-Message:
-{{message}}
-
-Please respond to: {{reply_to}}
-*/
-
-// ==================== ALTERNATIVE CONTACT METHOD ====================
-
-function showAlternativeContact() {
-    modalTitle.textContent = 'Contact Support';
-    modalBody.innerHTML = `
-        <div class="contact-options">
-            <div class="contact-option">
-                <h4><i class="fas fa-envelope"></i> Email Us</h4>
-                <p>Send us an email directly at:</p>
-                <a href="mailto:support@nicknamegen.com" class="email-link">support@nicknamegen.com</a>
-            </div>
-            
-            <div class="contact-option">
-                <h4><i class="fas fa-comments"></i> Quick Feedback</h4>
-                <p>Have a quick suggestion? Use the form below:</p>
-                <form id="quickFeedbackForm">
-                    <div class="form-group">
-                        <label for="feedback">Your Feedback</label>
-                        <textarea id="feedback" name="feedback" required placeholder="Tell us what you think..." rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactEmail">Your Email (optional)</label>
-                        <input type="email" id="contactEmail" name="contactEmail" placeholder="For follow-up (optional)">
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Send Feedback
-                    </button>
-                </form>
-            </div>
-            
-            <div class="contact-info">
-                <h4>We Value Your Input</h4>
-                <p>Your feedback helps us improve the nickname generator and add new features!</p>
-            </div>
-        </div>
-        
-        <div id="feedbackMessage" class="form-message"></div>
-    `;
-    
-    modal.classList.add('active');
-    sidebar.classList.remove('active');
-    
-    // Add event listener for quick feedback form
-    setTimeout(() => {
-        const feedbackForm = document.getElementById('quickFeedbackForm');
-        if (feedbackForm) {
-            feedbackForm.addEventListener('submit', handleQuickFeedback);
-        }
-    }, 100);
-}
-
-function handleQuickFeedback(event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const submitBtn = form.querySelector('.submit-btn');
-    const feedbackMessage = document.getElementById('feedbackMessage');
-    const feedback = form.querySelector('#feedback').value;
-    const contactEmail = form.querySelector('#contactEmail').value;
-    
-    if (!feedback) {
-        feedbackMessage.textContent = 'Please enter your feedback.';
-        feedbackMessage.className = 'form-message error';
-        return;
-    }
-    
-    // Disable button and show loading
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    
-    // Prepare template parameters
-    const templateParams = {
-        from_name: contactEmail ? `Feedback from ${contactEmail}` : 'Anonymous User',
-        from_email: contactEmail || 'anonymous@nicknamegen.com',
-        subject: 'Quick Feedback - Nickname Generator',
-        message: feedback,
-        type: 'feedback'
-    };
-    
-    // Send feedback using EmailJS
-    emailjs.send(emailjsConfig.serviceID, emailjsConfig.templateID, templateParams, emailjsConfig.userID)
-        .then(function(response) {
-            console.log('Feedback sent!', response.status, response.text);
-            feedbackMessage.textContent = 'Thank you for your feedback! We appreciate your input.';
-            feedbackMessage.className = 'form-message success';
-            form.reset();
-        })
-        .catch(function(error) {
-            console.log('Failed to send feedback', error);
-            feedbackMessage.textContent = 'Thank you for your feedback! (Note: Message not sent via email, but we\'ve logged your input)';
-            feedbackMessage.className = 'form-message success';
-            form.reset();
-        })
-        .finally(function() {
-            // Re-enable button
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Feedback';
-        });
-}
-
-// ==================== ENHANCED SIDEBAR MENU ====================
-
-// Update the sidebar to include both contact options
-function setupSidebar() {
-    const sidebarContent = document.querySelector('.sidebar-content');
-    if (sidebarContent) {
-        sidebarContent.innerHTML = `
-            <a href="#" class="sidebar-link" onclick="showContact()">
-                <i class="fas fa-envelope"></i> Contact Form
-            </a>
-            <a href="#" class="sidebar-link" onclick="showAlternativeContact()">
-                <i class="fas fa-comment-alt"></i> Quick Feedback
-            </a>
-            <a href="#" class="sidebar-link" onclick="showAbout()">
-                <i class="fas fa-info-circle"></i> About Us
-            </a>
-            <a href="#" class="sidebar-link" onclick="showPrivacy()">
-                <i class="fas fa-shield-alt"></i> Privacy Policy
-            </a>
-            <a href="#" class="sidebar-link" onclick="showTerms()">
-                <i class="fas fa-file-contract"></i> Terms & Conditions
-            </a>
-        `;
-    }
-}
-
-// ==================== INITIALIZATION ====================
-
-window.addEventListener('load', () => {
-    nameInput.value = "Alex";
-    addBlogSection();
-    addInfiniteScrollIndicator();
-    setupSidebar();
-    initEmailJS();
-    
-    // Show blog section initially
-    const blogSection = document.getElementById('blogSection');
-    if (blogSection) {
-        blogSection.classList.remove('hidden');
-    }
-});
-
-// ==================== CSS FOR NEW ELEMENTS ====================
-/*
-Add this CSS to your styles:
-
-.contact-options {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.contact-option {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 4px solid #667eea;
-}
-
-.contact-option h4 {
-    color: #667eea;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.email-link {
-    color: #667eea;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.email-link:hover {
-    text-decoration: underline;
-}
-
-.quick-feedback-form {
-    margin-top: 15px;
-}
-*/
-
-console.log('Enhanced Unicode Name Generator with EmailJS loaded successfully!');
+console.log('Enhanced Unicode Name Generator loaded successfully!');
