@@ -1956,3 +1956,10 @@ function fallbackEmail(name, email, subject, message, formMessage) {
     formMessage.textContent = 'Email client opened. If it did not open, please email us at support@nicknamegen.com';
     formMessage.className = 'form-message info';
 }
+
+
+const emailjsConfig = {
+    serviceID: 'service_qpfld6e', // আপনার Service ID
+    templateID: 'template_9izy39n', // আপনার Template ID
+    userID: 'RfqTBprRQQhducrd9' // আপনার Public Key
+};
