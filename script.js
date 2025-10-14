@@ -1963,3 +1963,380 @@ const emailjsConfig = {
     templateID: 'template_9izy39n', // আপনার Template ID
     userID: 'RfqTBprRQQhducrd9' // আপনার Public Key
 };
+
+
+// ==================== EMAILJS INTEGRATION ====================
+
+// EmailJS configuration
+const emailjsConfig = {
+    serviceID: 'service_qpfld6e', // Replace with your EmailJS service ID
+    templateID: 'template_9izy39n', // Replace with your EmailJS template ID
+    userID: 'RfqTBprRQQhducrd9' // Replace with your EmailJS public key
+};
+
+// Initialize EmailJS
+function initEmailJS() {
+    // EmailJS is typically initialized by including their SDK in HTML
+    // If you need to initialize manually, you can do it here
+    console.log('EmailJS initialized');
+}
+
+// Updated contact form handling with EmailJS
+function handleContactFormSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const submitBtn = form.querySelector('.submit-btn');
+    const formMessage = document.getElementById('formMessage');
+    
+    // Get form data
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+    
+    // Basic validation
+    if (!name || !email || !subject || !message) {
+        formMessage.textContent = 'Please fill in all fields.';
+        formMessage.className = 'form-message error';
+        return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        formMessage.textContent = 'Please enter a valid email address.';
+        formMessage.className = 'form-message error';
+        return;
+    }
+    
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    // Prepare template parameters for EmailJS
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+        to_email: 'support@nicknamegen.com', // Your support email
+        reply_to: email
+    };
+    
+    // Send email using EmailJS
+    emailjs.send(emailjsConfig.serviceID, emailjsConfig.templateID, templateParams, emailjsConfig.userID)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            formMessage.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
+            formMessage.className = 'form-message success';
+            
+            // Reset form
+            form.reset();
+        })
+        .catch(function(error) {
+            console.log('FAILED...', error);
+            formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly at support@nicknamegen.com';
+            formMessage.className = 'form-message error';
+        })
+        .finally(function() {
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        });
+}
+
+// Updated showContact function with EmailJS integration
+function showContact() {
+    modalTitle.textContent = 'Contact Us';
+    modalBody.innerHTML = `
+        <div class="contact-form">
+            <p>Have questions or suggestions? We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..." rows="5"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+            
+            <div id="formMessage" class="form-message"></div>
+            
+            <div class="contact-info">
+                <h4>Other Ways to Reach Us</h4>
+                <p><i class="fas fa-envelope"></i> support@nicknamegen.com</p>
+                <p><i class="fas fa-clock"></i> Response Time: 24-48 hours</p>
+                <p><i class="fas fa-heart"></i> We appreciate your feedback!</p>
+            </div>
+        </div>
+    `;
+    
+    modal.classList.add('active');
+    sidebar.classList.remove('active');
+    
+    // Add event listener to the form after it's added to DOM
+    setTimeout(() => {
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', handleContactFormSubmit);
+        }
+    }, 100);
+}
+
+// ==================== ENHANCED CONTACT FORM VALIDATION ====================
+
+function validateContactForm(formData) {
+    const errors = [];
+    
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+    
+    // Name validation
+    if (!name || name.trim().length < 2) {
+        errors.push('Name must be at least 2 characters long');
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+        errors.push('Please enter a valid email address');
+    }
+    
+    // Subject validation
+    if (!subject || subject.trim().length < 5) {
+        errors.push('Subject must be at least 5 characters long');
+    }
+    
+    // Message validation
+    if (!message || message.trim().length < 10) {
+        errors.push('Message must be at least 10 characters long');
+    }
+    
+    return errors;
+}
+
+// ==================== EMAILJS TEMPLATE EXAMPLE ====================
+/*
+EmailJS Template Example:
+
+Template Name: Contact Form Submission
+
+Subject:
+New Contact Form Submission from {{from_name}}
+
+Body:
+Name: {{from_name}}
+Email: {{from_email}}
+Subject: {{subject}}
+
+Message:
+{{message}}
+
+Please respond to: {{reply_to}}
+*/
+
+// ==================== ALTERNATIVE CONTACT METHOD ====================
+
+function showAlternativeContact() {
+    modalTitle.textContent = 'Contact Support';
+    modalBody.innerHTML = `
+        <div class="contact-options">
+            <div class="contact-option">
+                <h4><i class="fas fa-envelope"></i> Email Us</h4>
+                <p>Send us an email directly at:</p>
+                <a href="mailto:support@nicknamegen.com" class="email-link">support@nicknamegen.com</a>
+            </div>
+            
+            <div class="contact-option">
+                <h4><i class="fas fa-comments"></i> Quick Feedback</h4>
+                <p>Have a quick suggestion? Use the form below:</p>
+                <form id="quickFeedbackForm">
+                    <div class="form-group">
+                        <label for="feedback">Your Feedback</label>
+                        <textarea id="feedback" name="feedback" required placeholder="Tell us what you think..." rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Your Email (optional)</label>
+                        <input type="email" id="contactEmail" name="contactEmail" placeholder="For follow-up (optional)">
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Feedback
+                    </button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h4>We Value Your Input</h4>
+                <p>Your feedback helps us improve the nickname generator and add new features!</p>
+            </div>
+        </div>
+        
+        <div id="feedbackMessage" class="form-message"></div>
+    `;
+    
+    modal.classList.add('active');
+    sidebar.classList.remove('active');
+    
+    // Add event listener for quick feedback form
+    setTimeout(() => {
+        const feedbackForm = document.getElementById('quickFeedbackForm');
+        if (feedbackForm) {
+            feedbackForm.addEventListener('submit', handleQuickFeedback);
+        }
+    }, 100);
+}
+
+function handleQuickFeedback(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const submitBtn = form.querySelector('.submit-btn');
+    const feedbackMessage = document.getElementById('feedbackMessage');
+    const feedback = form.querySelector('#feedback').value;
+    const contactEmail = form.querySelector('#contactEmail').value;
+    
+    if (!feedback) {
+        feedbackMessage.textContent = 'Please enter your feedback.';
+        feedbackMessage.className = 'form-message error';
+        return;
+    }
+    
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    // Prepare template parameters
+    const templateParams = {
+        from_name: contactEmail ? `Feedback from ${contactEmail}` : 'Anonymous User',
+        from_email: contactEmail || 'anonymous@nicknamegen.com',
+        subject: 'Quick Feedback - Nickname Generator',
+        message: feedback,
+        type: 'feedback'
+    };
+    
+    // Send feedback using EmailJS
+    emailjs.send(emailjsConfig.serviceID, emailjsConfig.templateID, templateParams, emailjsConfig.userID)
+        .then(function(response) {
+            console.log('Feedback sent!', response.status, response.text);
+            feedbackMessage.textContent = 'Thank you for your feedback! We appreciate your input.';
+            feedbackMessage.className = 'form-message success';
+            form.reset();
+        })
+        .catch(function(error) {
+            console.log('Failed to send feedback', error);
+            feedbackMessage.textContent = 'Thank you for your feedback! (Note: Message not sent via email, but we\'ve logged your input)';
+            feedbackMessage.className = 'form-message success';
+            form.reset();
+        })
+        .finally(function() {
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Feedback';
+        });
+}
+
+// ==================== ENHANCED SIDEBAR MENU ====================
+
+// Update the sidebar to include both contact options
+function setupSidebar() {
+    const sidebarContent = document.querySelector('.sidebar-content');
+    if (sidebarContent) {
+        sidebarContent.innerHTML = `
+            <a href="#" class="sidebar-link" onclick="showContact()">
+                <i class="fas fa-envelope"></i> Contact Form
+            </a>
+            <a href="#" class="sidebar-link" onclick="showAlternativeContact()">
+                <i class="fas fa-comment-alt"></i> Quick Feedback
+            </a>
+            <a href="#" class="sidebar-link" onclick="showAbout()">
+                <i class="fas fa-info-circle"></i> About Us
+            </a>
+            <a href="#" class="sidebar-link" onclick="showPrivacy()">
+                <i class="fas fa-shield-alt"></i> Privacy Policy
+            </a>
+            <a href="#" class="sidebar-link" onclick="showTerms()">
+                <i class="fas fa-file-contract"></i> Terms & Conditions
+            </a>
+        `;
+    }
+}
+
+// ==================== INITIALIZATION ====================
+
+window.addEventListener('load', () => {
+    nameInput.value = "Alex";
+    addBlogSection();
+    addInfiniteScrollIndicator();
+    setupSidebar();
+    initEmailJS();
+    
+    // Show blog section initially
+    const blogSection = document.getElementById('blogSection');
+    if (blogSection) {
+        blogSection.classList.remove('hidden');
+    }
+});
+
+// ==================== CSS FOR NEW ELEMENTS ====================
+/*
+Add this CSS to your styles:
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-option {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.contact-option h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.email-link {
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+.quick-feedback-form {
+    margin-top: 15px;
+}
+*/
+
+console.log('Enhanced Unicode Name Generator with EmailJS loaded successfully!');
