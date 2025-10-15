@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://whitelist540-ops.github.io/Nickname-generator/sitemap.xml
+Sitemap: https://www.stylenick.com/Nickname-generator/sitemap.xml
