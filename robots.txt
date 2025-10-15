@@ -1,5 +1,10 @@
-# robots.txt — allow all crawlers
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://www.stylenick.com/Nickname-generator/sitemap.xml
+# Block unnecessary folders (if any)
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /test/
+
+# Sitemap location
+Sitemap: https://www.stylenick.com/sitemap.xml
