@@ -462,17 +462,17 @@ const symbols = ["☯", "⚡", "🔥", "💫", "🌟", "⭐", "✨", "🎮", "�
 const socialMedia = {
     facebook: {
         name: "Facebook",
-        url: "https://www.facebook.com/sharer/sharer.php?u=",
+        url: "https://www.facebook.com/sharer/sharer.php?u=https://www.stylenick.com",
         color: "#1877f2"
     },
     twitter: {
         name: "Twitter",
-        url: "https://twitter.com/intent/tweet?text=",
+        url: "https://twitter.com/intent/tweet?url=https://www.stylenick.com&text=Check%20out%20StyleNick!",
         color: "#1da1f2"
     },
     whatsapp: {
         name: "WhatsApp",
-        url: "https://api.whatsapp.com/send?text=",
+        url: "https://api.whatsapp.com/send?text=Check%20out%20StyleNick!%20https://www.stylenick.com",
         color: "#25d366"
     },
     instagram: {
@@ -482,12 +482,12 @@ const socialMedia = {
     },
     telegram: {
         name: "Telegram",
-        url: "https://t.me/share/url?url=",
+        url: "https://t.me/share/url?url=https://www.stylenick.com&text=Check%20out%20StyleNick%20-%20Stylish%20Name%20Generator!",
         color: "#0088cc"
     },
     reddit: {
         name: "Reddit",
-        url: "https://www.reddit.com/submit?title=",
+        url: "https://www.reddit.com/submit?url=https://www.stylenick.com&title=StyleNick%20-%20Stylish%20Name%20Generator",
         color: "#ff4500"
     }
 };
