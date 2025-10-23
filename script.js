@@ -1176,6 +1176,23 @@ function addBlogSection() {
                         In the digital age, nicknames have evolved into creative usernames and gamertags that 
                         represent your identity online across various platforms.
                     </p>
+
+style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
+    <h3 style="color: #ffd700; margin-bottom: 15px;">✨ How to Enjoy Infinite Stylish Nicknames</h3>
+    <p style="line-height: 1.6; font-size: 16px;">
+        It's super easy! Just type your name in the <strong>input bar</strong> above, click <strong>Generate</strong>, 
+        and enjoy <strong>infinite stylish nicknames</strong> instantly. Each click gives you new, unique, 
+        and creative nickname ideas for gaming, social media, or fun.
+    </p>
+    <p style="line-height: 1.6; font-size: 16px;">
+        You can <strong>copy</strong> your favorite nicknames, <strong>save</strong> them for later, 
+        or <strong>share</strong> with friends. The possibilities are endless!
+    </p>
+    <p style="line-height: 1.6; font-size: 16px;">
+        Try it now on our <a href="https://www.stylenick.com" style="color: #ffd700; text-decoration: underline;">Nickname Generator</a> and see how many creative nicknames you can discover!
+    </p>
+
+                    
                 </div>
                 
                 <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px);">
