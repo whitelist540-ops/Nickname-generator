@@ -472,6 +472,7 @@ const complexDecorations = [
     { prefix: "♛", suffix: "♛" },
     { prefix: "👑", suffix: "👑" },
     { prefix: "ᴵᴬᴹ", suffix: "ᥫ᭡" },
+    { prefix: "⋆. 𐙚˚࿔", suffix: "𝜗𝜚˚⋆" },
 ];
 
 // ==================== SYMBOLS AND EMOJIS ====================
