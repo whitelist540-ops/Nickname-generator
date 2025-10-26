@@ -471,7 +471,7 @@ const complexDecorations = [
     { prefix: "【", suffix: "】" },
     { prefix: "♛", suffix: "♛" },
     { prefix: "👑", suffix: "👑" },
-    { prefix: "ᴵᴬᴹ", suffix: "👑" },
+    { prefix: "ᴵᴬᴹ", suffix: "ᥫ᭡" },
 ];
 
 // ==================== SYMBOLS AND EMOJIS ====================
