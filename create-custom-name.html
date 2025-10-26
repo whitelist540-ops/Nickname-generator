@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Your Name | StyleNick</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #8a2be2, #6a1bb3);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #8a2be2;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 20px 30px;
+            transition: color 0.3s ease;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .back-link:hover {
+            color: #6a1bb3;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(to right, #8a2be2, #6a1bb3);
+            color: white;
+        }
+        
+        h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .input-section {
+            padding: 40px 30px 30px;
+            background: white;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.2rem;
+        }
+        
+        .keyboard-input {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            background: #f8f9fa;
+        }
+        
+        .keyboard-input:focus {
+            outline: none;
+            border-color: #8a2be2;
+            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
+            background: white;
+        }
+        
+        .active-field {
+            border: 2px solid #8a2be2 !important;
+            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2) !important;
+            background: white !important;
+        }
+
+        /* Virtual Keyboard Styles */
+        .keyboard-section {
+            padding: 0 30px 40px;
+        }
+
+        .keyboard-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .keyboard-tab {
+            padding: 12px 24px;
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #333;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .keyboard-tab.active {
+            background: #8a2be2;
+            color: white;
+            border-color: #8a2be2;
+        }
+
+        .keyboard-tab:hover {
+            background: #e9ecef;
+        }
+
+        .keyboard-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .keyboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 12px;
+        }
+
+        .keyboard-key {
+            padding: 15px 10px;
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            word-break: break-word;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .keyboard-key:hover {
+            background: #e9ecef;
+            border-color: #8a2be2;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        .keyboard-key:active {
+            transform: translateY(0);
+        }
+
+        .keyboard-key.symbol {
+            font-size: 18px;
+        }
+
+        .keyboard-key.emoji {
+            font-size: 24px;
+        }
+        
+        .keyboard-key.special {
+            background: #8a2be2;
+            color: white;
+            border-color: #8a2be2;
+            grid-column: span 2;
+        }
+        
+        .keyboard-key.special:hover {
+            background: #6a1bb3;
+            border-color: #6a1bb3;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1.8rem;
+        }
+        
+        .keyboard-subtitle {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #666;
+        }
+        
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .keyboard-grid {
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            }
+            
+            .keyboard-key {
+                min-height: 55px;
+                font-size: 14px;
+                padding: 12px 8px;
+            }
+            
+            .keyboard-key.emoji {
+                font-size: 20px;
+            }
+            
+            .keyboard-container {
+                padding: 15px;
+            }
+            
+            .keyboard-section, .input-section {
+                padding: 20px 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .keyboard-grid {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+                gap: 8px;
+            }
+            
+            .keyboard-key {
+                min-height: 50px;
+                font-size: 13px;
+                padding: 10px 5px;
+            }
+            
+            .keyboard-tab {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Generator
+        </a>
+        
+        <header>
+            <h1>Type Your Name</h1>
+            <p class="subtitle">Use the virtual keyboard below to type your name</p>
+        </header>
+        
+        <section class="input-section">
+            <div class="form-group">
+                <label for="userName">Your Name</label>
+                <input type="text" id="userName" placeholder="Click here and use the keyboard below..." class="keyboard-input">
+            </div>
+        </section>
+
+        <section class="keyboard-section">
+            <h2 class="section-title">Virtual Keyboard</h2>
+            <p class="keyboard-subtitle">Click on the input field above, then select characters from the keyboard below</p>
+            
+            <div class="keyboard-tabs" id="keyboardTabs">
+                <!-- Tabs will be generated by JavaScript -->
+            </div>
+            
+            <div class="keyboard-container" id="keyboardContainer">
+                <!-- Keyboard content will be generated by JavaScript -->
+            </div>
+        </section>
+    </div>
+    
+    <div class="notification" id="notification">Text copied to clipboard!</div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="create-custom-name.js"></script>
+</body>
+</html>
