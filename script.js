@@ -479,6 +479,10 @@ const complexDecorations = [
     { prefix: "˖ ֹ੭୧", suffix: "⊹ ࣪ ⑅" },
     { prefix: "ᥫ᭡.ִֶָ𓂃", suffix: "𐙚⋆" },
     { prefix: "︵", suffix: "◌Ⳋ𝅄" },
+    { prefix: "▸", suffix: "✌︎︎" },
+    { prefix: "", suffix: "✗" },
+    { prefix: "ℳᥫ᭡.", suffix: "⚕" },
+    { prefix: "ℳᥫ᭡.", suffix: "✓" },
 ];
 
 // ==================== SYMBOLS AND EMOJIS ====================
