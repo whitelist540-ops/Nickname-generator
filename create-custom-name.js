@@ -589,3 +589,141 @@ document.addEventListener('keydown', (e) => {
         document.getElementById('spaceBtn').click();
     }
 });
+
+
+
+
+
+// Sidebar functionality
+const sidebar = document.querySelector('.sidebar');
+const sidebarToggle = document.querySelector('.sidebar-toggle');
+const sidebarClose = document.querySelector('.sidebar-close');
+const modal = document.getElementById('modal');
+const modalClose = document.querySelector('.modal-close');
+const modalTitle = document.getElementById('modalTitle');
+const modalBody = document.getElementById('modalBody');
+
+// Toggle sidebar
+sidebarToggle.addEventListener('click', function() {
+    sidebar.classList.add('active');
+});
+
+sidebarClose.addEventListener('click', function() {
+    sidebar.classList.remove('active');
+});
+
+// Close sidebar when clicking outside
+document.addEventListener('click', function(event) {
+    if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+        sidebar.classList.remove('active');
+    }
+});
+
+// Modal functionality
+modalClose.addEventListener('click', function() {
+    modal.classList.remove('active');
+});
+
+// Close modal when clicking outside
+modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.classList.remove('active');
+    }
+});
+
+// Sidebar content functions
+function showContact() {
+    modalTitle.textContent = 'Contact Us';
+    modalBody.innerHTML = `
+        <h4>Get In Touch</h4>
+        <p>We'd love to hear from you! Here's how you can reach us:</p>
+        
+        <h4>Email</h4>
+        <p>notmy8623@gmail.com</p>
+        
+        <h4>Response Time</h4>
+        <p>We typically respond within 24-48 hours.</p>
+        
+        <h4>Feedback</h4>
+        <p>Your feedback helps us improve our name generator. Let us know what features you'd like to see!</p>
+    `;
+    modal.classList.add('active');
+    sidebar.classList.remove('active');
+}
+
+function showPrivacy() {
+    modalTitle.textContent = 'Privacy Policy';
+    modalBody.innerHTML = `
+        <h4>Information We Collect</h4>
+        <p>We value your privacy. Our name generator operates with minimal data collection:</p>
+        <ul>
+            <li>Names you input for generation (not stored)</li>
+            <li>Usage statistics for improvement</li>
+            <li>Browser information for compatibility</li>
+        </ul>
+        
+        <h4>Data Usage</h4>
+        <p>Your data is used solely for:</p>
+        <ul>
+            <li>Generating nickname variations</li>
+            <li>Improving our service quality</li>
+            <li>Ensuring proper functionality</li>
+        </ul>
+        
+        <h4>Third Parties</h4>
+        <p>We don't sell or share your personal information with third parties.</p>
+    `;
+    modal.classList.add('active');
+    sidebar.classList.remove('active');
+}
+
+function showTerms() {
+    modalTitle.textContent = 'Terms & Conditions';
+    modalBody.innerHTML = `
+        <h4>Service Usage</h4>
+        <p>By using our nickname generator, you agree to:</p>
+        <ul>
+            <li>Use the service for personal purposes only</li>
+            <li>Not abuse or overload our servers</li>
+            <li>Respect our intellectual property</li>
+        </ul>
+        
+        <h4>Generated Content</h4>
+        <p>All generated names are suggestions only. We're not responsible for:</p>
+        <ul>
+            <li>Name availability on platforms</li>
+            <li>Name appropriateness for your use case</li>
+            <li>Any issues arising from name usage</li>
+        </ul>
+        
+        <h4>Service Availability</h4>
+        <p>We strive for 99.9% uptime but can't guarantee uninterrupted service.</p>
+    `;
+    modal.classList.add('active');
+    sidebar.classList.remove('active');
+}
+
+function showAbout() {
+    modalTitle.textContent = 'About Us';
+    modalBody.innerHTML = `
+        <h4>Our Mission</h4>
+        <p>We created this stylish name generator to help people express their creativity and find unique identities online.</p>
+        
+        <h4>What We Offer</h4>
+        <ul>
+            <li>100+ font styles and variations</li>
+            <li>Unicode character support</li>
+            <li>Real-time name generation</li>
+            <li>Mobile-friendly design</li>
+            <li>Completely free service</li>
+        </ul>
+        
+        <h4>Technology</h4>
+        <p>Built with modern web technologies including HTML5, CSS3, and JavaScript for the best user experience.</p>
+        
+        <h4>Always Improving</h4>
+        <p>We regularly update our generator with new styles and features based on user feedback.</p>
+    `;
+    modal.classList.add('active');
+    sidebar.classList.remove('active');
+}
