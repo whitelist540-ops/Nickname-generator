@@ -483,6 +483,7 @@ const complexDecorations = [
     { prefix: "ℳᥫ᭡. ", suffix: " ⚕" },
     { prefix: "ℳᥫ᭡. ", suffix: " ✓" },
     { prefix: "ᴹᴿメ. ", suffix: "☂️" },
+    { prefix: "➳ᴹᴿメ", suffix: "亗" },
 ];
 
 // ==================== SYMBOLS AND EMOJIS ====================
