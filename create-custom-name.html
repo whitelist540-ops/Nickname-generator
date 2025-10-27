@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Custom Name - StyleNick</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="create-custom-name.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
@@ -44,8 +44,19 @@
         <section class="preview-section">
             <div class="preview-container">
                 <h2>Your Custom Name</h2>
+                
+                <!-- Direct Text Input -->
+                <div class="direct-input-container">
+                    <label for="directTextInput">Type your name directly:</label>
+                    <input type="text" id="directTextInput" placeholder="Enter your name here..." class="direct-input">
+                    <button id="applyTextBtn" class="preview-btn primary">
+                        <i class="fas fa-check"></i>
+                        Apply Text
+                    </button>
+                </div>
+                
                 <div class="preview-display" id="namePreview">
-                    Type something...
+                    Your styled name will appear here...
                 </div>
                 <div class="preview-actions">
                     <button id="copyPreviewBtn" class="preview-btn primary">
@@ -96,6 +107,7 @@
                             <button class="category-btn" data-category="fancy">Fancy Styles</button>
                             <button class="category-btn" data-category="special">Special Styles</button>
                             <button class="category-btn" data-category="asian">Asian Styles</button>
+                            <button class="category-btn" data-category="all">All Letters</button>
                         </div>
                         <div class="keyboard-grid" id="fontsKeyboard">
                             <!-- Font keys will be generated here -->
@@ -104,6 +116,13 @@
 
                     <!-- Symbols Tab -->
                     <div class="tab-pane" id="symbolsTab">
+                        <div class="symbol-categories">
+                            <button class="category-btn active" data-category="popular">Popular</button>
+                            <button class="category-btn" data-category="stars">Stars</button>
+                            <button class="category-btn" data-category="hearts">Hearts</button>
+                            <button class="category-btn" data-category="arrows">Arrows</button>
+                            <button class="category-btn" data-category="shapes">Shapes</button>
+                        </div>
                         <div class="keyboard-grid" id="symbolsKeyboard">
                             <!-- Symbol keys will be generated here -->
                         </div>
@@ -112,10 +131,11 @@
                     <!-- Emojis Tab -->
                     <div class="tab-pane" id="emojisTab">
                         <div class="emoji-categories">
-                            <button class="emoji-category-btn active" data-category="faces">Faces</button>
-                            <button class="emoji-category-btn" data-category="animals">Animals</button>
-                            <button class="emoji-category-btn" data-category="objects">Objects</button>
-                            <button class="emoji-category-btn" data-category="symbols">Symbols</button>
+                            <button class="emoji-category-btn active" data-category="faces">Faces & People</button>
+                            <button class="emoji-category-btn" data-category="animals">Animals & Nature</button>
+                            <button class="emoji-category-btn" data-category="food">Food & Drink</button>
+                            <button class="emoji-category-btn" data-category="activities">Activities</button>
+                            <button class="emoji-category-btn" data-category="objects">Objects & Symbols</button>
                         </div>
                         <div class="keyboard-grid emoji-grid" id="emojisKeyboard">
                             <!-- Emoji keys will be generated here -->
@@ -124,6 +144,12 @@
 
                     <!-- Decorations Tab -->
                     <div class="tab-pane" id="decorationsTab">
+                        <div class="decoration-categories">
+                            <button class="category-btn active" data-category="brackets">Brackets</button>
+                            <button class="category-btn" data-category="stars">Star Styles</button>
+                            <button class="category-btn" data-category="flowers">Flower Styles</button>
+                            <button class="category-btn" data-category="misc">Miscellaneous</button>
+                        </div>
                         <div class="keyboard-grid decoration-grid" id="decorationsKeyboard">
                             <!-- Decoration keys will be generated here -->
                         </div>
@@ -147,6 +173,16 @@
                                     <button class="transform-btn" data-transform="lowercase">lowercase</button>
                                     <button class="transform-btn" data-transform="titlecase">Title Case</button>
                                     <button class="transform-btn" data-transform="alternating">AlTeRnAtInG</button>
+                                    <button class="transform-btn" data-transform="reverse">Reverse Text</button>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label>Special Effects:</label>
+                                <div class="effect-buttons">
+                                    <button class="effect-btn" data-effect="sparkles">Add Sparkles</button>
+                                    <button class="effect-btn" data-effect="hearts">Add Hearts</button>
+                                    <button class="effect-btn" data-effect="flames">Add Flames</button>
+                                    <button class="effect-btn" data-effect="borders">Add Borders</button>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +201,11 @@
                     </button>
                     <button class="control-key large" id="enterBtn">
                         <i class="fas fa-arrow-right"></i>
-                        Enter
+                        New Line
+                    </button>
+                    <button class="control-key" id="clearBtn">
+                        <i class="fas fa-eraser"></i>
+                        Clear
                     </button>
                 </div>
             </div>
